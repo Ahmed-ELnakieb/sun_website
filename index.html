@@ -16,6 +16,9 @@
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     
     <style>
         * {
@@ -78,10 +81,202 @@
         .animate-slide-in-left {
             animation: slideInLeft 1s ease-out;
         }
-        
+
         @keyframes slideInLeft {
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
+        }
+
+        .admin-section-card {
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .admin-section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15);
+        }
+
+        .admin-section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .admin-section-card:hover::before {
+            left: 100%;
+        }
+
+        .expertise-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .admin-image-container img {
+            transition: transform 0.5s ease;
+        }
+
+        .admin-image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .counter-animation {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .admin-cards-container {
+            /* Removed background and shadow */
+        }
+
+        .admin-card {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: none;
+            margin: 0;
+            box-shadow: none;
+        }
+
+        .admin-card-team {
+            background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        }
+
+        .admin-card-management {
+            background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        }
+
+        .admin-card-ceo {
+            background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        }
+
+        .admin-card-values {
+            background-image: url('https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        }
+
+        .admin-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .admin-card-team .admin-card-overlay {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(29, 78, 216, 0.3));
+        }
+
+        .admin-card-management .admin-card-overlay {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(4, 120, 87, 0.3));
+        }
+
+        .admin-card-ceo .admin-card-overlay {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(109, 40, 217, 0.3));
+        }
+
+        .admin-card-values .admin-card-overlay {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(217, 119, 6, 0.3));
+        }
+
+        .admin-card:hover {
+            box-shadow: 0 25px 50px rgba(30, 64, 175, 0.3);
+            z-index: 10;
+        }
+
+        .admin-card:hover .admin-card-overlay {
+            opacity: 0.7;
+        }
+
+        .admin-card-content {
+            transition: transform 0.3s ease;
+        }
+
+        .admin-card:hover .admin-card-content {
+            transform: skewX(8deg) translateY(-5px) scale(1.02);
+        }
+
+        /* Fix for skewed cards hover effect */
+        .admin-card {
+            transform-origin: center center;
+        }
+
+        .admin-card:hover {
+            transform: skewX(-8deg) scale(1.02);
+        }
+
+        #admin-detail-modal {
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: modalSlideIn 0.5s ease-out forwards;
+        }
+
+        @keyframes modalSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .detail-image {
+            transition: transform 0.3s ease;
+        }
+
+        .detail-image:hover {
+            transform: scale(1.02);
         }
     </style>
 </head>
@@ -106,6 +301,7 @@
                     <a href="#home" class="text-white hover:text-blue-200 transition-colors nav-link">الرئيسية</a>
                     <a href="#about" class="text-white hover:text-blue-200 transition-colors nav-link">الشركة</a>
                     <a href="#products" class="text-white hover:text-blue-200 transition-colors nav-link">المنتجات</a>
+                    <a href="#administration" class="text-white hover:text-blue-200 transition-colors nav-link">الاداره</a>
                     <a href="#contact" class="text-white hover:text-blue-200 transition-colors nav-link">اتصل بنا</a>
                 </div>
                 
@@ -120,6 +316,7 @@
                 <a href="#home" class="block py-2 text-blue-800 hover:text-blue-600 transition-colors">الرئيسية</a>
                 <a href="#about" class="block py-2 text-blue-800 hover:text-blue-600 transition-colors">الشركة</a>
                 <a href="#products" class="block py-2 text-blue-800 hover:text-blue-600 transition-colors">المنتجات</a>
+                <a href="#administration" class="block py-2 text-blue-800 hover:text-blue-600 transition-colors">الاداره</a>
                 <a href="#contact" class="block py-2 text-blue-800 hover:text-blue-600 transition-colors">اتصل بنا</a>
             </div>
         </div>
@@ -375,6 +572,94 @@
         </div>
     </section>
 
+    <!-- Administration Section -->
+    <section id="administration" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">الإدارة</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    تعرف على فريق الإدارة المتميز الذي يقود شركة صن نحو النجاح والتميز في مجال الاستيراد والتصدير
+                </p>
+            </div>
+
+            <!-- 4 Column Cards Layout -->
+            <div class="flex justify-center mb-16">
+                <div class="admin-cards-container flex" style="width: 80%; height: 581px;">
+                    <!-- فريق العمل Card -->
+                    <div class="admin-card admin-card-team flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                         data-section="team" style="transform: skewX(-8deg);">
+                        <div class="admin-card-overlay"></div>
+                        <div class="admin-card-content h-full flex flex-col items-center justify-center p-6 text-center relative z-10" style="transform: skewX(8deg);">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-users text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 drop-shadow-lg">فريق العمل</h3>
+                            <div class="w-12 h-1 bg-white rounded-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- إدارة الشركة Card -->
+                    <div class="admin-card admin-card-management flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                         data-section="management" style="transform: skewX(-8deg);">
+                        <div class="admin-card-overlay"></div>
+                        <div class="admin-card-content h-full flex flex-col items-center justify-center p-6 text-center relative z-10" style="transform: skewX(8deg);">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-building text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 drop-shadow-lg">إدارة الشركة</h3>
+                            <div class="w-12 h-1 bg-white rounded-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- المدير العام Card -->
+                    <div class="admin-card admin-card-ceo flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                         data-section="ceo" style="transform: skewX(-8deg);">
+                        <div class="admin-card-overlay"></div>
+                        <div class="admin-card-content h-full flex flex-col items-center justify-center p-6 text-center relative z-10" style="transform: skewX(8deg);">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-user-tie text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 drop-shadow-lg">المدير العام</h3>
+                            <div class="w-12 h-1 bg-white rounded-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- قيمنا Card -->
+                    <div class="admin-card admin-card-values flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                         data-section="values" style="transform: skewX(-8deg);">
+                        <div class="admin-card-overlay"></div>
+                        <div class="admin-card-content h-full flex flex-col items-center justify-center p-6 text-center relative z-10" style="transform: skewX(8deg);">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-heart text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 drop-shadow-lg">قيمنا</h3>
+                            <div class="w-12 h-1 bg-white rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detail Modal/Overlay -->
+        <div id="admin-detail-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-white rounded-xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+                    <!-- Close Button -->
+                    <div class="flex justify-end p-4">
+                        <button id="close-modal" class="text-gray-500 hover:text-gray-700 text-2xl">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <!-- Modal Content -->
+                    <div id="modal-content" class="p-8 pt-0">
+                        <!-- Content will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -524,6 +809,7 @@
                         <li><a href="#home" class="text-blue-100 hover:text-white transition-colors">الرئيسية</a></li>
                         <li><a href="#about" class="text-blue-100 hover:text-white transition-colors">نبذة عن الشركة</a></li>
                         <li><a href="#products" class="text-blue-100 hover:text-white transition-colors">منتجاتنا</a></li>
+                        <li><a href="#administration" class="text-blue-100 hover:text-white transition-colors">الإدارة</a></li>
                         <li><a href="#contact" class="text-blue-100 hover:text-white transition-colors">اتصل بنا</a></li>
                     </ul>
                 </div>
@@ -660,6 +946,314 @@
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
+        });
+
+        // jQuery animations for administration section
+        $(document).ready(function() {
+            // Animate counter numbers
+            function animateCounters() {
+                $('.counter-animation').each(function() {
+                    const $this = $(this);
+                    const countTo = parseInt($this.text().replace('+', ''));
+
+                    $({ countNum: 0 }).animate({
+                        countNum: countTo
+                    }, {
+                        duration: 2000,
+                        easing: 'swing',
+                        step: function() {
+                            $this.text(Math.floor(this.countNum) + '+');
+                        },
+                        complete: function() {
+                            $this.text(countTo + '+');
+                        }
+                    });
+                });
+            }
+
+            // Intersection Observer for jQuery animations
+            const adminObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const $element = $(entry.target);
+
+                        if ($element.hasClass('fade-in-up')) {
+                            $element.addClass('visible');
+                        }
+                        if ($element.hasClass('slide-in-left')) {
+                            $element.addClass('visible');
+                        }
+                        if ($element.hasClass('slide-in-right')) {
+                            $element.addClass('visible');
+                        }
+
+                        // Animate counters when they come into view
+                        if ($element.find('.counter-animation').length > 0) {
+                            setTimeout(animateCounters, 500);
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe administration section elements
+            $('.fade-in-up, .slide-in-left, .slide-in-right').each(function() {
+                adminObserver.observe(this);
+            });
+
+            // Expertise cards hover effects
+            $('.expertise-card').hover(
+                function() {
+                    $(this).find('i').addClass('animate-pulse');
+                },
+                function() {
+                    $(this).find('i').removeClass('animate-pulse');
+                }
+            );
+
+            // Add click effects to expertise cards
+            $('.expertise-card').click(function() {
+                $(this).addClass('animate-pulse');
+                setTimeout(() => {
+                    $(this).removeClass('animate-pulse');
+                }, 600);
+            });
+
+            // Smooth reveal animation for admin section cards
+            $('.admin-section-card').each(function(index) {
+                $(this).css('animation-delay', (index * 0.2) + 's');
+            });
+
+            // Admin cards click functionality
+            $('.admin-card').click(function() {
+                const section = $(this).data('section');
+                showAdminDetail(section);
+            });
+
+            // Modal close functionality
+            $('#close-modal').click(function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $('#admin-detail-modal').fadeOut(300);
+            });
+
+            // Close modal when clicking on backdrop
+            $('#admin-detail-modal').click(function(e) {
+                if (e.target === this) {
+                    $('#admin-detail-modal').fadeOut(300);
+                }
+            });
+
+            // Prevent modal close when clicking inside modal content
+            $(document).on('click', '.bg-white', function(e) {
+                e.stopPropagation();
+            });
+
+            // Close modal with Escape key
+            $(document).keydown(function(e) {
+                if (e.key === "Escape") {
+                    $('#admin-detail-modal').fadeOut(300);
+                }
+            });
+
+            // Function to show admin detail modal
+            function showAdminDetail(section) {
+                const modalContent = $('#modal-content');
+                let content = '';
+
+                switch(section) {
+                    case 'team':
+                        content = `
+                            <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
+                                <div class="order-2 lg:order-1">
+                                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                         alt="فريق العمل"
+                                         class="detail-image rounded-xl shadow-2xl w-full">
+                                </div>
+                                <div class="order-1 lg:order-2">
+                                    <h3 class="text-3xl font-bold text-gray-800 mb-6">فريق العمل</h3>
+                                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                        يضم فريق عمل شركة صن مجموعة من المتخصصين ذوي الخبرة العالية في مجال الاستيراد والتصدير. نحن نؤمن بأن القوة الحقيقية للشركة تكمن في فريق العمل المتفاني والمتخصص الذي يعمل بروح الفريق الواحد لتحقيق أهداف الشركة وتلبية احتياجات عملائنا.
+                                    </p>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center space-x-3 space-x-reverse">
+                                            <i class="fas fa-check-circle text-blue-600"></i>
+                                            <span class="text-gray-700">فريق متخصص في التجارة الدولية</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3 space-x-reverse">
+                                            <i class="fas fa-check-circle text-blue-600"></i>
+                                            <span class="text-gray-700">خبرة واسعة في الأسواق العالمية</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3 space-x-reverse">
+                                            <i class="fas fa-check-circle text-blue-600"></i>
+                                            <span class="text-gray-700">التزام بأعلى معايير الجودة</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3 space-x-reverse">
+                                            <i class="fas fa-check-circle text-blue-600"></i>
+                                            <span class="text-gray-700">خدمة عملاء متميزة على مدار الساعة</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+
+                    case 'management':
+                        content = `
+                            <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
+                                <div class="order-2 lg:order-1">
+                                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                         alt="إدارة الشركة"
+                                         class="detail-image rounded-xl shadow-2xl w-full">
+                                </div>
+                                <div class="order-1 lg:order-2">
+                                    <h3 class="text-3xl font-bold text-gray-800 mb-6">إدارة الشركة</h3>
+                                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                        في شركة صن، يقودنا فريق إداري متميز ذو خبرة طويلة في صناعة الاستيراد والتصدير، حيث نؤمن أن القيادة الحكيمة والتخطيط الاستراتيجي هما أساس نجاحنا المستمر. يتمتع كل عضو في فريق الإدارة بمعرفة واسعة بمتطلبات السوق الزراعي، مما يعزز قدرتنا على تقديم حلول مبتكرة تلبي احتياجات عملائنا.
+                                    </p>
+                                    <div class="grid grid-cols-3 gap-6 mb-6">
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-blue-600 mb-2">25+</div>
+                                            <div class="text-gray-600 text-sm">سنة خبرة</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-blue-600 mb-2">100+</div>
+                                            <div class="text-gray-600 text-sm">مشروع ناجح</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-blue-600 mb-2">15+</div>
+                                            <div class="text-gray-600 text-sm">دولة شريكة</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+
+                    case 'ceo':
+                        content = `
+                            <div class="modal-content-section max-w-4xl mx-auto">
+                                <div class="text-center mb-8">
+                                    <h3 class="text-4xl font-bold text-gray-800 mb-4">المدير العام</h3>
+                                    <div class="w-24 h-1 bg-purple-600 mx-auto rounded-full"></div>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-8 mb-8">
+                                    <p class="text-xl text-gray-700 leading-relaxed text-center mb-6">
+                                        بخبرة تمتد لأكثر من <span class="font-bold text-purple-600">12 سنة</span> في مجال التجارة الدولية والقطاع الزراعي، يقود <span class="font-bold text-purple-600">[اسم المدير العام]</span> شركة <span class="font-bold text-purple-600">[اسم الشركة]</span> برؤية استراتيجية طموحة تهدف إلى تحقيق النمو المستدام والريادة في الأسواق العالمية.
+                                    </p>
+                                    <p class="text-lg text-gray-600 leading-relaxed text-center">
+                                        من خلال قيادته الحكيمة ومهاراته الاستراتيجية المتقدمة، نجح في بناء شبكة واسعة من الشراكات الدولية وتعزيز مكانة الشركة كرائدة في مجال استيراد وتصدير المنتجات الزراعية عالية الجودة.
+                                    </p>
+                                </div>
+
+                                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                                    <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-globe text-blue-600 text-2xl"></i>
+                                        </div>
+                                        <h4 class="font-bold text-gray-800 mb-2">التجارة الدولية</h4>
+                                        <p class="text-sm text-gray-600">خبرة واسعة في الأسواق العالمية والتجارة الخارجية</p>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-seedling text-green-600 text-2xl"></i>
+                                        </div>
+                                        <h4 class="font-bold text-gray-800 mb-2">القطاع الزراعي</h4>
+                                        <p class="text-sm text-gray-600">تخصص عميق في المنتجات الزراعية والحبوب</p>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-chart-line text-purple-600 text-2xl"></i>
+                                        </div>
+                                        <h4 class="font-bold text-gray-800 mb-2">النمو الاستراتيجي</h4>
+                                        <p class="text-sm text-gray-600">رؤية طموحة للتوسع والنمو المستدام</p>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-handshake text-orange-600 text-2xl"></i>
+                                        </div>
+                                        <h4 class="font-bold text-gray-800 mb-2">بناء الشراكات</h4>
+                                        <p class="text-sm text-gray-600">علاقات قوية مع العملاء والشركاء الدوليين</p>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-8">
+                                    <div class="flex flex-wrap justify-center gap-3">
+                                        <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+                                            <i class="fas fa-medal text-xs ml-2"></i>
+                                            12+ سنة خبرة
+                                        </span>
+                                        <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                                            <i class="fas fa-trophy text-xs ml-2"></i>
+                                            قائد متميز
+                                        </span>
+                                        <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                                            <i class="fas fa-rocket text-xs ml-2"></i>
+                                            رؤية استراتيجية
+                                        </span>
+                                        <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
+                                            <i class="fas fa-globe text-xs ml-2"></i>
+                                            خبرة دولية
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+
+                    case 'values':
+                        content = `
+                            <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
+                                <div class="order-2 lg:order-1">
+                                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                         alt="قيمنا"
+                                         class="detail-image rounded-xl shadow-2xl w-full">
+                                </div>
+                                <div class="order-1 lg:order-2">
+                                    <h3 class="text-3xl font-bold text-gray-800 mb-6">قيمنا</h3>
+                                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                                        تقوم شركة صن على مجموعة من القيم الأساسية التي توجه عملنا وتحدد هويتنا في السوق. هذه القيم ليست مجرد كلمات، بل هي المبادئ التي نعيش بها ونطبقها في كل جانب من جوانب عملنا.
+                                    </p>
+                                    <div class="space-y-6">
+                                        <div class="flex items-start space-x-4 space-x-reverse">
+                                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-award text-blue-600"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-xl font-bold text-gray-800 mb-2">الجودة</h4>
+                                                <p class="text-gray-600">التزامنا بمعايير الجودة والتميز في كل خطوة</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4 space-x-reverse">
+                                            <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-handshake text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-xl font-bold text-gray-800 mb-2">الشفافية</h4>
+                                                <p class="text-gray-600">نؤمن بالتعامل بشفافية مع عملائنا وشركائنا</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4 space-x-reverse">
+                                            <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-lightbulb text-purple-600"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-xl font-bold text-gray-800 mb-2">الابتكار</h4>
+                                                <p class="text-gray-600">نسعى دائماً لتقديم حلول جديدة ومبتكرة</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                }
+
+                modalContent.html(content);
+                $('#admin-detail-modal').fadeIn(300);
+            }
         });
     </script>
 </body>
