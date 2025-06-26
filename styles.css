@@ -1,0 +1,436 @@
+/* Sun Trading Company - Main Stylesheet */
+
+/* Global Styles */
+* {
+    font-family: 'Cairo', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero-bg {
+    background: linear-gradient(rgba(30, 64, 175, 0.8), rgba(30, 64, 175, 0.6)), 
+                url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Feature Cards */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(30, 64, 175, 0.1);
+}
+
+/* Product Cards */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation */
+.navbar-scroll {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Animations */
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Admin Section Cards */
+.admin-section-card {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15);
+}
+
+.admin-section-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.admin-section-card:hover::before {
+    left: 100%;
+}
+
+/* Expertise Cards */
+.expertise-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.expertise-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Admin Image Container */
+.admin-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-image-container img {
+    transition: transform 0.5s ease;
+}
+
+.admin-image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Fade In Up Animation */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide In Left Animation */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slide In Right Animation */
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Counter Animation */
+.counter-animation {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Admin Cards Container */
+.admin-cards-container {
+    /* Removed background and shadow */
+}
+
+/* Admin Cards */
+.admin-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    margin: 0;
+    box-shadow: none;
+}
+
+.admin-card-team {
+    background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+}
+
+.admin-card-management {
+    background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+}
+
+.admin-card-ceo {
+    background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+}
+
+.admin-card-values {
+    background-image: url('https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+}
+
+/* Admin Card Overlays */
+.admin-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.admin-card-team .admin-card-overlay {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(29, 78, 216, 0.3));
+}
+
+.admin-card-management .admin-card-overlay {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(4, 120, 87, 0.3));
+}
+
+.admin-card-ceo .admin-card-overlay {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(109, 40, 217, 0.3));
+}
+
+.admin-card-values .admin-card-overlay {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(217, 119, 6, 0.3));
+}
+
+/* Admin Card Hover Effects */
+.admin-card:hover {
+    box-shadow: 0 25px 50px rgba(30, 64, 175, 0.3);
+    z-index: 10;
+}
+
+.admin-card:hover .admin-card-overlay {
+    opacity: 0.7;
+}
+
+.admin-card-content {
+    transition: transform 0.3s ease;
+}
+
+.admin-card:hover .admin-card-content {
+    transform: skewX(8deg) translateY(-5px) scale(1.02);
+}
+
+/* Fix for skewed cards hover effect */
+.admin-card {
+    transform-origin: center center;
+}
+
+.admin-card:hover {
+    transform: skewX(-8deg) scale(1.02);
+}
+
+/* Modal Styles */
+#admin-detail-modal {
+    backdrop-filter: blur(5px);
+}
+
+.modal-content-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: modalSlideIn 0.5s ease-out forwards;
+}
+
+@keyframes modalSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-image {
+    transition: transform 0.3s ease;
+}
+
+.detail-image:hover {
+    transform: scale(1.02);
+}
+
+/* Contact Section Styles */
+#contact {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+}
+
+.sun-background {
+    animation: sunBackgroundFloat 20s ease-in-out infinite;
+}
+
+@keyframes sunBackgroundFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+/* Sun Main Animation */
+.sun-main {
+    animation: sunPulse 4s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes sunPulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(180deg); }
+}
+
+/* Sun Rays Animation */
+.sun-rays {
+    animation: sunRaysRotate 8s linear infinite;
+    transform-origin: 600px 400px;
+}
+
+@keyframes sunRaysRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Floating Suns Animation */
+.floating-suns circle:nth-child(1) {
+    animation: floatUp 6s ease-in-out infinite;
+}
+
+.floating-suns circle:nth-child(2) {
+    animation: floatUp 8s ease-in-out infinite 1s;
+}
+
+.floating-suns circle:nth-child(3) {
+    animation: floatUp 7s ease-in-out infinite 2s;
+}
+
+.floating-suns circle:nth-child(4) {
+    animation: floatUp 9s ease-in-out infinite 3s;
+}
+
+@keyframes floatUp {
+    0%, 100% { transform: translateY(0px) scale(1); opacity: 0.2; }
+    50% { transform: translateY(-20px) scale(1.2); opacity: 0.4; }
+}
+
+/* Decorative Elements Animation */
+.decorative-elements path:nth-child(1) {
+    animation: wavePath 10s ease-in-out infinite;
+}
+
+.decorative-elements path:nth-child(2) {
+    animation: wavePath 12s ease-in-out infinite 2s;
+}
+
+@keyframes wavePath {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(20px); }
+}
+
+/* Contact Form Card Styles */
+.contact-form-card {
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Contact Info Cards Styles */
+.contact-info-card {
+    animation: slideInRight 1s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.contact-info-card:hover::before {
+    left: 100%;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Form Input Enhancements */
+#contact input:focus,
+#contact select:focus,
+#contact textarea:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2);
+}
+
+/* Button Hover Effects */
+#contact button[type="submit"] {
+    position: relative;
+    overflow: hidden;
+}
+
+#contact button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+#contact button[type="submit"]:hover::before {
+    left: 100%;
+}
+
+/* Responsive Animations */
+@media (max-width: 768px) {
+    .sun-main {
+        animation-duration: 6s;
+    }
+
+    .sun-rays {
+        animation-duration: 12s;
+    }
+
+    .contact-form-card,
+    .contact-info-card {
+        animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
