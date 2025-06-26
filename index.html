@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة صن للاستيراد والتصدير - شريككم الموثوق في تجارة القمح والسلع الأساسية</title>
+    <meta name="description" content="شركة صن للاستيراد والتصدير - شريككم الموثوق في استيراد وتصدير القمح والحبوب والسلع الأساسية. خبرة طويلة وجودة عالية في الخدمة.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Cairo for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(30, 64, 175, 0.8), rgba(30, 64, 175, 0.6)), 
+                        url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.1);
+        }
+        
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar-scroll {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-slide-in-right {
+            animation: slideInRight 1s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .animate-slide-in-left {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-sun text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white" id="logo-text">شركة صن</h1>
+                        <p class="text-sm text-blue-100" id="logo-subtitle">للاستيراد والتصدير</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="#home" class="text-white hover:text-blue-200 transition-colors nav-link">الرئيسية</a>
+                    <a href="#about" class="text-white hover:text-blue-200 transition-colors nav-link">الشركة</a>
+                    <a href="#products" class="text-white hover:text-blue-200 transition-colors nav-link">المنتجات</a>
+                    <a href="#contact" class="text-white hover:text-blue-200 transition-colors nav-link">اتصل بنا</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
+                <a href="#home" class="block py-2 text-blue-800 hover:text-blue-600 transition-colors">الرئيسية</a>
+                <a href="#about" class="block py-2 text-blue-800 hover:text-blue-600 transition-colors">الشركة</a>
+                <a href="#products" class="block py-2 text-blue-800 hover:text-blue-600 transition-colors">المنتجات</a>
+                <a href="#contact" class="block py-2 text-blue-800 hover:text-blue-600 transition-colors">اتصل بنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center animate-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    مرحباً بكم في شركة صن
+                </h1>
+                <h2 class="text-2xl md:text-4xl font-medium mb-8 text-blue-100">
+                    للاستيراد والتصدير
+                </h2>
+                <p class="text-xl md:text-2xl mb-12 leading-relaxed">
+                    شريككم الموثوق في تجارة القمح والسلع الأساسية
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#about" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-colors">
+                        اكتشف خدماتنا
+                    </a>
+                    <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-full text-lg font-medium transition-colors">
+                        تواصل معنا
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Arrow -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#features" class="text-white text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">لماذا تختار شركة صن؟</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    نتميز بخبرة طويلة في مجال استيراد وتصدير المنتجات الزراعية ونعمل على توفير مجموعة من المنتجات عالية الجودة التي تلبي احتياجات السوق
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-globe text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">شبكة واسعة</h3>
+                    <p class="text-gray-600">نتعاون مع أفضل الموردين في جميع أنحاء العالم</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-award text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">جودة عالية</h3>
+                    <p class="text-gray-600">نقدم منتجات عالية الجودة تلبي المعايير الدولية</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-headset text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">خدمة متميزة</h3>
+                    <p class="text-gray-600">نحرص على توفير خدمة عملاء مميزة وحلول مرنة</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clock text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">خبرة طويلة</h3>
+                    <p class="text-gray-600">سنوات من الخبرة في مجال الاستيراد والتصدير</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="animate-slide-in-right">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">نبذة عن الشركة</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        تأسست شركة صن للاستيراد والتصدير لتعمل في مجال استيراد وتصدير الحاصلات الزراعية والسلع الأساسية،
+                        وقد أصبحت تمتلك أقوى فريق عمل ينتقي المحاصيل ذات الجودة العالية ويقوم بفرزها وتنقيتها وتصديرها
+                        لكل بلدان العالم مثل العراق ورومانيا وتركيا وإسبانيا وغيرها.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        نسعى للتوسع في هذا المجال وتقديم أفضل الخدمات لعملائنا، مع الحرص على تقديم أسعار مناسبة
+                        تناسب جميع أنواع الأسواق والحفاظ على أعلى معايير الجودة.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">15+</div>
+                            <div class="text-gray-600">سنة خبرة</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">50+</div>
+                            <div class="text-gray-600">عميل راضي</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">20+</div>
+                            <div class="text-gray-600">دولة نصدر إليها</div>
+                        </div>
+                    </div>
+
+                    <!-- Values -->
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">قيمنا</h3>
+                        <div class="flex items-center space-x-3 space-x-reverse">
+                            <i class="fas fa-check-circle text-blue-600"></i>
+                            <span class="text-gray-700"><strong>الجودة:</strong> التزامنا بمعايير الجودة والتميز في كل خطوة</span>
+                        </div>
+                        <div class="flex items-center space-x-3 space-x-reverse">
+                            <i class="fas fa-check-circle text-blue-600"></i>
+                            <span class="text-gray-700"><strong>الشفافية:</strong> نؤمن بالتعامل بشفافية مع عملائنا وشركائنا</span>
+                        </div>
+                        <div class="flex items-center space-x-3 space-x-reverse">
+                            <i class="fas fa-check-circle text-blue-600"></i>
+                            <span class="text-gray-700"><strong>الابتكار:</strong> نسعى دائماً لتقديم حلول جديدة ومبتكرة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="animate-slide-in-left">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                             alt="مستودع الشركة"
+                             class="rounded-xl shadow-2xl w-full">
+                        <div class="absolute inset-0 bg-blue-600 opacity-20 rounded-xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">منتجاتنا</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    نقدم مجموعة متنوعة من المنتجات الزراعية عالية الجودة التي تلبي احتياجات السوق المحلي والدولي
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 - Wheat -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                         alt="القمح"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">القمح</h3>
+                        <p class="text-gray-600 mb-4">قمح عالي الجودة من أفضل المصادر العالمية</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-600 font-semibold">منتج أساسي</span>
+                            <i class="fas fa-seedling text-blue-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 - Corn -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                         alt="الذرة"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">الذرة</h3>
+                        <p class="text-gray-600 mb-4">ذرة صفراء عالية الجودة للاستخدامات المتعددة</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-600 font-semibold">حبوب</span>
+                            <i class="fas fa-seedling text-blue-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 - Barley -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                         alt="الشعير"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">الشعير</h3>
+                        <p class="text-gray-600 mb-4">شعير عالي الجودة للأعلاف والاستخدامات الصناعية</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-600 font-semibold">حبوب</span>
+                            <i class="fas fa-seedling text-blue-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 - Beans -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                         alt="الفاصوليا"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">الفاصوليا البيضاء</h3>
+                        <p class="text-gray-600 mb-4">فاصوليا بيضاء خالية من الشوائب وعالية الجودة</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-600 font-semibold">بقوليات</span>
+                            <i class="fas fa-leaf text-blue-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 - Lentils -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                         alt="العدس"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">العدس</h3>
+                        <p class="text-gray-600 mb-4">عدس أحمر وأصفر عالي الجودة ومنتقى بعناية</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-600 font-semibold">بقوليات</span>
+                            <i class="fas fa-leaf text-blue-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 - Chickpeas -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                         alt="الحمص"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">الحمص</h3>
+                        <p class="text-gray-600 mb-4">حمص عالي الجودة ومنتقى من أفضل المصادر</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-600 font-semibold">بقوليات</span>
+                            <i class="fas fa-leaf text-blue-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">اتصل بنا</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    نحن هنا لخدمتكم. تواصلوا معنا للحصول على أفضل العروض والخدمات
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">أرسل لنا رسالة</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">الاسم</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">رقم الهاتف</label>
+                            <input type="tel" id="phone" name="phone"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">الموضوع</label>
+                            <select id="subject" name="subject" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">اختر الموضوع</option>
+                                <option value="import">استيراد</option>
+                                <option value="export">تصدير</option>
+                                <option value="inquiry">استفسار عام</option>
+                                <option value="partnership">شراكة</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">الرسالة</label>
+                            <textarea id="message" name="message" rows="5" required
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit"
+                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <!-- Address -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center ml-4">
+                                <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">العنوان</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            القاهرة، مصر<br>
+                            منطقة التجمع الخامس<br>
+                            شارع التسعين الشمالي
+                        </p>
+                    </div>
+
+                    <!-- Phone Numbers -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center ml-4">
+                                <i class="fas fa-phone text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">أرقام الهاتف</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <a href="tel:+201000000000" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+                                <i class="fas fa-phone text-sm ml-2"></i>
+                                +20 100 000 0000
+                            </a>
+                            <a href="tel:+201111111111" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+                                <i class="fas fa-phone text-sm ml-2"></i>
+                                +20 111 111 1111
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center ml-4">
+                                <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">واتساب</h3>
+                        </div>
+                        <a href="https://wa.me/201000000000" target="_blank"
+                           class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition-colors">
+                            <i class="fab fa-whatsapp text-xl ml-2"></i>
+                            تواصل عبر واتساب
+                        </a>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center ml-4">
+                                <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">البريد الإلكتروني</h3>
+                        </div>
+                        <a href="mailto:info@sun-trading.com" class="text-gray-600 hover:text-blue-600 transition-colors">
+                            info@sun-trading.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 space-x-reverse mb-6">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-sun text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">شركة صن</h3>
+                            <p class="text-blue-200">للاستيراد والتصدير</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 leading-relaxed">
+                        شريككم الموثوق في تجارة القمح والسلع الأساسية. نقدم خدمات الاستيراد والتصدير بأعلى معايير الجودة.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">روابط سريعة</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-blue-100 hover:text-white transition-colors">الرئيسية</a></li>
+                        <li><a href="#about" class="text-blue-100 hover:text-white transition-colors">نبذة عن الشركة</a></li>
+                        <li><a href="#products" class="text-blue-100 hover:text-white transition-colors">منتجاتنا</a></li>
+                        <li><a href="#contact" class="text-blue-100 hover:text-white transition-colors">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">معلومات الاتصال</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 space-x-reverse">
+                            <i class="fas fa-map-marker-alt text-blue-300"></i>
+                            <span class="text-blue-100">القاهرة، مصر</span>
+                        </div>
+                        <div class="flex items-center space-x-3 space-x-reverse">
+                            <i class="fas fa-phone text-blue-300"></i>
+                            <span class="text-blue-100">+20 100 000 0000</span>
+                        </div>
+                        <div class="flex items-center space-x-3 space-x-reverse">
+                            <i class="fas fa-envelope text-blue-300"></i>
+                            <span class="text-blue-100">info@sun-trading.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-700 mt-8 pt-8 text-center">
+                <p class="text-blue-200">
+                    © 2024 شركة صن للاستيراد والتصدير. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const logoText = document.getElementById('logo-text');
+            const logoSubtitle = document.getElementById('logo-subtitle');
+
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-scroll');
+                logoText.classList.remove('text-white');
+                logoText.classList.add('text-blue-800');
+                logoSubtitle.classList.remove('text-blue-100');
+                logoSubtitle.classList.add('text-blue-600');
+
+                // Update nav links color
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white', 'hover:text-blue-200');
+                    link.classList.add('text-blue-800', 'hover:text-blue-600');
+                });
+            } else {
+                navbar.classList.remove('navbar-scroll');
+                logoText.classList.remove('text-blue-800');
+                logoText.classList.add('text-white');
+                logoSubtitle.classList.remove('text-blue-600');
+                logoSubtitle.classList.add('text-blue-100');
+
+                // Reset nav links color
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.classList.remove('text-blue-800', 'hover:text-blue-600');
+                    link.classList.add('text-white', 'hover:text-blue-200');
+                });
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+
+            // Simulate form submission
+            alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+            contactForm.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .product-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
