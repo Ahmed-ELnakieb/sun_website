@@ -244,11 +244,56 @@ section#services {
 
 /* Hero Section */
 .hero-bg {
-    background: linear-gradient(rgba(168, 101, 35, 0.85), rgba(233, 163, 25, 0.75)),
-                url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    position: relative;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg,
+        rgba(168, 101, 35, 0.85),
+        rgba(233, 163, 25, 0.75),
+        rgba(168, 101, 35, 0.65),
+        rgba(233, 163, 25, 0.85));
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease-in-out infinite;
+    z-index: 1;
+}
+
+.hero-bg > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+        opacity: 0.85;
+    }
+    25% {
+        background-position: 100% 50%;
+        opacity: 0.75;
+    }
+    50% {
+        background-position: 100% 100%;
+        opacity: 0.65;
+    }
+    75% {
+        background-position: 0% 100%;
+        opacity: 0.8;
+    }
+    100% {
+        background-position: 0% 50%;
+        opacity: 0.85;
+    }
 }
 
 /* About Section */
@@ -363,10 +408,36 @@ section#services {
 }
 
 /* Navigation */
+#navbar {
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(0px);
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
 .navbar-scroll {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px) !important;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-    box-shadow: 0 4px 20px var(--shadow-warm);
+    box-shadow: 0 4px 20px var(--shadow-warm) !important;
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Smooth background appearance animation */
+#navbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: -1;
+}
+
+#navbar.navbar-scroll::after {
+    opacity: 1;
 }
 
 /* Animations */
