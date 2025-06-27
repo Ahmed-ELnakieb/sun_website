@@ -12,6 +12,9 @@
     <!-- Local Font Awesome for icons -->
     <link rel="stylesheet" href="fonts/font-awesome/css/all.min.css">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -260,15 +263,38 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="category-btn active px-6 py-3 rounded-full font-medium transition-all duration-300" data-category="all" style="background: var(--secondary-color); color: white;">
+                    جميع المنتجات
+                </button>
+                <button class="category-btn px-6 py-3 rounded-full font-medium transition-all duration-300" data-category="grains" style="background: var(--accent-color); color: var(--primary-color);">
+                    الحبوب
+                </button>
+                <button class="category-btn px-6 py-3 rounded-full font-medium transition-all duration-300" data-category="legumes" style="background: var(--accent-color); color: var(--primary-color);">
+                    البقوليات
+                </button>
+                <button class="category-btn px-6 py-3 rounded-full font-medium transition-all duration-300" data-category="seeds" style="background: var(--accent-color); color: var(--primary-color);">
+                    البذور
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
                 <!-- Product 1 - Wheat -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                         alt="القمح"
-                         class="w-full h-48 object-cover">
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="wheat"
+                     data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover focus" data-bs-html="true"
+                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 650px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="القمح" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">القمح</h5><p class="mb-2" style="font-size: 13px; color: #666;">قمح عالي الجودة من أفضل المصادر العالمية، يتميز بنقاوته العالية ومحتواه الغذائي الممتاز</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-success" style="font-size: 10px;">نقاوة عالية</span><span class="badge bg-success" style="font-size: 10px;">خالي من الشوائب</span><span class="badge bg-success" style="font-size: 10px;">معايير دولية</span><span class="badge bg-success" style="font-size: 10px;">تخزين آمن</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">أوكرانيا، روسيا، كندا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">صناعة الخبز والمعجنات</p></div></div>'>
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                             alt="القمح"
+                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">حبوب</span>
+                        </div>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);">القمح</h3>
-                        <p class="mb-4" style="color: var(--text-dark);">قمح عالي الجودة من أفضل المصادر العالمية</p>
+                        <p class="mb-4 text-sm" style="color: var(--text-dark);">قمح عالي الجودة من أفضل المصادر العالمية</p>
                         <div class="flex items-center justify-between">
                             <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);">منتج أساسي</span>
                             <i class="fas fa-seedling" style="color: var(--secondary-color);"></i>
@@ -277,81 +303,118 @@
                 </div>
 
                 <!-- Product 2 - Corn -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                         alt="الذرة"
-                         class="w-full h-48 object-cover">
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="corn"
+                     data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover focus" data-bs-html="true"
+                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 500px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الذرة" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">الذرة</h5><p class="mb-2" style="font-size: 13px; color: #666;">ذرة صفراء عالية الجودة للاستخدامات المتعددة في الصناعات الغذائية والعلفية</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-warning text-dark" style="font-size: 10px;">لون ذهبي مميز</span><span class="badge bg-warning text-dark" style="font-size: 10px;">حبوب كاملة</span><span class="badge bg-warning text-dark" style="font-size: 10px;">رطوبة مناسبة</span><span class="badge bg-warning text-dark" style="font-size: 10px;">خالية من الآفات</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">الأرجنتين، البرازيل، أوكرانيا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">الأعلاف، الصناعات الغذائية</p></div></div>'>
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                             alt="الذرة"
+                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">حبوب</span>
+                        </div>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);">الذرة</h3>
-                        <p class="mb-4" style="color: var(--text-dark);">ذرة صفراء عالية الجودة للاستخدامات المتعددة</p>
+                        <p class="mb-4 text-sm" style="color: var(--text-dark);">ذرة صفراء عالية الجودة للاستخدامات المتعددة</p>
                         <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);">حبوب</span>
+                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);">علف وغذاء</span>
                             <i class="fas fa-seedling" style="color: var(--secondary-color);"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 3 - Barley -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                         alt="الشعير"
-                         class="w-full h-48 object-cover">
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="barley"
+                     data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover focus" data-bs-html="true"
+                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 500px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الشعير" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">الشعير</h5><p class="mb-2" style="font-size: 13px; color: #666;">شعير عالي الجودة للأعلاف والاستخدامات الصناعية، مصدر ممتاز للطاقة والبروتين</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-info" style="font-size: 10px;">قيمة غذائية عالية</span><span class="badge bg-info" style="font-size: 10px;">سهل الهضم</span><span class="badge bg-info" style="font-size: 10px;">مقاوم للتخزين</span><span class="badge bg-info" style="font-size: 10px;">نقاوة ممتازة</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">فرنسا، ألمانيا، أستراليا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">أعلاف الحيوانات، الصناعات</p></div></div>'>
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                             alt="الشعير"
+                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">حبوب</span>
+                        </div>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);">الشعير</h3>
-                        <p class="mb-4" style="color: var(--text-dark);">شعير عالي الجودة للأعلاف والاستخدامات الصناعية</p>
+                        <p class="mb-4 text-sm" style="color: var(--text-dark);">شعير عالي الجودة للأعلاف والاستخدامات الصناعية</p>
                         <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);">حبوب</span>
+                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);">أعلاف</span>
                             <i class="fas fa-seedling" style="color: var(--secondary-color);"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 4 - Beans -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                         alt="الفاصوليا"
-                         class="w-full h-48 object-cover">
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="beans"
+                     data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover focus" data-bs-html="true"
+                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 500px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الفاصوليا" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">الفاصوليا البيضاء</h5><p class="mb-2" style="font-size: 13px; color: #666;">فاصوليا بيضاء خالية من الشوائب وعالية الجودة، مصدر ممتاز للبروتين النباتي</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-primary" style="font-size: 10px;">بروتين عالي</span><span class="badge bg-primary" style="font-size: 10px;">خالية من الشوائب</span><span class="badge bg-primary" style="font-size: 10px;">حجم منتظم</span><span class="badge bg-primary" style="font-size: 10px;">لون أبيض ناصع</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">تركيا، الأرجنتين، كندا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">الطبخ المنزلي، الصناعات الغذائية</p></div></div>'>
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                             alt="الفاصوليا"
+                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">بقوليات</span>
+                        </div>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);">الفاصوليا البيضاء</h3>
-                        <p class="mb-4" style="color: var(--text-dark);">فاصوليا بيضاء خالية من الشوائب وعالية الجودة</p>
+                        <p class="mb-4 text-sm" style="color: var(--text-dark);">فاصوليا بيضاء خالية من الشوائب وعالية الجودة</p>
                         <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);">بقوليات</span>
+                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);">بروتين نباتي</span>
                             <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 5 - Lentils -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                         alt="العدس"
-                         class="w-full h-48 object-cover">
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="lentils"
+                     data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover focus" data-bs-html="true"
+                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 500px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="العدس" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">العدس</h5><p class="mb-2" style="font-size: 13px; color: #666;">عدس أحمر وأصفر عالي الجودة ومنتقى بعناية، غني بالبروتين والألياف</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-danger" style="font-size: 10px;">غني بالبروتين</span><span class="badge bg-danger" style="font-size: 10px;">سريع الطبخ</span><span class="badge bg-danger" style="font-size: 10px;">ألوان متنوعة</span><span class="badge bg-danger" style="font-size: 10px;">قيمة غذائية عالية</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">تركيا، كندا، أستراليا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">الشوربات، الأطباق الرئيسية</p></div></div>'>
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                             alt="العدس"
+                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">بقوليات</span>
+                        </div>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);">العدس</h3>
-                        <p class="mb-4" style="color: var(--text-dark);">عدس أحمر وأصفر عالي الجودة ومنتقى بعناية</p>
+                        <p class="mb-4 text-sm" style="color: var(--text-dark);">عدس أحمر وأصفر عالي الجودة ومنتقى بعناية</p>
                         <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);">بقوليات</span>
+                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);">غذاء صحي</span>
                             <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 6 - Chickpeas -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                         alt="الحمص"
-                         class="w-full h-48 object-cover">
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="chickpeas"
+                     data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover focus" data-bs-html="true"
+                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 500px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الحمص" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">الحمص</h5><p class="mb-2" style="font-size: 13px; color: #666;">حمص عالي الجودة ومنتقى من أفضل المصادر، مصدر طبيعي للبروتين والألياف</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-secondary" style="font-size: 10px;">حجم كبير</span><span class="badge bg-secondary" style="font-size: 10px;">لون ذهبي</span><span class="badge bg-secondary" style="font-size: 10px;">ملمس ناعم</span><span class="badge bg-secondary" style="font-size: 10px;">طعم مميز</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">تركيا، المكسيك، أستراليا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">الحمص المسلوق، الفلافل، الحمص بالطحينة</p></div></div>'>
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                             alt="الحمص"
+                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">بقوليات</span>
+                        </div>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);">الحمص</h3>
-                        <p class="mb-4" style="color: var(--text-dark);">حمص عالي الجودة ومنتقى من أفضل المصادر</p>
+                        <p class="mb-4 text-sm" style="color: var(--text-dark);">حمص عالي الجودة ومنتقى من أفضل المصادر</p>
                         <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);">بقوليات</span>
+                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);">بروتين طبيعي</span>
                             <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </section>
 
     <!-- Administration Section -->
@@ -369,10 +432,12 @@
                 <div class="admin-cards-container flex gap-4 container mx-auto px-4" style="height: 750px;">
                     <!-- فريق العمل Card -->
                     <div class="admin-card admin-card-team flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="team" style="transform: skewX(-8deg); min-width: 280px;">
+                         data-section="team" style="transform: skewX(-8deg); min-width: 280px;"
+                         data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-html="true"
+                         data-bs-content='<div class="text-right" style="direction: rtl;"><h6 class="fw-bold mb-2" style="color: #8B5A2B;">فريق العمل</h6><div class="mb-2"><div class="d-flex align-items-center mb-2"><div class="rounded-circle bg-primary d-flex align-items-center justify-content-center me-2" style="width: 20px; height: 20px;"><i class="fas fa-users text-white" style="font-size: 8px;"></i></div><div><div class="fw-bold" style="font-size: 11px;">فريق متخصص ومتفاني</div><div style="font-size: 9px; color: #666;">يعمل بأعلى معايير الجودة والمهنية</div></div></div><div class="d-flex align-items-center mb-2"><div class="rounded-circle bg-success d-flex align-items-center justify-content-center me-2" style="width: 20px; height: 20px;"><i class="fas fa-handshake text-white" style="font-size: 8px;"></i></div><div><div class="fw-bold" style="font-size: 11px;">خبرة واسعة</div><div style="font-size: 9px; color: #666;">في مجال الاستيراد والتصدير والتجارة الدولية</div></div></div><div class="d-flex align-items-center"><div class="rounded-circle bg-info d-flex align-items-center justify-content-center me-2" style="width: 20px; height: 20px;"><i class="fas fa-award text-white" style="font-size: 8px;"></i></div><div><div class="fw-bold" style="font-size: 11px;">التزام بالتميز</div><div style="font-size: 9px; color: #666;">نسعى دائماً لتقديم أفضل الخدمات لعملائنا</div></div></div></div></div>'>
                         <div class="admin-card-overlay"></div>
                         <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
-                            <div class="w-20 h-20 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center mb-8">
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: var(--secondary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
                                 <i class="fas fa-users text-white text-3xl"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">فريق العمل</h3>
@@ -385,11 +450,13 @@
 
                     <!-- إدارة الشركة Card -->
                     <div class="admin-card admin-card-management flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="management" style="transform: skewX(-8deg); min-width: 280px;">
+                         data-section="management" style="transform: skewX(-8deg); min-width: 280px;"
+                         data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-html="true"
+                         data-bs-content='<div class="text-right" style="direction: rtl;"><h6 class="fw-bold mb-2" style="color: #8B5A2B;">إدارة الشركة</h6><div class="mb-2"><div class="bg-light p-2 rounded mb-2"><h6 class="fw-bold mb-1" style="font-size: 11px;">رؤيتنا</h6><p class="mb-0" style="font-size: 9px; color: #666;">أن نكون الشركة الرائدة في مجال الاستيراد والتصدير في المنطقة</p></div><div class="bg-light p-2 rounded"><h6 class="fw-bold mb-1" style="font-size: 11px;">مهمتنا</h6><p class="mb-0" style="font-size: 9px; color: #666;">تقديم خدمات متميزة في الاستيراد والتصدير مع الحفاظ على أعلى معايير الجودة</p></div></div></div>'>
                         <div class="admin-card-overlay"></div>
                         <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
-                            <div class="w-20 h-20 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center mb-8">
-                                <i class="fas fa-building text-white text-3xl"></i>
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: var(--accent-color); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                                <i class="fas fa-building text-3xl" style="color: var(--primary-color);"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">إدارة الشركة</h3>
                             <div class="w-16 h-1 bg-white rounded-full mb-4"></div>
@@ -401,10 +468,12 @@
 
                     <!-- المدير العام Card -->
                     <div class="admin-card admin-card-ceo flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="ceo" style="transform: skewX(-8deg); min-width: 280px;">
+                         data-section="ceo" style="transform: skewX(-8deg); min-width: 280px;"
+                         data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-html="true"
+                         data-bs-content='<div class="text-right" style="direction: rtl;"><h6 class="fw-bold mb-2" style="color: #8B5A2B;">المدير العام</h6><div class="d-flex align-items-center mb-2"><div class="rounded-circle bg-warning d-flex align-items-center justify-content-center me-2" style="width: 30px; height: 30px;"><i class="fas fa-user-tie text-white" style="font-size: 10px;"></i></div><div><div class="fw-bold" style="font-size: 11px;">أحمد عبدالفتاح متولي</div><div style="font-size: 9px; color: #666;">المدير العام والمؤسس</div></div></div><p class="mb-2" style="font-size: 9px; color: #666;">يتمتع بخبرة تزيد عن 20 عاماً في مجال التجارة الدولية والاستيراد والتصدير.</p><div class="row"><div class="col-6"><div class="bg-light p-1 rounded text-center"><div class="fw-bold" style="font-size: 9px;">الخبرة</div><div style="font-size: 8px; color: #666;">+20 سنة</div></div></div><div class="col-6"><div class="bg-light p-1 rounded text-center"><div class="fw-bold" style="font-size: 9px;">التخصص</div><div style="font-size: 8px; color: #666;">التجارة الدولية</div></div></div></div></div>'>
                         <div class="admin-card-overlay"></div>
                         <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
-                            <div class="w-20 h-20 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center mb-8">
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: linear-gradient(135deg, #FFD700, #FFA500); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
                                 <i class="fas fa-user-tie text-white text-3xl"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">المدير العام</h3>
@@ -417,10 +486,12 @@
 
                     <!-- قيمنا Card -->
                     <div class="admin-card admin-card-values flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="values" style="transform: skewX(-8deg); min-width: 280px;">
+                         data-section="values" style="transform: skewX(-8deg); min-width: 280px;"
+                         data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-html="true"
+                         data-bs-content='<div class="text-right" style="direction: rtl;"><h6 class="fw-bold mb-2" style="color: #8B5A2B;">قيمنا</h6><div class="row"><div class="col-6 mb-2"><div class="text-center p-1 bg-light rounded"><div class="rounded-circle bg-primary d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 16px; height: 16px;"><i class="fas fa-handshake text-white" style="font-size: 6px;"></i></div><div class="fw-bold" style="font-size: 9px;">المصداقية</div><div style="font-size: 7px; color: #666;">الصدق والشفافية</div></div></div><div class="col-6 mb-2"><div class="text-center p-1 bg-light rounded"><div class="rounded-circle bg-success d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 16px; height: 16px;"><i class="fas fa-award text-white" style="font-size: 6px;"></i></div><div class="fw-bold" style="font-size: 9px;">الجودة</div><div style="font-size: 7px; color: #666;">أعلى المعايير</div></div></div><div class="col-6"><div class="text-center p-1 bg-light rounded"><div class="rounded-circle bg-danger d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 16px; height: 16px;"><i class="fas fa-heart text-white" style="font-size: 6px;"></i></div><div class="fw-bold" style="font-size: 9px;">الاهتمام بالعملاء</div><div style="font-size: 7px; color: #666;">أولويتنا الأولى</div></div></div><div class="col-6"><div class="text-center p-1 bg-light rounded"><div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 16px; height: 16px;"><i class="fas fa-lightbulb text-white" style="font-size: 6px;"></i></div><div class="fw-bold" style="font-size: 9px;">الابتكار</div><div style="font-size: 7px; color: #666;">حلول جديدة</div></div></div></div></div>'>
                         <div class="admin-card-overlay"></div>
                         <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
-                            <div class="w-20 h-20 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center mb-8">
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
                                 <i class="fas fa-heart text-white text-3xl"></i>
                             </div>
                             <h3 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">قيمنا</h3>
@@ -875,6 +946,9 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- External JavaScript -->
     <script src="script.js"></script>
 
@@ -923,6 +997,55 @@
             // Reset form and close modal
             this.reset();
             closeContactModal();
+        });
+
+        // Initialize Bootstrap Popovers
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all Bootstrap popovers
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl, {
+                    container: 'body',
+                    customClass: 'admin-popover product-popover',
+                    delay: { show: 200, hide: 100 },
+                    boundary: 'viewport',
+                    template: '<div class="popover" role="tooltip" style="max-width: 550px;"><div class="popover-arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
+                });
+            });
+
+            console.log('Bootstrap popovers initialized:', popoverList.length);
+        });
+
+        // Products Category Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+
+                    // Update active button
+                    categoryBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.style.background = 'var(--accent-color)';
+                        b.style.color = 'var(--primary-color)';
+                    });
+                    this.classList.add('active');
+                    this.style.background = 'var(--secondary-color)';
+                    this.style.color = 'white';
+
+                    // Filter products
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeIn 0.5s ease-in-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
         });
     </script>
 

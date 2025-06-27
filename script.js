@@ -234,19 +234,19 @@ $(document).ready(function() {
                             <div class="space-y-4">
                                 <div class="flex items-center space-x-3 space-x-reverse">
                                     <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">فريق متخصص في التجارة الدولية</span>
+                                    <span style="color: var(--text-dark);">فريق متخصص ومتفاني يعمل بأعلى معايير الجودة</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
                                     <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">خبرة واسعة في الأسواق العالمية</span>
+                                    <span style="color: var(--text-dark);">خبرة واسعة في مجال الاستيراد والتصدير والتجارة الدولية</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
                                     <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">التزام بأعلى معايير الجودة</span>
+                                    <span style="color: var(--text-dark);">التزام بالتميز ونسعى دائماً لتقديم أفضل الخدمات</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
                                     <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">خدمة عملاء متميزة على مدار الساعة</span>
+                                    <span style="color: var(--text-dark);">حلول مبتكرة ومتخصصة لجميع احتياجات عملائنا</span>
                                 </div>
                             </div>
                         </div>

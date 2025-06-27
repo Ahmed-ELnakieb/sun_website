@@ -774,3 +774,137 @@ html {
         to { opacity: 1; transform: translateY(0); }
     }
 }
+
+/* Product Cards Enhancements */
+.product-card {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    transition: transform 0.3s ease;
+    height: 280px !important;
+    width: 100% !important;
+    object-fit: cover;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card .relative {
+    flex-shrink: 0;
+}
+
+.product-card .p-6 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Category Buttons */
+.category-btn {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.category-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.category-btn.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(139, 90, 43, 0.3);
+}
+
+/* Product Modal */
+#productModal {
+    backdrop-filter: blur(5px);
+}
+
+#productModal .bg-white {
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Product Grid Responsive */
+@media (max-width: 768px) {
+    .product-card {
+        margin-bottom: 1rem;
+    }
+
+    #productModal .grid {
+        grid-template-columns: 1fr;
+    }
+
+    #productModal img {
+        height: 250px;
+    }
+}
+
+/* Product Popovers Custom Styling */
+.product-popover {
+    max-width: 550px !important;
+}
+
+.product-popover .popover-body {
+    padding: 1rem;
+    font-family: 'Cairo', sans-serif;
+}
+
+.product-popover img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 200px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.product-popover .badge {
+    margin: 2px;
+    font-weight: 500;
+}
+
+/* Responsive Popover */
+@media (max-width: 768px) {
+    .product-popover {
+        max-width: 90vw !important;
+    }
+
+    .product-popover img {
+        height: 150px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+}
