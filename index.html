@@ -618,9 +618,7 @@
                 <div class="admin-cards-container flex gap-4 container mx-auto px-4" style="height: 750px;">
                     <!-- فريق العمل Card -->
                     <div class="admin-card admin-card-team flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="team" style="transform: skewX(-8deg); min-width: 280px;"
-                         data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-html="true"
-                         data-bs-content='<div class="text-right" style="direction: rtl;"><h6 class="fw-bold mb-2" style="color: #8B5A2B;">فريق العمل</h6><div class="mb-2"><div class="d-flex align-items-center mb-2"><div class="rounded-circle bg-primary d-flex align-items-center justify-content-center me-2" style="width: 20px; height: 20px;"><i class="fas fa-users text-white" style="font-size: 8px;"></i></div><div><div class="fw-bold" style="font-size: 11px;">فريق متخصص ومتفاني</div><div style="font-size: 9px; color: #666;">يعمل بأعلى معايير الجودة والمهنية</div></div></div><div class="d-flex align-items-center mb-2"><div class="rounded-circle bg-success d-flex align-items-center justify-content-center me-2" style="width: 20px; height: 20px;"><i class="fas fa-handshake text-white" style="font-size: 8px;"></i></div><div><div class="fw-bold" style="font-size: 11px;">خبرة واسعة</div><div style="font-size: 9px; color: #666;">في مجال الاستيراد والتصدير والتجارة الدولية</div></div></div><div class="d-flex align-items-center"><div class="rounded-circle bg-info d-flex align-items-center justify-content-center me-2" style="width: 20px; height: 20px;"><i class="fas fa-award text-white" style="font-size: 8px;"></i></div><div><div class="fw-bold" style="font-size: 11px;">التزام بالتميز</div><div style="font-size: 9px; color: #666;">نسعى دائماً لتقديم أفضل الخدمات لعملائنا</div></div></div></div></div>'>
+                         data-section="team" style="transform: skewX(-8deg); min-width: 280px;">
                         <div class="admin-card-overlay"></div>
                         <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
                             <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: var(--secondary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
@@ -632,13 +630,39 @@
                                 فريق متخصص ومتفاني يعمل بأعلى معايير الجودة
                             </p>
                         </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="admin-hover-overlay">
+                            <div class="admin-hover-content">
+                                <h3>فريق العمل</h3>
+                                <p>فريق متخصص ومتفاني يعمل بأعلى معايير الجودة والمهنية في جميع جوانب العمل</p>
+
+                                <div class="admin-features-section">
+                                    <div class="admin-features-title">مميزات الفريق:</div>
+                                    <div>
+                                        <span class="admin-feature-badge blue">فريق متخصص ومتفاني</span>
+                                        <span class="admin-feature-badge green">خبرة واسعة</span>
+                                        <span class="admin-feature-badge purple">التزام بالتميز</span>
+                                    </div>
+                                </div>
+
+                                <div class="admin-info-grid">
+                                    <div class="admin-info-item">
+                                        <div class="admin-info-label">التخصص:</div>
+                                        <div>الاستيراد والتصدير والتجارة الدولية</div>
+                                    </div>
+                                    <div class="admin-info-item">
+                                        <div class="admin-info-label">الهدف:</div>
+                                        <div>تقديم أفضل الخدمات لعملائنا</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- إدارة الشركة Card -->
                     <div class="admin-card admin-card-management flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="management" style="transform: skewX(-8deg); min-width: 280px;"
-                         data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-html="true"
-                         data-bs-content='<div class="text-right" style="direction: rtl;"><h6 class="fw-bold mb-2" style="color: #8B5A2B;">إدارة الشركة</h6><div class="mb-2"><div class="bg-light p-2 rounded mb-2"><h6 class="fw-bold mb-1" style="font-size: 11px;">رؤيتنا</h6><p class="mb-0" style="font-size: 9px; color: #666;">أن نكون الشركة الرائدة في مجال الاستيراد والتصدير في المنطقة</p></div><div class="bg-light p-2 rounded"><h6 class="fw-bold mb-1" style="font-size: 11px;">مهمتنا</h6><p class="mb-0" style="font-size: 9px; color: #666;">تقديم خدمات متميزة في الاستيراد والتصدير مع الحفاظ على أعلى معايير الجودة</p></div></div></div>'>
+                         data-section="management" style="transform: skewX(-8deg); min-width: 280px;">
                         <div class="admin-card-overlay"></div>
                         <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
                             <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: var(--accent-color); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
@@ -650,13 +674,39 @@
                                 قيادة حكيمة وتخطيط استراتيجي للنمو المستدام
                             </p>
                         </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="admin-hover-overlay">
+                            <div class="admin-hover-content">
+                                <h3>إدارة الشركة</h3>
+                                <p>قيادة حكيمة وتخطيط استراتيجي للنمو المستدام مع التركيز على التميز والابتكار</p>
+
+                                <div class="admin-features-section">
+                                    <div class="admin-features-title">التوجهات الاستراتيجية:</div>
+                                    <div>
+                                        <span class="admin-feature-badge gold">قيادة حكيمة</span>
+                                        <span class="admin-feature-badge orange">تخطيط استراتيجي</span>
+                                        <span class="admin-feature-badge blue">نمو مستدام</span>
+                                    </div>
+                                </div>
+
+                                <div class="admin-info-grid">
+                                    <div class="admin-info-item">
+                                        <div class="admin-info-label">رؤيتنا:</div>
+                                        <div>أن نكون الشركة الرائدة في مجال الاستيراد والتصدير في المنطقة</div>
+                                    </div>
+                                    <div class="admin-info-item">
+                                        <div class="admin-info-label">مهمتنا:</div>
+                                        <div>تقديم خدمات متميزة في الاستيراد والتصدير مع الحفاظ على أعلى معايير الجودة</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- المدير العام Card -->
                     <div class="admin-card admin-card-ceo flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="ceo" style="transform: skewX(-8deg); min-width: 280px;"
-                         data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-html="true"
-                         data-bs-content='<div class="text-right" style="direction: rtl;"><h6 class="fw-bold mb-2" style="color: #8B5A2B;">المدير العام</h6><div class="d-flex align-items-center mb-2"><div class="rounded-circle bg-warning d-flex align-items-center justify-content-center me-2" style="width: 30px; height: 30px;"><i class="fas fa-user-tie text-white" style="font-size: 10px;"></i></div><div><div class="fw-bold" style="font-size: 11px;">أحمد عبدالفتاح متولي</div><div style="font-size: 9px; color: #666;">المدير العام والمؤسس</div></div></div><p class="mb-2" style="font-size: 9px; color: #666;">يتمتع بخبرة تزيد عن 20 عاماً في مجال التجارة الدولية والاستيراد والتصدير.</p><div class="row"><div class="col-6"><div class="bg-light p-1 rounded text-center"><div class="fw-bold" style="font-size: 9px;">الخبرة</div><div style="font-size: 8px; color: #666;">+20 سنة</div></div></div><div class="col-6"><div class="bg-light p-1 rounded text-center"><div class="fw-bold" style="font-size: 9px;">التخصص</div><div style="font-size: 8px; color: #666;">التجارة الدولية</div></div></div></div></div>'>
+                         data-section="ceo" style="transform: skewX(-8deg); min-width: 280px;">
                         <div class="admin-card-overlay"></div>
                         <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
                             <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: linear-gradient(135deg, #FFD700, #FFA500); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
@@ -668,13 +718,39 @@
                                 خبرة واسعة ورؤية استراتيجية للتميز
                             </p>
                         </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="admin-hover-overlay">
+                            <div class="admin-hover-content">
+                                <h3>أحمد عبدالفتاح متولي</h3>
+                                <p>المدير العام والمؤسس - يتمتع بخبرة تزيد عن 20 عاماً في مجال التجارة الدولية والاستيراد والتصدير</p>
+
+                                <div class="admin-features-section">
+                                    <div class="admin-features-title">المؤهلات:</div>
+                                    <div>
+                                        <span class="admin-feature-badge gold">خبرة +20 سنة</span>
+                                        <span class="admin-feature-badge orange">التجارة الدولية</span>
+                                        <span class="admin-feature-badge blue">قيادة استراتيجية</span>
+                                    </div>
+                                </div>
+
+                                <div class="admin-info-grid">
+                                    <div class="admin-info-item">
+                                        <div class="admin-info-label">المنصب:</div>
+                                        <div>المدير العام والمؤسس</div>
+                                    </div>
+                                    <div class="admin-info-item">
+                                        <div class="admin-info-label">التخصص:</div>
+                                        <div>التجارة الدولية والاستيراد والتصدير</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- قيمنا Card -->
                     <div class="admin-card admin-card-values flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="values" style="transform: skewX(-8deg); min-width: 280px;"
-                         data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-html="true"
-                         data-bs-content='<div class="text-right" style="direction: rtl;"><h6 class="fw-bold mb-2" style="color: #8B5A2B;">قيمنا</h6><div class="row"><div class="col-6 mb-2"><div class="text-center p-1 bg-light rounded"><div class="rounded-circle bg-primary d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 16px; height: 16px;"><i class="fas fa-handshake text-white" style="font-size: 6px;"></i></div><div class="fw-bold" style="font-size: 9px;">المصداقية</div><div style="font-size: 7px; color: #666;">الصدق والشفافية</div></div></div><div class="col-6 mb-2"><div class="text-center p-1 bg-light rounded"><div class="rounded-circle bg-success d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 16px; height: 16px;"><i class="fas fa-award text-white" style="font-size: 6px;"></i></div><div class="fw-bold" style="font-size: 9px;">الجودة</div><div style="font-size: 7px; color: #666;">أعلى المعايير</div></div></div><div class="col-6"><div class="text-center p-1 bg-light rounded"><div class="rounded-circle bg-danger d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 16px; height: 16px;"><i class="fas fa-heart text-white" style="font-size: 6px;"></i></div><div class="fw-bold" style="font-size: 9px;">الاهتمام بالعملاء</div><div style="font-size: 7px; color: #666;">أولويتنا الأولى</div></div></div><div class="col-6"><div class="text-center p-1 bg-light rounded"><div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 16px; height: 16px;"><i class="fas fa-lightbulb text-white" style="font-size: 6px;"></i></div><div class="fw-bold" style="font-size: 9px;">الابتكار</div><div style="font-size: 7px; color: #666;">حلول جديدة</div></div></div></div></div>'>
+                         data-section="values" style="transform: skewX(-8deg); min-width: 280px;">
                         <div class="admin-card-overlay"></div>
                         <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
                             <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
@@ -685,6 +761,35 @@
                             <p class="text-white/80 text-sm leading-relaxed">
                                 مبادئ أساسية توجه عملنا وتحدد هويتنا
                             </p>
+                        </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="admin-hover-overlay">
+                            <div class="admin-hover-content">
+                                <h3>قيمنا</h3>
+                                <p>مبادئ أساسية توجه عملنا وتحدد هويتنا في جميع التعاملات التجارية والعلاقات مع العملاء</p>
+
+                                <div class="admin-features-section">
+                                    <div class="admin-features-title">قيمنا الأساسية:</div>
+                                    <div>
+                                        <span class="admin-feature-badge blue">المصداقية</span>
+                                        <span class="admin-feature-badge green">الجودة</span>
+                                        <span class="admin-feature-badge red">الاهتمام بالعملاء</span>
+                                        <span class="admin-feature-badge purple">الابتكار</span>
+                                    </div>
+                                </div>
+
+                                <div class="admin-info-grid">
+                                    <div class="admin-info-item">
+                                        <div class="admin-info-label">المصداقية:</div>
+                                        <div>الصدق والشفافية في جميع التعاملات</div>
+                                    </div>
+                                    <div class="admin-info-item">
+                                        <div class="admin-info-label">الجودة:</div>
+                                        <div>أعلى المعايير في الخدمات والمنتجات</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1185,21 +1290,7 @@
             closeContactModal();
         });
 
-        // Initialize Bootstrap Popovers for Admin Section Only
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Bootstrap popovers only for admin cards
-            var adminPopoverTriggerList = [].slice.call(document.querySelectorAll('.admin-card[data-bs-toggle="popover"]'));
-            var adminPopoverList = adminPopoverTriggerList.map(function (popoverTriggerEl) {
-                return new bootstrap.Popover(popoverTriggerEl, {
-                    container: 'body',
-                    customClass: 'admin-popover',
-                    delay: { show: 200, hide: 100 },
-                    boundary: 'viewport'
-                });
-            });
 
-            console.log('Bootstrap popovers initialized:', popoverList.length);
-        });
 
         // Products Category Filtering
         document.addEventListener('DOMContentLoaded', function() {

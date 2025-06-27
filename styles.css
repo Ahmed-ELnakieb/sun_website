@@ -389,19 +389,19 @@ html {
 }
 
 .admin-card-team .admin-card-overlay {
-    background: linear-gradient(135deg, rgba(168, 101, 35, 0.4), rgba(233, 163, 25, 0.3));
+    background: linear-gradient(135deg, rgba(168, 101, 35, 0.2), rgba(233, 163, 25, 0.15));
 }
 
 .admin-card-management .admin-card-overlay {
-    background: linear-gradient(135deg, rgba(233, 163, 25, 0.4), rgba(250, 213, 154, 0.3));
+    background: linear-gradient(135deg, rgba(233, 163, 25, 0.2), rgba(250, 213, 154, 0.15));
 }
 
 .admin-card-ceo .admin-card-overlay {
-    background: linear-gradient(135deg, rgba(168, 101, 35, 0.5), rgba(233, 163, 25, 0.4));
+    background: linear-gradient(135deg, rgba(168, 101, 35, 0.25), rgba(233, 163, 25, 0.2));
 }
 
 .admin-card-values .admin-card-overlay {
-    background: linear-gradient(135deg, rgba(233, 163, 25, 0.4), rgba(168, 101, 35, 0.3));
+    background: linear-gradient(135deg, rgba(233, 163, 25, 0.2), rgba(168, 101, 35, 0.15));
 }
 
 /* Admin Card Hover Effects */
@@ -1073,6 +1073,163 @@ html {
 }
 
 .hover-overlay .features-title {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Admin Cards Hover Effects */
+.admin-cards-container {
+    transition: all 1s ease;
+}
+
+.admin-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 1s ease;
+    flex: 1;
+}
+
+.admin-card:hover {
+    flex: 2.5;
+    z-index: 10;
+    transform: skewX(0deg);
+}
+
+.admin-cards-container:hover .admin-card:not(:hover) {
+    flex: 0.6;
+}
+
+.admin-card .admin-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    right: -10px;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.6) 100%);
+    opacity: 0;
+    transition: all 1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    color: white;
+    z-index: 20;
+    transform: skewX(-8deg);
+}
+
+.admin-card:hover .admin-hover-overlay {
+    transform: skewX(0deg);
+}
+
+.admin-card:hover .admin-hover-overlay {
+    opacity: 1;
+}
+
+.admin-card:hover .admin-card-overlay {
+    opacity: 0.1;
+}
+
+.admin-card .admin-card-overlay {
+    transition: opacity 1s ease;
+}
+
+.admin-card .admin-hover-content {
+    transform: translateY(2rem) skewX(8deg);
+    transition: transform 1s ease 0.1s;
+}
+
+.admin-card:hover .admin-hover-content {
+    transform: translateY(0) skewX(0deg);
+}
+
+.admin-card:hover .admin-card-content {
+    transform: skewX(0deg) scale(1.05);
+    opacity: 0.3;
+}
+
+.admin-card .admin-card-content {
+    transition: all 1s ease;
+    opacity: 1;
+}
+
+/* Admin feature badges */
+.admin-hover-overlay .admin-feature-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    margin: 0.125rem;
+    font-weight: 500;
+}
+
+.admin-hover-overlay .admin-feature-badge.blue {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.admin-hover-overlay .admin-feature-badge.green {
+    background-color: #10b981;
+    color: white;
+}
+
+.admin-hover-overlay .admin-feature-badge.red {
+    background-color: #ef4444;
+    color: white;
+}
+
+.admin-hover-overlay .admin-feature-badge.purple {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+.admin-hover-overlay .admin-feature-badge.gold {
+    background-color: #f59e0b;
+    color: black;
+}
+
+.admin-hover-overlay .admin-feature-badge.orange {
+    background-color: #f97316;
+    color: white;
+}
+
+/* Admin grid layout */
+.admin-hover-overlay .admin-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.admin-hover-overlay .admin-info-grid .admin-info-item {
+    opacity: 0.9;
+}
+
+.admin-hover-overlay .admin-info-grid .admin-info-label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+/* Admin titles and text */
+.admin-hover-overlay h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.admin-hover-overlay p {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.admin-hover-overlay .admin-features-section {
+    margin-bottom: 0.75rem;
+}
+
+.admin-hover-overlay .admin-features-title {
     font-size: 0.875rem;
     font-weight: bold;
     margin-bottom: 0.5rem;

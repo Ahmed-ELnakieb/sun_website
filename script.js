@@ -43,7 +43,8 @@ mobileMenuBtn.addEventListener('click', function() {
 
 // Contact form submission
 const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', function(e) {
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
     // Get form data
@@ -63,7 +64,8 @@ contactForm.addEventListener('submit', function(e) {
     // Simulate form submission
     alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
     contactForm.reset();
-});
+    });
+}
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
