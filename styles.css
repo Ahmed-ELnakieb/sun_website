@@ -54,6 +54,21 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Section scroll offset to account for fixed navbar */
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+/* Additional offset for better spacing */
+#home, #about, #products, #services, #administration, #contact {
+    scroll-margin-top: 50px;
+}
+
+/* Specific fix for services section */
+section#services {
+    scroll-margin-top: 100px !important;
+}
+
 /* Hero Section */
 .hero-bg {
     background: linear-gradient(rgba(168, 101, 35, 0.85), rgba(233, 163, 25, 0.75)),
