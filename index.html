@@ -36,11 +36,12 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 space-x-reverse">
-                    <a href="#home" class="text-white transition-colors nav-link" style="hover:color: var(--accent-color);">الرئيسية</a>
-                    <a href="#about" class="text-white transition-colors nav-link" style="hover:color: var(--accent-color);">الشركة</a>
-                    <a href="#products" class="text-white transition-colors nav-link" style="hover:color: var(--accent-color);">المنتجات</a>
-                    <a href="#administration" class="text-white transition-colors nav-link" style="hover:color: var(--accent-color);">الاداره</a>
-                    <a href="#contact" class="text-white transition-colors nav-link" style="hover:color: var(--accent-color);">اتصل بنا</a>
+                    <a href="#home" class="text-white transition-colors nav-link">الرئيسية</a>
+                    <a href="#about" class="text-white transition-colors nav-link">الشركة</a>
+                    <a href="#products" class="text-white transition-colors nav-link">المنتجات</a>
+                    <a href="#services" class="text-white transition-colors nav-link">الخدمات</a>
+                    <a href="#administration" class="text-white transition-colors nav-link">الاداره</a>
+                    <a href="#contact" class="text-white transition-colors nav-link">اتصل بنا</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -51,11 +52,12 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 rounded-lg shadow-lg p-4" style="background: var(--background-color); border: 1px solid var(--accent-color);">
-                <a href="#home" class="block py-2 transition-colors" style="color: var(--primary-color); hover:color: var(--secondary-color);">الرئيسية</a>
-                <a href="#about" class="block py-2 transition-colors" style="color: var(--primary-color); hover:color: var(--secondary-color);">الشركة</a>
-                <a href="#products" class="block py-2 transition-colors" style="color: var(--primary-color); hover:color: var(--secondary-color);">المنتجات</a>
-                <a href="#administration" class="block py-2 transition-colors" style="color: var(--primary-color); hover:color: var(--secondary-color);">الاداره</a>
-                <a href="#contact" class="block py-2 transition-colors" style="color: var(--primary-color); hover:color: var(--secondary-color);">اتصل بنا</a>
+                <a href="#home" class="block py-2 transition-colors" style="color: var(--primary-color);">الرئيسية</a>
+                <a href="#about" class="block py-2 transition-colors" style="color: var(--primary-color);">الشركة</a>
+                <a href="#products" class="block py-2 transition-colors" style="color: var(--primary-color);">المنتجات</a>
+                <a href="#services" class="block py-2 transition-colors" style="color: var(--primary-color);">الخدمات</a>
+                <a href="#administration" class="block py-2 transition-colors" style="color: var(--primary-color);">الاداره</a>
+                <a href="#contact" class="block py-2 transition-colors" style="color: var(--primary-color);">اتصل بنا</a>
             </div>
         </div>
     </nav>
@@ -74,10 +76,10 @@
                     شريككم الموثوق في تجارة القمح والسلع الأساسية
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#about" class="text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105" style="background: var(--secondary-color); box-shadow: 0 8px 25px var(--shadow-golden); hover:box-shadow: 0 12px 35px var(--shadow-golden);">
+                    <a href="#about" class="text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105" style="background: var(--secondary-color); box-shadow: 0 8px 25px var(--shadow-golden);">
                         اكتشف خدماتنا
                     </a>
-                    <a href="#contact" class="border-2 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105" style="border-color: var(--accent-color); hover:background: var(--accent-color); hover:color: var(--primary-color);">
+                    <a href="#contact" class="border-2 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105" style="border-color: var(--accent-color);">
                         تواصل معنا
                     </a>
                 </div>
@@ -364,7 +366,7 @@
 
             <!-- 4 Column Cards Layout - Enhanced Size -->
             <div class="flex justify-center mb-16">
-                <div class="admin-cards-container flex gap-4" style="width: 95%; height: 750px;">
+                <div class="admin-cards-container flex gap-4 container mx-auto px-4" style="height: 750px;">
                     <!-- فريق العمل Card -->
                     <div class="admin-card admin-card-team flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
                          data-section="team" style="transform: skewX(-8deg); min-width: 280px;">
@@ -452,202 +454,344 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 relative overflow-hidden">
-        <!-- Animated Sun Background -->
-        <div class="absolute inset-0 sun-background">
-            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-                <!-- Background Gradient -->
-                <defs>
-                    <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#E9A319;stop-opacity:0.15"/>
-                        <stop offset="50%" style="stop-color:#A86523;stop-opacity:0.08"/>
-                        <stop offset="100%" style="stop-color:#FAD59A;stop-opacity:0.03"/>
-                    </radialGradient>
-                    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#FCEFCB;stop-opacity:0.9"/>
-                        <stop offset="50%" style="stop-color:#FAD59A;stop-opacity:0.7"/>
-                        <stop offset="100%" style="stop-color:#E9A319;stop-opacity:0.5"/>
-                    </linearGradient>
-                </defs>
-
-                <!-- Background -->
-                <rect width="100%" height="100%" fill="url(#bgGradient)"/>
-
-                <!-- Main Sun -->
-                <g class="sun-main">
-                    <circle cx="600" cy="400" r="80" fill="url(#sunGradient)" opacity="0.3"/>
-                    <circle cx="600" cy="400" r="60" fill="#fbbf24" opacity="0.1"/>
-                </g>
-
-                <!-- Sun Rays -->
-                <g class="sun-rays">
-                    <line x1="600" y1="250" x2="600" y2="200" stroke="#f59e0b" stroke-width="3" opacity="0.4"/>
-                    <line x1="671" y1="279" x2="706" y2="244" stroke="#f59e0b" stroke-width="3" opacity="0.4"/>
-                    <line x1="750" y1="400" x2="800" y2="400" stroke="#f59e0b" stroke-width="3" opacity="0.4"/>
-                    <line x1="671" y1="521" x2="706" y2="556" stroke="#f59e0b" stroke-width="3" opacity="0.4"/>
-                    <line x1="600" y1="550" x2="600" y2="600" stroke="#f59e0b" stroke-width="3" opacity="0.4"/>
-                    <line x1="529" y1="521" x2="494" y2="556" stroke="#f59e0b" stroke-width="3" opacity="0.4"/>
-                    <line x1="450" y1="400" x2="400" y2="400" stroke="#f59e0b" stroke-width="3" opacity="0.4"/>
-                    <line x1="529" y1="279" x2="494" y2="244" stroke="#f59e0b" stroke-width="3" opacity="0.4"/>
-                </g>
-
-                <!-- Floating Sun Icons -->
-                <g class="floating-suns">
-                    <circle cx="150" cy="150" r="20" fill="#fbbf24" opacity="0.2"/>
-                    <circle cx="1050" cy="200" r="15" fill="#f59e0b" opacity="0.3"/>
-                    <circle cx="100" cy="600" r="25" fill="#fbbf24" opacity="0.15"/>
-                    <circle cx="1100" cy="650" r="18" fill="#f59e0b" opacity="0.25"/>
-                </g>
-
-                <!-- Decorative Elements -->
-                <g class="decorative-elements">
-                    <path d="M200,300 Q250,250 300,300 T400,300" stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.2"/>
-                    <path d="M800,500 Q850,450 900,500 T1000,500" stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.2"/>
-                </g>
-            </svg>
-        </div>
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative overflow-hidden">
+        <!-- Background with gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100"></div>
 
         <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold mb-6" style="color: var(--primary-color);">تواصل معنا</h2>
+                <h2 class="text-5xl font-bold mb-6" style="color: var(--primary-color);">خدماتنا</h2>
                 <p class="text-xl max-w-3xl mx-auto leading-relaxed" style="color: var(--text-dark);">
-                    نحن هنا لخدمتكم على مدار الساعة. تواصلوا معنا للحصول على أفضل العروض والخدمات في مجال الاستيراد والتصدير
+                    نقدم مجموعة شاملة من الخدمات المتخصصة في مجال الاستيراد والتصدير لضمان نجاح أعمالكم التجارية
                 </p>
                 <div class="w-24 h-1 mx-auto mt-6 rounded-full" style="background: linear-gradient(to right, var(--secondary-color), var(--primary-color));"></div>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
-                <!-- Contact Form -->
-                <div class="contact-form-card">
-                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-white/20">
-                        <div class="flex items-center mb-8">
-                            <div class="w-12 h-12 rounded-full flex items-center justify-center ml-4" style="background: linear-gradient(to right, var(--secondary-color), var(--primary-color));">
-                                <i class="fas fa-envelope text-white text-xl"></i>
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Service 1: Import/Export Consulting -->
+                <div class="service-card bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));">
+                        <i class="fas fa-handshake text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);">استشارات الاستيراد والتصدير</h3>
+                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);">
+                        فريق من المتخصصين يقدم استشارات شاملة في مجال الاستيراد والتصدير للمجالات الزراعية والصناعية والتجارية
+                    </p>
+                    <div class="text-center">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105" style="background: var(--secondary-color);">
+                            <i class="fas fa-arrow-left ml-2"></i>
+                            اعرف المزيد
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Price Quotations -->
+                <div class="service-card bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--secondary-color), var(--accent-color));">
+                        <i class="fas fa-calculator text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);">عروض الأسعار</h3>
+                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);">
+                        نقدم أفضل الأسعار لعملائنا ونساعدهم للوصول لأفضل سعر ممكن مع مراعاة الجودة والمصداقية
+                    </p>
+                    <div class="text-center">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105" style="background: var(--secondary-color);">
+                            <i class="fas fa-arrow-left ml-2"></i>
+                            اطلب عرض سعر
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Machinery Import -->
+                <div class="service-card bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--accent-color), var(--primary-color));">
+                        <i class="fas fa-cogs text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);">استيراد الماكينات</h3>
+                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);">
+                        متخصصون في استيراد الماكينات وخطوط الإنتاج من أفضل المصادر العالمية مع ضمان الجودة والكفاءة
+                    </p>
+                    <div class="text-center">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105" style="background: var(--secondary-color);">
+                            <i class="fas fa-arrow-left ml-2"></i>
+                            تواصل معنا
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4: International Marketing -->
+                <div class="service-card bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--primary-color), var(--accent-color));">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);">التسويق الدولي</h3>
+                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);">
+                        خدمات التسويق الدولية لمساعدتك في تسويق منتجاتك عالمياً وتوسيع نطاق أعمالك التجارية
+                    </p>
+                    <div class="text-center">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105" style="background: var(--secondary-color);">
+                            <i class="fas fa-arrow-left ml-2"></i>
+                            ابدأ الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Shipping Consulting -->
+                <div class="service-card bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--secondary-color), var(--primary-color));">
+                        <i class="fas fa-ship text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);">استشارات الشحن</h3>
+                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);">
+                        خدمات استشارية متخصصة في الشحن البحري والجوي والبري مع أفضل الحلول اللوجستية
+                    </p>
+                    <div class="text-center">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105" style="background: var(--secondary-color);">
+                            <i class="fas fa-arrow-left ml-2"></i>
+                            استشر خبرائنا
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6: Storage & Distribution -->
+                <div class="service-card bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--accent-color), var(--secondary-color));">
+                        <i class="fas fa-warehouse text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);">التخزين والتوزيع</h3>
+                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);">
+                        حلول متكاملة للتخزين والتوزيع مع مرافق حديثة وأنظمة إدارة متطورة لضمان سلامة البضائع
+                    </p>
+                    <div class="text-center">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105" style="background: var(--secondary-color);">
+                            <i class="fas fa-arrow-left ml-2"></i>
+                            احجز مساحتك
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us Section -->
+            <div class="bg-white rounded-3xl shadow-2xl p-12 mb-16">
+                <h3 class="text-4xl font-bold text-center mb-12" style="color: var(--primary-color);">لماذا تختار شركة شمس؟</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1: Speed -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));">
+                            <i class="fas fa-bolt text-white text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-4" style="color: var(--primary-color);">السرعة</h4>
+                        <p class="leading-relaxed" style="color: var(--text-dark);">
+                            خدمة سريعة في التخليص الجمركي والشحن مع الحفاظ على أعلى معايير الجودة والدقة
+                        </p>
+                    </div>
+
+                    <!-- Feature 2: Reliability -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--secondary-color), var(--accent-color));">
+                            <i class="fas fa-shield-alt text-white text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-4" style="color: var(--primary-color);">المصداقية</h4>
+                        <p class="leading-relaxed" style="color: var(--text-dark);">
+                            عملاء دائمون يثقون بنا للمصداقية في المواعيد والتعامل مع فريق متخصص من الخبراء
+                        </p>
+                    </div>
+
+                    <!-- Feature 3: Solutions -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--accent-color), var(--primary-color));">
+                            <i class="fas fa-lightbulb text-white text-3xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-4" style="color: var(--primary-color);">الحلول المميزة</h4>
+                        <p class="leading-relaxed" style="color: var(--text-dark);">
+                            حلول مبتكرة ومتخصصة في جميع طرق الشحن: البرية والجوية والبحرية
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center">
+                <h3 class="text-3xl font-bold mb-6" style="color: var(--primary-color);">هل تحتاج إلى استشارة مجانية؟</h3>
+                <p class="text-xl mb-8" style="color: var(--text-dark);">تواصل معنا الآن للحصول على استشارة مجانية وعرض سعر مخصص لاحتياجاتك</p>
+                <button onclick="openContactModal()" class="inline-flex items-center px-12 py-4 rounded-full text-white text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));">
+                    <i class="fas fa-phone ml-3"></i>
+                    تواصل معنا الآن
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4" onclick="closeContactModal(event)">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[95vh] overflow-hidden" onclick="event.stopPropagation()">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                <h2 class="text-3xl font-bold" style="color: var(--primary-color);">تواصل معنا</h2>
+                <button onclick="closeContactModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6 h-full">
+                <div class="grid lg:grid-cols-2 gap-8 h-full">
+                    <!-- Left Side: Contact Information -->
+                    <div class="space-y-6">
+                        <!-- Phone Numbers -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--primary-color);">أرقام الهاتف</h3>
+                            <div class="grid grid-cols-1 gap-3">
+                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                    <a href="tel:+201220333352" class="text-base font-medium" style="color: var(--text-dark); direction: ltr;" dir="ltr">+20 122 033 3352</a>
+                                    <a href="https://wa.me/201220333352" target="_blank" class="text-green-500 hover:text-green-600 transition-colors">
+                                        <i class="fab fa-whatsapp text-lg"></i>
+                                    </a>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                    <a href="tel:+201222106583" class="text-base font-medium" style="color: var(--text-dark); direction: ltr;" dir="ltr">+20 122 210 6583</a>
+                                    <a href="https://wa.me/201222106583" target="_blank" class="text-green-500 hover:text-green-600 transition-colors">
+                                        <i class="fab fa-whatsapp text-lg"></i>
+                                    </a>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                    <a href="tel:+201099915369" class="text-base font-medium" style="color: var(--text-dark); direction: ltr;" dir="ltr">+20 109 991 5369</a>
+                                    <a href="https://wa.me/201099915369" target="_blank" class="text-green-500 hover:text-green-600 transition-colors">
+                                        <i class="fab fa-whatsapp text-lg"></i>
+                                    </a>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                    <a href="tel:+201099915359" class="text-base font-medium" style="color: var(--text-dark); direction: ltr;" dir="ltr">+20 109 991 5359</a>
+                                    <a href="https://wa.me/201099915359" target="_blank" class="text-green-500 hover:text-green-600 transition-colors">
+                                        <i class="fab fa-whatsapp text-lg"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <h3 class="text-3xl font-bold" style="color: var(--primary-color);">أرسل لنا رسالة</h3>
                         </div>
 
-                        <form id="contact-form" class="space-y-6">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="name" class="block font-semibold mb-3" style="color: var(--primary-color);">الاسم</label>
-                                    <input type="text" id="name" name="name" required
-                                           class="w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 bg-white/80" style="border-color: var(--accent-color); focus:ring-color: var(--secondary-color); focus:border-color: var(--secondary-color);">
+                        <!-- Address & Email -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--primary-color);">العنوان والبريد الإلكتروني</h3>
+                            <div class="space-y-3">
+                                <div class="p-3 bg-gray-50 rounded-lg">
+                                    <div class="flex items-start space-x-3 space-x-reverse">
+                                        <i class="fas fa-map-marker-alt mt-1" style="color: var(--accent-color);"></i>
+                                        <div>
+                                            <p class="font-semibold mb-1" style="color: var(--primary-color);">العنوان:</p>
+                                            <p class="text-sm" style="color: var(--text-dark);">7 شارع الشون، ساحل روض الفرج، القاهرة، مصر</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <label for="email" class="block font-semibold mb-3" style="color: var(--primary-color);">البريد الإلكتروني</label>
-                                    <input type="email" id="email" name="email" required
-                                           class="w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 bg-white/80" style="border-color: var(--accent-color); focus:ring-color: var(--secondary-color); focus:border-color: var(--secondary-color);">
+                                <div class="p-3 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center space-x-3 space-x-reverse">
+                                        <i class="fas fa-envelope" style="color: var(--accent-color);"></i>
+                                        <div>
+                                            <p class="font-semibold mb-1" style="color: var(--primary-color);">البريد الإلكتروني:</p>
+                                            <a href="mailto:info@suncompany-egypt.org" class="hover:underline text-sm" style="color: var(--text-dark);">info@suncompany-egypt.org</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Right Side: Contact Form -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary-color);">أرسل لنا رسالة</h3>
+                        <form id="modal-contact-form" class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label for="phone" class="block text-gray-700 font-semibold mb-3">رقم الهاتف</label>
-                                    <input type="tel" id="phone" name="phone"
-                                           class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-300 bg-white/80">
+                                    <label for="modal-name" class="block font-semibold mb-2 text-sm" style="color: var(--primary-color);">الاسم</label>
+                                    <input type="text" id="modal-name" name="name" required
+                                           class="w-full px-3 py-2 border-2 rounded-lg transition-all duration-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm" style="border-color: var(--accent-color);">
                                 </div>
                                 <div>
-                                    <label for="subject" class="block text-gray-700 font-semibold mb-3">الموضوع</label>
-                                    <select id="subject" name="subject" required
-                                            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-300 bg-white/80">
+                                    <label for="modal-email" class="block font-semibold mb-2 text-sm" style="color: var(--primary-color);">البريد الإلكتروني</label>
+                                    <input type="email" id="modal-email" name="email" required
+                                           class="w-full px-3 py-2 border-2 rounded-lg transition-all duration-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm" style="border-color: var(--accent-color);">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="modal-phone" class="block font-semibold mb-2 text-sm" style="color: var(--primary-color);">رقم الهاتف</label>
+                                    <input type="tel" id="modal-phone" name="phone"
+                                           class="w-full px-3 py-2 border-2 rounded-lg transition-all duration-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm" style="border-color: var(--accent-color);">
+                                </div>
+                                <div>
+                                    <label for="modal-subject" class="block font-semibold mb-2 text-sm" style="color: var(--primary-color);">الموضوع</label>
+                                    <select id="modal-subject" name="subject" required
+                                            class="w-full px-3 py-2 border-2 rounded-lg transition-all duration-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm" style="border-color: var(--accent-color);">
                                         <option value="">اختر الموضوع</option>
                                         <option value="import">استيراد</option>
                                         <option value="export">تصدير</option>
-                                        <option value="inquiry">استفسار عام</option>
-                                        <option value="partnership">شراكة</option>
+                                        <option value="consultation">استشارة</option>
+                                        <option value="machinery">استيراد ماكينات</option>
+                                        <option value="marketing">تسويق دولي</option>
+                                        <option value="shipping">استشارات شحن</option>
+                                        <option value="storage">تخزين وتوزيع</option>
+                                        <option value="other">أخرى</option>
                                     </select>
                                 </div>
                             </div>
-
                             <div>
-                                <label for="message" class="block text-gray-700 font-semibold mb-3">الرسالة</label>
-                                <textarea id="message" name="message" rows="6" required
-                                          class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all duration-300 bg-white/80 resize-none"></textarea>
+                                <label for="modal-message" class="block font-semibold mb-2 text-sm" style="color: var(--primary-color);">الرسالة</label>
+                                <textarea id="modal-message" name="message" rows="3" required
+                                          class="w-full px-3 py-2 border-2 rounded-lg transition-all duration-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 resize-none text-sm" style="border-color: var(--accent-color);"
+                                          placeholder="اكتب رسالتك هنا..."></textarea>
                             </div>
-
                             <button type="submit"
-                                    class="w-full text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(to right, var(--secondary-color), var(--primary-color)); hover:box-shadow: 0 15px 35px var(--shadow-golden);">
+                                    class="w-full text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));">
                                 <i class="fas fa-paper-plane ml-2"></i>
                                 إرسال الرسالة
                             </button>
                         </form>
                     </div>
                 </div>
-
-                <!-- Contact Information -->
-                <div class="space-y-6">
-                    <!-- Address -->
-                    <div class="contact-info-card bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300" style="border: 1px solid var(--accent-color);">
-                        <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center ml-4 shadow-lg" style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));">
-                                <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold" style="color: var(--primary-color);">العنوان</h3>
-                        </div>
-                        <p class="leading-relaxed text-lg" style="color: var(--text-dark);">
-                            القاهرة، مصر<br>
-                            منطقة التجمع الخامس<br>
-                            شارع التسعين الشمالي
-                        </p>
-                    </div>
-
-                    <!-- Phone Numbers -->
-                    <div class="contact-info-card bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300" style="border: 1px solid var(--accent-color);">
-                        <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center ml-4 shadow-lg" style="background: linear-gradient(to right, var(--secondary-color), var(--primary-color));">
-                                <i class="fas fa-phone text-white text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold" style="color: var(--primary-color);">أرقام الهاتف</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <a href="tel:+201000000000" class="flex items-center transition-colors text-lg font-medium" style="color: var(--text-dark); hover:color: var(--secondary-color);">
-                                <i class="fas fa-phone text-sm ml-3" style="color: var(--secondary-color);"></i>
-                                +20 100 000 0000
-                            </a>
-                            <a href="tel:+201111111111" class="flex items-center transition-colors text-lg font-medium" style="color: var(--text-dark); hover:color: var(--secondary-color);">
-                                <i class="fas fa-phone text-sm ml-3" style="color: var(--secondary-color);"></i>
-                                +20 111 111 1111
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- WhatsApp -->
-                    <div class="contact-info-card bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-white/20 transform hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center ml-4 shadow-lg">
-                                <i class="fab fa-whatsapp text-white text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-800">واتساب</h3>
-                        </div>
-                        <a href="https://wa.me/201000000000" target="_blank"
-                           class="inline-flex items-center bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold text-lg">
-                            <i class="fab fa-whatsapp text-2xl ml-3"></i>
-                            تواصل عبر واتساب
-                        </a>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="contact-info-card bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-white/20 transform hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center ml-4 shadow-lg">
-                                <i class="fas fa-envelope text-white text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-800">البريد الإلكتروني</h3>
-                        </div>
-                        <a href="mailto:info@sun-trading.com" class="text-gray-700 hover:text-purple-600 transition-colors text-lg font-medium">
-                            info@sun-trading.com
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="text-white py-12" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
-        <div class="container mx-auto px-4">
+    <footer class="text-white py-12 relative overflow-hidden" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
+        <!-- Animated Sun Element - Bottom Right -->
+        <div class="absolute bottom-8 right-8 z-10 hidden md:block">
+            <div class="contact-sun-animation relative">
+                <!-- Main Sun Circle -->
+                <div class="w-32 h-32 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-400 to-orange-400 shadow-2xl animate-pulse">
+                    <div class="w-full h-full rounded-full bg-gradient-to-tr from-transparent via-yellow-200 to-transparent opacity-50 animate-spin-slow"></div>
+                </div>
+
+                <!-- Sun Rays -->
+                <div class="absolute inset-0 animate-spin-reverse">
+                    <div class="absolute top-0 left-1/2 w-1 h-8 bg-gradient-to-t from-yellow-400 to-transparent transform -translate-x-1/2 -translate-y-8"></div>
+                    <div class="absolute top-2 right-2 w-1 h-6 bg-gradient-to-tr from-yellow-400 to-transparent transform rotate-45 translate-x-6 -translate-y-6"></div>
+                    <div class="absolute top-1/2 right-0 w-8 h-1 bg-gradient-to-r from-yellow-400 to-transparent transform -translate-y-1/2 translate-x-8"></div>
+                    <div class="absolute bottom-2 right-2 w-1 h-6 bg-gradient-to-br from-yellow-400 to-transparent transform -rotate-45 translate-x-6 translate-y-6"></div>
+                    <div class="absolute bottom-0 left-1/2 w-1 h-8 bg-gradient-to-b from-yellow-400 to-transparent transform -translate-x-1/2 translate-y-8"></div>
+                    <div class="absolute bottom-2 left-2 w-1 h-6 bg-gradient-to-bl from-yellow-400 to-transparent transform rotate-45 -translate-x-6 translate-y-6"></div>
+                    <div class="absolute top-1/2 left-0 w-8 h-1 bg-gradient-to-l from-yellow-400 to-transparent transform -translate-y-1/2 -translate-x-8"></div>
+                    <div class="absolute top-2 left-2 w-1 h-6 bg-gradient-to-tl from-yellow-400 to-transparent transform -rotate-45 -translate-x-6 -translate-y-6"></div>
+                </div>
+
+                <!-- Inner Glow -->
+                <div class="absolute inset-4 rounded-full bg-gradient-to-br from-yellow-200 to-orange-300 opacity-70 animate-pulse-slow"></div>
+            </div>
+        </div>
+
+        <!-- Mobile Sun Element - Smaller and repositioned -->
+        <div class="absolute bottom-4 right-4 z-10 md:hidden">
+            <div class="contact-sun-animation relative">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-400 to-orange-400 shadow-lg animate-pulse">
+                    <div class="w-full h-full rounded-full bg-gradient-to-tr from-transparent via-yellow-200 to-transparent opacity-50 animate-spin-slow"></div>
+                </div>
+                <div class="absolute inset-1 rounded-full bg-gradient-to-br from-yellow-200 to-orange-300 opacity-70 animate-pulse-slow"></div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-20">
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Company Info -->
                 <div>
@@ -665,33 +809,59 @@
                     </p>
                 </div>
 
-                <!-- Quick Links -->
+                <!-- Phone Numbers -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6">روابط سريعة</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#home" class="transition-colors" style="color: rgba(255, 255, 255, 0.8); hover:color: var(--accent-color);">الرئيسية</a></li>
-                        <li><a href="#about" class="transition-colors" style="color: rgba(255, 255, 255, 0.8); hover:color: var(--accent-color);">نبذة عن الشركة</a></li>
-                        <li><a href="#products" class="transition-colors" style="color: rgba(255, 255, 255, 0.8); hover:color: var(--accent-color);">منتجاتنا</a></li>
-                        <li><a href="#administration" class="transition-colors" style="color: rgba(255, 255, 255, 0.8); hover:color: var(--accent-color);">الإدارة</a></li>
-                        <li><a href="#contact" class="transition-colors" style="color: rgba(255, 255, 255, 0.8); hover:color: var(--accent-color);">اتصل بنا</a></li>
-                    </ul>
+                    <h4 class="text-lg font-bold mb-6">أرقام الهاتف</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <a href="https://wa.me/201220333352" target="_blank" style="color: rgba(255, 255, 255, 0.9); direction: ltr;" class="hover:text-white transition-colors" dir="ltr">+20 122 033 3352</a>
+                            <i class="fab fa-whatsapp" style="color: var(--accent-color);"></i>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <a href="https://wa.me/201222106583" target="_blank" style="color: rgba(255, 255, 255, 0.9); direction: ltr;" class="hover:text-white transition-colors" dir="ltr">+20 122 210 6583</a>
+                            <i class="fab fa-whatsapp" style="color: var(--accent-color);"></i>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <a href="https://wa.me/201099915369" target="_blank" style="color: rgba(255, 255, 255, 0.9); direction: ltr;" class="hover:text-white transition-colors" dir="ltr">+20 109 991 5369</a>
+                            <i class="fab fa-whatsapp" style="color: var(--accent-color);"></i>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <a href="https://wa.me/201099915359" target="_blank" style="color: rgba(255, 255, 255, 0.9); direction: ltr;" class="hover:text-white transition-colors" dir="ltr">+20 109 991 5359</a>
+                            <i class="fab fa-whatsapp" style="color: var(--accent-color);"></i>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone" style="color: var(--accent-color);"></i>
+                            <span style="color: rgba(255, 255, 255, 0.9);">للاتصال المباشر</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Contact Info -->
+                <!-- Address & Email -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6">معلومات الاتصال</h4>
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-3 space-x-reverse">
-                            <i class="fas fa-map-marker-alt" style="color: var(--accent-color);"></i>
-                            <span style="color: rgba(255, 255, 255, 0.9);">القاهرة، مصر</span>
-                        </div>
-                        <div class="flex items-center space-x-3 space-x-reverse">
-                            <i class="fas fa-phone" style="color: var(--accent-color);"></i>
-                            <span style="color: rgba(255, 255, 255, 0.9);">+20 100 000 0000</span>
+                    <h4 class="text-lg font-bold mb-6">العنوان والبريد الإلكتروني</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3 space-x-reverse">
+                            <i class="fas fa-map-marker-alt mt-1" style="color: var(--accent-color);"></i>
+                            <div style="color: rgba(255, 255, 255, 0.9);">
+                                <p class="font-semibold">العنوان الكامل:</p>
+                                <p>7 شارع الشون</p>
+                                <p>ساحل روض الفرج</p>
+                                <p>القاهرة، مصر</p>
+                            </div>
                         </div>
                         <div class="flex items-center space-x-3 space-x-reverse">
                             <i class="fas fa-envelope" style="color: var(--accent-color);"></i>
-                            <span style="color: rgba(255, 255, 255, 0.9);">info@sun-trading.com</span>
+                            <div style="color: rgba(255, 255, 255, 0.9);">
+                                <p class="font-semibold">البريد الإلكتروني:</p>
+                                <a href="mailto:info@suncompany-egypt.org" class="hover:text-white transition-colors">info@suncompany-egypt.org</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 space-x-reverse">
+                            <i class="fas fa-building" style="color: var(--accent-color);"></i>
+                            <div style="color: rgba(255, 255, 255, 0.9);">
+                                <p class="font-semibold">شركة شمس للاستيراد والتصدير</p>
+                                <p class="text-sm opacity-80">متخصصون في التجارة الدولية</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -708,7 +878,53 @@
     <!-- External JavaScript -->
     <script src="script.js"></script>
 
+    <!-- Contact Modal JavaScript -->
+    <script>
+        // Open contact modal
+        function openContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
 
+        // Close contact modal
+        function closeContactModal(event) {
+            // Only close if clicking the backdrop or close button
+            if (event && event.target !== event.currentTarget && !event.target.closest('.fa-times')) {
+                return;
+            }
+
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeContactModal();
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('modal-contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Here you can add your form submission logic
+            console.log('Form submitted:', data);
+
+            // Show success message (you can customize this)
+            alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+
+            // Reset form and close modal
+            this.reset();
+            closeContactModal();
+        });
+    </script>
 
 </body>
 </html>

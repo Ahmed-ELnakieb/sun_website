@@ -306,7 +306,7 @@ html {
 .admin-cards-container {
     display: flex;
     gap: 1rem;
-    width: 95%;
+    width: 100%;
     height: 750px;
     justify-content: center;
     align-items: stretch;
@@ -460,6 +460,163 @@ html {
 /* Contact Section Styles */
 #contact {
     background: linear-gradient(135deg, var(--background-color) 0%, #ffffff 50%, var(--accent-color) 100%);
+}
+
+/* Crops Background for Contact Section */
+.contact-green-bg {
+    /* Crops background image with multiple fallbacks */
+    background-image:
+        /* Dark gradient overlay for text readability */
+        linear-gradient(135deg, rgba(45, 80, 22, 0.85) 0%, rgba(74, 124, 89, 0.8) 25%, rgba(93, 138, 102, 0.75) 50%, rgba(107, 155, 122, 0.8) 75%, rgba(127, 176, 105, 0.85) 100%),
+        /* Primary crops image - wheat field */
+        url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80'),
+        /* Backup crops image - green crops */
+        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80'),
+        /* Third fallback - agricultural field */
+        url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80'),
+        /* Final fallback gradient if all images fail to load */
+        linear-gradient(135deg, #2d5016 0%, #4a7c59 25%, #5d8a66 50%, #6b9b7a 75%, #7fb069 100%);
+
+    background-size: cover, cover, cover, cover, cover;
+    background-position: center, center, center, center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-attachment: fixed, fixed, fixed, fixed, fixed;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Enhanced overlay for better text contrast */
+.contact-green-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Additional dark overlay to ensure white text is always readable */
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(45, 80, 22, 0.3) 25%,
+        rgba(74, 124, 89, 0.2) 50%,
+        rgba(45, 80, 22, 0.3) 75%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    z-index: 1;
+}
+
+/* Subtle texture overlay for depth */
+.contact-green-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.02) 49%, rgba(255, 255, 255, 0.02) 51%, transparent 52%);
+    background-size: 200px 200px, 150px 150px, 60px 60px;
+    opacity: 0.6;
+    z-index: 2;
+}
+
+/* Fallback for when background-attachment: fixed is not supported (mobile) */
+@media (max-width: 768px) {
+    .contact-green-bg {
+        background-attachment: scroll, scroll, scroll, scroll, scroll;
+    }
+}
+
+/* Contact Sun Animation Styles */
+.contact-sun-animation {
+    filter: drop-shadow(0 0 20px rgba(255, 193, 7, 0.4));
+}
+
+/* Custom Animation Keyframes */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-reverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+}
+
+/* Apply custom animations */
+.animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+}
+
+.animate-spin-reverse {
+    animation: spin-reverse 12s linear infinite;
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Enhanced text readability on crops background */
+.contact-green-bg .text-white {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 1px 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
+}
+
+.contact-green-bg h2,
+.contact-green-bg h3,
+.contact-green-bg p,
+.contact-green-bg span,
+.contact-green-bg a {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 1px 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
+}
+
+/* Ensure icons are also visible */
+.contact-green-bg i {
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+    position: relative;
+    z-index: 10;
+}
+
+/* Responsive adjustments for contact sun */
+@media (max-width: 768px) {
+    .contact-sun-animation {
+        filter: drop-shadow(0 0 10px rgba(255, 193, 7, 0.3));
+    }
+
+    /* Enhanced text shadow for mobile */
+    .contact-green-bg .text-white,
+    .contact-green-bg h2,
+    .contact-green-bg h3,
+    .contact-green-bg p,
+    .contact-green-bg span,
+    .contact-green-bg a {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
 }
 
 .sun-background {
