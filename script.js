@@ -81,27 +81,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer for animations
+// Optimized Intersection Observer for animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -30px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+// Lightweight animation observer
+const animationObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('animate-in');
+            // Unobserve immediately to improve performance
+            animationObserver.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe elements for animation
-document.querySelectorAll('.feature-card, .product-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+// Initialize animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Trigger navbar animations with proper sequencing
+    setTimeout(() => {
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach((item, index) => {
+            // Add animate-in class with individual delays
+            setTimeout(() => {
+                item.classList.add('animate-in');
+            }, index * 200); // 200ms between each item
+        });
+    }, 300); // Start after 300ms
+
+    // Only observe elements that have animation classes
+    const animatedElements = document.querySelectorAll('.section-fade-in, .card-fade-in, .text-fade-up, .icon-scale-in, .scale-in');
+
+    animatedElements.forEach(element => {
+        animationObserver.observe(element);
+    });
 });
 
 // jQuery animations for administration section
