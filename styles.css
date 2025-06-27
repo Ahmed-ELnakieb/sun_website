@@ -875,7 +875,7 @@ html {
 
 /* Product Popovers Custom Styling */
 .product-popover {
-    max-width: 550px !important;
+    max-width: 715px !important;
 }
 
 .product-popover .popover-body {
@@ -886,7 +886,7 @@ html {
 .product-popover img {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    height: 200px !important;
+    height: 260px !important;
     width: 100% !important;
     object-fit: cover !important;
 }
@@ -903,8 +903,177 @@ html {
     }
 
     .product-popover img {
-        height: 150px !important;
+        height: 195px !important;
         width: 100% !important;
         object-fit: cover !important;
     }
+}
+
+/* Full Screen Image Modal */
+#fullscreenImageModal {
+    backdrop-filter: blur(3px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+#fullscreenImageModal img {
+    max-width: 95vw;
+    max-height: 95vh;
+    transition: transform 0.3s ease;
+    animation: zoomIn 0.3s ease-out;
+}
+
+#fullscreenImageModal button {
+    transition: all 0.3s ease;
+}
+
+#fullscreenImageModal button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Cursor pointer for clickable images */
+.cursor-pointer {
+    cursor: pointer !important;
+    transition: opacity 0.3s ease;
+}
+
+.cursor-pointer:hover {
+    opacity: 0.9;
+}
+
+/* Modern Product Card Hover Effects */
+.product-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card .hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    color: white;
+    z-index: 10;
+}
+
+.product-card:hover .hover-overlay {
+    opacity: 1;
+}
+
+.product-card .hover-content {
+    transform: translateY(2rem);
+    transition: transform 0.5s ease 0.1s;
+}
+
+.product-card:hover .hover-content {
+    transform: translateY(0);
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+.product-card img {
+    transition: transform 0.5s ease;
+}
+
+/* Feature badges in hover overlay */
+.hover-overlay .feature-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    margin: 0.125rem;
+    font-weight: 500;
+}
+
+.hover-overlay .feature-badge.green {
+    background-color: #10b981;
+    color: white;
+}
+
+.hover-overlay .feature-badge.yellow {
+    background-color: #f59e0b;
+    color: black;
+}
+
+.hover-overlay .feature-badge.blue {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.hover-overlay .feature-badge.indigo {
+    background-color: #6366f1;
+    color: white;
+}
+
+.hover-overlay .feature-badge.red {
+    background-color: #ef4444;
+    color: white;
+}
+
+.hover-overlay .feature-badge.gray {
+    background-color: #6b7280;
+    color: white;
+}
+
+/* Grid layout for origin and uses */
+.hover-overlay .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.hover-overlay .info-grid .info-item {
+    opacity: 0.9;
+}
+
+.hover-overlay .info-grid .info-label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+/* Product title in hover */
+.hover-overlay h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.hover-overlay p {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.hover-overlay .features-section {
+    margin-bottom: 0.75rem;
+}
+
+.hover-overlay .features-title {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }

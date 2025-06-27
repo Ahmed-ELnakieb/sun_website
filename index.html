@@ -281,15 +281,43 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
                 <!-- Product 1 - Wheat -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="wheat"
-                     data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover focus" data-bs-html="true"
-                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 650px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="القمح" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">القمح</h5><p class="mb-2" style="font-size: 13px; color: #666;">قمح عالي الجودة من أفضل المصادر العالمية، يتميز بنقاوته العالية ومحتواه الغذائي الممتاز</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-success" style="font-size: 10px;">نقاوة عالية</span><span class="badge bg-success" style="font-size: 10px;">خالي من الشوائب</span><span class="badge bg-success" style="font-size: 10px;">معايير دولية</span><span class="badge bg-success" style="font-size: 10px;">تخزين آمن</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">أوكرانيا، روسيا، كندا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">صناعة الخبز والمعجنات</p></div></div>'>
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="wheat">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                              alt="القمح"
-                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                             class="w-full object-cover" style="height: 280px; width: 100%;"
+                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'القمح')">
                         <div class="absolute top-4 right-4">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">حبوب</span>
+                        </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="hover-overlay">
+                            <div class="hover-content">
+                                <h3>القمح</h3>
+                                <p>قمح عالي الجودة من أفضل المصادر العالمية، يتميز بنقاوته العالية ومحتواه الغذائي الممتاز</p>
+
+                                <div class="features-section">
+                                    <div class="features-title">المميزات:</div>
+                                    <div>
+                                        <span class="feature-badge green">نقاوة عالية</span>
+                                        <span class="feature-badge green">خالي من الشوائب</span>
+                                        <span class="feature-badge green">معايير دولية</span>
+                                        <span class="feature-badge green">تخزين آمن</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <div class="info-label">المنشأ:</div>
+                                        <div>أوكرانيا، روسيا، كندا</div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-label">الاستخدامات:</div>
+                                        <div>صناعة الخبز والمعجنات</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -303,15 +331,43 @@
                 </div>
 
                 <!-- Product 2 - Corn -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="corn"
-                     data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover focus" data-bs-html="true"
-                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 500px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الذرة" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">الذرة</h5><p class="mb-2" style="font-size: 13px; color: #666;">ذرة صفراء عالية الجودة للاستخدامات المتعددة في الصناعات الغذائية والعلفية</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-warning text-dark" style="font-size: 10px;">لون ذهبي مميز</span><span class="badge bg-warning text-dark" style="font-size: 10px;">حبوب كاملة</span><span class="badge bg-warning text-dark" style="font-size: 10px;">رطوبة مناسبة</span><span class="badge bg-warning text-dark" style="font-size: 10px;">خالية من الآفات</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">الأرجنتين، البرازيل، أوكرانيا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">الأعلاف، الصناعات الغذائية</p></div></div>'>
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="corn">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                              alt="الذرة"
-                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                             class="w-full object-cover" style="height: 280px; width: 100%;"
+                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'الذرة')">
                         <div class="absolute top-4 right-4">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">حبوب</span>
+                        </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="hover-overlay">
+                            <div class="hover-content">
+                                <h3>الذرة</h3>
+                                <p>ذرة صفراء عالية الجودة للاستخدامات المتعددة في الصناعات الغذائية والعلفية</p>
+
+                                <div class="features-section">
+                                    <div class="features-title">المميزات:</div>
+                                    <div>
+                                        <span class="feature-badge yellow">لون ذهبي مميز</span>
+                                        <span class="feature-badge yellow">حبوب كاملة</span>
+                                        <span class="feature-badge yellow">رطوبة مناسبة</span>
+                                        <span class="feature-badge yellow">خالية من الآفات</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <div class="info-label">المنشأ:</div>
+                                        <div>الأرجنتين، البرازيل، أوكرانيا</div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-label">الاستخدامات:</div>
+                                        <div>الأعلاف، الصناعات الغذائية</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -325,15 +381,43 @@
                 </div>
 
                 <!-- Product 3 - Barley -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="barley"
-                     data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover focus" data-bs-html="true"
-                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 500px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الشعير" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">الشعير</h5><p class="mb-2" style="font-size: 13px; color: #666;">شعير عالي الجودة للأعلاف والاستخدامات الصناعية، مصدر ممتاز للطاقة والبروتين</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-info" style="font-size: 10px;">قيمة غذائية عالية</span><span class="badge bg-info" style="font-size: 10px;">سهل الهضم</span><span class="badge bg-info" style="font-size: 10px;">مقاوم للتخزين</span><span class="badge bg-info" style="font-size: 10px;">نقاوة ممتازة</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">فرنسا، ألمانيا، أستراليا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">أعلاف الحيوانات، الصناعات</p></div></div>'>
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="barley">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                              alt="الشعير"
-                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                             class="w-full object-cover" style="height: 280px; width: 100%;"
+                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'الشعير')">
                         <div class="absolute top-4 right-4">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">حبوب</span>
+                        </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="hover-overlay">
+                            <div class="hover-content">
+                                <h3>الشعير</h3>
+                                <p>شعير عالي الجودة للأعلاف والاستخدامات الصناعية، مصدر ممتاز للطاقة والبروتين</p>
+
+                                <div class="features-section">
+                                    <div class="features-title">المميزات:</div>
+                                    <div>
+                                        <span class="feature-badge blue">قيمة غذائية عالية</span>
+                                        <span class="feature-badge blue">سهل الهضم</span>
+                                        <span class="feature-badge blue">مقاوم للتخزين</span>
+                                        <span class="feature-badge blue">نقاوة ممتازة</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <div class="info-label">المنشأ:</div>
+                                        <div>فرنسا، ألمانيا، أستراليا</div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-label">الاستخدامات:</div>
+                                        <div>أعلاف الحيوانات، الصناعات</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -347,15 +431,43 @@
                 </div>
 
                 <!-- Product 4 - Beans -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="beans"
-                     data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover focus" data-bs-html="true"
-                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 500px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الفاصوليا" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">الفاصوليا البيضاء</h5><p class="mb-2" style="font-size: 13px; color: #666;">فاصوليا بيضاء خالية من الشوائب وعالية الجودة، مصدر ممتاز للبروتين النباتي</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-primary" style="font-size: 10px;">بروتين عالي</span><span class="badge bg-primary" style="font-size: 10px;">خالية من الشوائب</span><span class="badge bg-primary" style="font-size: 10px;">حجم منتظم</span><span class="badge bg-primary" style="font-size: 10px;">لون أبيض ناصع</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">تركيا، الأرجنتين، كندا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">الطبخ المنزلي، الصناعات الغذائية</p></div></div>'>
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="beans">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                              alt="الفاصوليا"
-                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                             class="w-full object-cover" style="height: 280px; width: 100%;"
+                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'الفاصوليا البيضاء')">
                         <div class="absolute top-4 right-4">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">بقوليات</span>
+                        </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="hover-overlay">
+                            <div class="hover-content">
+                                <h3>الفاصوليا البيضاء</h3>
+                                <p>فاصوليا بيضاء خالية من الشوائب وعالية الجودة، مصدر ممتاز للبروتين النباتي</p>
+
+                                <div class="features-section">
+                                    <div class="features-title">المميزات:</div>
+                                    <div>
+                                        <span class="feature-badge indigo">بروتين عالي</span>
+                                        <span class="feature-badge indigo">خالية من الشوائب</span>
+                                        <span class="feature-badge indigo">حجم منتظم</span>
+                                        <span class="feature-badge indigo">لون أبيض ناصع</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <div class="info-label">المنشأ:</div>
+                                        <div>تركيا، الأرجنتين، كندا</div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-label">الاستخدامات:</div>
+                                        <div>الطبخ المنزلي، الصناعات الغذائية</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -369,15 +481,43 @@
                 </div>
 
                 <!-- Product 5 - Lentils -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="lentils"
-                     data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover focus" data-bs-html="true"
-                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 500px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="العدس" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">العدس</h5><p class="mb-2" style="font-size: 13px; color: #666;">عدس أحمر وأصفر عالي الجودة ومنتقى بعناية، غني بالبروتين والألياف</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-danger" style="font-size: 10px;">غني بالبروتين</span><span class="badge bg-danger" style="font-size: 10px;">سريع الطبخ</span><span class="badge bg-danger" style="font-size: 10px;">ألوان متنوعة</span><span class="badge bg-danger" style="font-size: 10px;">قيمة غذائية عالية</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">تركيا، كندا، أستراليا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">الشوربات، الأطباق الرئيسية</p></div></div>'>
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="lentils">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                              alt="العدس"
-                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                             class="w-full object-cover" style="height: 280px; width: 100%;"
+                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'العدس')">
                         <div class="absolute top-4 right-4">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">بقوليات</span>
+                        </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="hover-overlay">
+                            <div class="hover-content">
+                                <h3>العدس</h3>
+                                <p>عدس أحمر وأصفر عالي الجودة ومنتقى بعناية، غني بالبروتين والألياف</p>
+
+                                <div class="features-section">
+                                    <div class="features-title">المميزات:</div>
+                                    <div>
+                                        <span class="feature-badge red">غني بالبروتين</span>
+                                        <span class="feature-badge red">سريع الطبخ</span>
+                                        <span class="feature-badge red">ألوان متنوعة</span>
+                                        <span class="feature-badge red">قيمة غذائية عالية</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <div class="info-label">المنشأ:</div>
+                                        <div>تركيا، كندا، أستراليا</div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-label">الاستخدامات:</div>
+                                        <div>الشوربات، الأطباق الرئيسية</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -391,15 +531,43 @@
                 </div>
 
                 <!-- Product 6 - Chickpeas -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="chickpeas"
-                     data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover focus" data-bs-html="true"
-                     data-bs-content='<div class="text-right" style="direction: rtl; max-width: 500px;"><div class="mb-3"><img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الحمص" class="w-100 rounded" style="height: 200px; width: 100%; object-fit: cover;"></div><h5 class="fw-bold mb-2" style="color: #8B5A2B;">الحمص</h5><p class="mb-2" style="font-size: 13px; color: #666;">حمص عالي الجودة ومنتقى من أفضل المصادر، مصدر طبيعي للبروتين والألياف</p><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المميزات:</h6><div class="d-flex flex-wrap gap-1"><span class="badge bg-secondary" style="font-size: 10px;">حجم كبير</span><span class="badge bg-secondary" style="font-size: 10px;">لون ذهبي</span><span class="badge bg-secondary" style="font-size: 10px;">ملمس ناعم</span><span class="badge bg-secondary" style="font-size: 10px;">طعم مميز</span></div></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">المنشأ:</h6><p class="mb-0" style="font-size: 11px; color: #666;">تركيا، المكسيك، أستراليا</p></div><div class="mb-2"><h6 class="fw-bold mb-1" style="font-size: 12px;">الاستخدامات:</h6><p class="mb-0" style="font-size: 11px; color: #666;">الحمص المسلوق، الفلافل، الحمص بالطحينة</p></div></div>'>
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="chickpeas">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                              alt="الحمص"
-                             class="w-full object-cover transition-transform duration-300 hover:scale-110" style="height: 280px; width: 100%;">
+                             class="w-full object-cover" style="height: 280px; width: 100%;"
+                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'الحمص')">
                         <div class="absolute top-4 right-4">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);">بقوليات</span>
+                        </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="hover-overlay">
+                            <div class="hover-content">
+                                <h3>الحمص</h3>
+                                <p>حمص عالي الجودة ومنتقى من أفضل المصادر، مصدر طبيعي للبروتين والألياف</p>
+
+                                <div class="features-section">
+                                    <div class="features-title">المميزات:</div>
+                                    <div>
+                                        <span class="feature-badge gray">حجم كبير</span>
+                                        <span class="feature-badge gray">لون ذهبي</span>
+                                        <span class="feature-badge gray">ملمس ناعم</span>
+                                        <span class="feature-badge gray">طعم مميز</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <div class="info-label">المنشأ:</div>
+                                        <div>تركيا، المكسيك، أستراليا</div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-label">الاستخدامات:</div>
+                                        <div>الحمص المسلوق، الفلافل، الحمص بالطحينة</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -410,6 +578,24 @@
                             <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Screen Image Modal -->
+        <div id="fullscreenImageModal" class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden flex items-center justify-center p-4">
+            <div class="relative max-w-full max-h-full">
+                <!-- Close Button -->
+                <button onclick="closeFullscreenImage()" class="absolute top-4 right-4 text-white hover:text-gray-300 text-3xl z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <!-- Full Screen Image -->
+                <img id="fullscreenImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
+
+                <!-- Image Caption -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg">
+                    <span id="fullscreenImageCaption"></span>
                 </div>
             </div>
         </div>
@@ -999,17 +1185,16 @@
             closeContactModal();
         });
 
-        // Initialize Bootstrap Popovers
+        // Initialize Bootstrap Popovers for Admin Section Only
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all Bootstrap popovers
-            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            // Initialize Bootstrap popovers only for admin cards
+            var adminPopoverTriggerList = [].slice.call(document.querySelectorAll('.admin-card[data-bs-toggle="popover"]'));
+            var adminPopoverList = adminPopoverTriggerList.map(function (popoverTriggerEl) {
                 return new bootstrap.Popover(popoverTriggerEl, {
                     container: 'body',
-                    customClass: 'admin-popover product-popover',
+                    customClass: 'admin-popover',
                     delay: { show: 200, hide: 100 },
-                    boundary: 'viewport',
-                    template: '<div class="popover" role="tooltip" style="max-width: 550px;"><div class="popover-arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
+                    boundary: 'viewport'
                 });
             });
 
@@ -1047,6 +1232,53 @@
                 });
             });
         });
+
+        // Full Screen Image Functions
+        function openFullscreenImage(imageSrc, imageAlt) {
+            console.log('Opening fullscreen image:', imageAlt);
+            const modal = document.getElementById('fullscreenImageModal');
+            const image = document.getElementById('fullscreenImage');
+            const caption = document.getElementById('fullscreenImageCaption');
+
+            // Set higher quality image source
+            const highQualityImageSrc = imageSrc.replace('w=800', 'w=1200').replace('q=80', 'q=90');
+
+            image.src = highQualityImageSrc;
+            image.alt = imageAlt;
+            caption.textContent = imageAlt;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFullscreenImage() {
+            console.log('Closing fullscreen image');
+            const modal = document.getElementById('fullscreenImageModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close fullscreen image when clicking on backdrop
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('fullscreenImageModal');
+            if (e.target === modal) {
+                closeFullscreenImage();
+            }
+        });
+
+        // Close fullscreen image with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('fullscreenImageModal');
+                if (!modal.classList.contains('hidden')) {
+                    closeFullscreenImage();
+                }
+            }
+        });
+
+        // Make functions globally available
+        window.openFullscreenImage = openFullscreenImage;
+        window.closeFullscreenImage = closeFullscreenImage;
     </script>
 
 </body>
