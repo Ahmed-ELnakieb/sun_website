@@ -8,29 +8,27 @@ window.addEventListener('scroll', function() {
 
     if (window.scrollY > 100) {
         navbar.classList.add('navbar-scroll');
-        logoText.classList.remove('text-white');
-        logoText.classList.add('text-blue-800');
-        logoSubtitle.classList.remove('text-blue-100');
-        logoSubtitle.classList.add('text-blue-600');
+        // Logo text stays white for better contrast on the gradient background
+        logoText.classList.add('text-white');
+        logoSubtitle.style.color = 'var(--accent-color)';
 
-        // Update nav links color
+        // Nav links stay white for better contrast
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
-            link.classList.remove('text-white', 'hover:text-blue-200');
-            link.classList.add('text-blue-800', 'hover:text-blue-600');
+            link.classList.add('text-white');
+            link.style.color = 'white';
         });
     } else {
         navbar.classList.remove('navbar-scroll');
-        logoText.classList.remove('text-blue-800');
+        // Keep logo text white for consistency
         logoText.classList.add('text-white');
-        logoSubtitle.classList.remove('text-blue-600');
-        logoSubtitle.classList.add('text-blue-100');
+        logoSubtitle.style.color = 'var(--accent-color)';
 
-        // Reset nav links color
+        // Keep nav links white
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
-            link.classList.remove('text-blue-800', 'hover:text-blue-600');
-            link.classList.add('text-white', 'hover:text-blue-200');
+            link.classList.add('text-white');
+            link.style.color = 'white';
         });
     }
 });
@@ -235,20 +233,20 @@ $(document).ready(function() {
                             </p>
                             <div class="space-y-4">
                                 <div class="flex items-center space-x-3 space-x-reverse">
-                                    <i class="fas fa-check-circle text-blue-600"></i>
-                                    <span class="text-gray-700">فريق متخصص في التجارة الدولية</span>
+                                    <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
+                                    <span style="color: var(--text-dark);">فريق متخصص في التجارة الدولية</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
-                                    <i class="fas fa-check-circle text-blue-600"></i>
-                                    <span class="text-gray-700">خبرة واسعة في الأسواق العالمية</span>
+                                    <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
+                                    <span style="color: var(--text-dark);">خبرة واسعة في الأسواق العالمية</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
-                                    <i class="fas fa-check-circle text-blue-600"></i>
-                                    <span class="text-gray-700">التزام بأعلى معايير الجودة</span>
+                                    <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
+                                    <span style="color: var(--text-dark);">التزام بأعلى معايير الجودة</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
-                                    <i class="fas fa-check-circle text-blue-600"></i>
-                                    <span class="text-gray-700">خدمة عملاء متميزة على مدار الساعة</span>
+                                    <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
+                                    <span style="color: var(--text-dark);">خدمة عملاء متميزة على مدار الساعة</span>
                                 </div>
                             </div>
                         </div>
@@ -271,16 +269,16 @@ $(document).ready(function() {
                             </p>
                             <div class="grid grid-cols-3 gap-6 mb-6">
                                 <div class="text-center">
-                                    <div class="text-3xl font-bold text-blue-600 mb-2">25+</div>
-                                    <div class="text-gray-600 text-sm">سنة خبرة</div>
+                                    <div class="text-3xl font-bold mb-2" style="color: var(--secondary-color);">25+</div>
+                                    <div class="text-sm" style="color: var(--text-dark);">سنة خبرة</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-3xl font-bold text-blue-600 mb-2">100+</div>
-                                    <div class="text-gray-600 text-sm">مشروع ناجح</div>
+                                    <div class="text-3xl font-bold mb-2" style="color: var(--secondary-color);">100+</div>
+                                    <div class="text-sm" style="color: var(--text-dark);">مشروع ناجح</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-3xl font-bold text-blue-600 mb-2">15+</div>
-                                    <div class="text-gray-600 text-sm">دولة شريكة</div>
+                                    <div class="text-3xl font-bold mb-2" style="color: var(--secondary-color);">15+</div>
+                                    <div class="text-sm" style="color: var(--text-dark);">دولة شريكة</div>
                                 </div>
                             </div>
                         </div>
@@ -292,8 +290,8 @@ $(document).ready(function() {
                 content = `
                     <div class="modal-content-section max-w-4xl mx-auto">
                         <div class="text-center mb-8">
-                            <h3 class="text-4xl font-bold text-gray-800 mb-4">المدير العام</h3>
-                            <div class="w-24 h-1 bg-purple-600 mx-auto rounded-full"></div>
+                            <h3 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">المدير العام</h3>
+                            <div class="w-24 h-1 mx-auto rounded-full" style="background: var(--secondary-color);"></div>
                         </div>
 
                         <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-8 mb-8">
@@ -307,11 +305,11 @@ $(document).ready(function() {
 
                         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                             <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-globe text-blue-600 text-2xl"></i>
+                                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--accent-color);">
+                                    <i class="fas fa-globe text-2xl" style="color: var(--primary-color);"></i>
                                 </div>
-                                <h4 class="font-bold text-gray-800 mb-2">التجارة الدولية</h4>
-                                <p class="text-sm text-gray-600">خبرة واسعة في الأسواق العالمية والتجارة الخارجية</p>
+                                <h4 class="font-bold mb-2" style="color: var(--primary-color);">التجارة الدولية</h4>
+                                <p class="text-sm" style="color: var(--text-dark);">خبرة واسعة في الأسواق العالمية والتجارة الخارجية</p>
                             </div>
                             <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
                                 <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -342,7 +340,7 @@ $(document).ready(function() {
                                     <i class="fas fa-medal text-xs ml-2"></i>
                                     12+ سنة خبرة
                                 </span>
-                                <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                                <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium" style="background: var(--accent-color); color: var(--primary-color);">
                                     <i class="fas fa-trophy text-xs ml-2"></i>
                                     قائد متميز
                                 </span>
@@ -375,12 +373,12 @@ $(document).ready(function() {
                             </p>
                             <div class="space-y-6">
                                 <div class="flex items-start space-x-4 space-x-reverse">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-award text-blue-600"></i>
+                                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--accent-color);">
+                                        <i class="fas fa-award" style="color: var(--primary-color);"></i>
                                     </div>
                                     <div>
-                                        <h4 class="text-xl font-bold text-gray-800 mb-2">الجودة</h4>
-                                        <p class="text-gray-600">التزامنا بمعايير الجودة والتميز في كل خطوة</p>
+                                        <h4 class="text-xl font-bold mb-2" style="color: var(--primary-color);">الجودة</h4>
+                                        <p style="color: var(--text-dark);">التزامنا بمعايير الجودة والتميز في كل خطوة</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-4 space-x-reverse">

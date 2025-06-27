@@ -1,8 +1,53 @@
 /* Sun Trading Company - Main Stylesheet */
 
+/* Local Font Declarations */
+@font-face {
+    font-family: 'Almarai';
+    src: url('./fonts/Almarai-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: url('./fonts/Almarai-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: url('./fonts/Almarai-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: url('./fonts/Almarai-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Color Palette Variables */
+:root {
+    --primary-color: #A86523;      /* Warm brown */
+    --secondary-color: #E9A319;    /* Golden yellow */
+    --accent-color: #FAD59A;       /* Light golden */
+    --background-color: #FCEFCB;   /* Cream */
+    --text-dark: #4A4A4A;          /* Dark gray for text */
+    --text-light: #FFFFFF;         /* White text */
+    --shadow-warm: rgba(168, 101, 35, 0.2);
+    --shadow-golden: rgba(233, 163, 25, 0.3);
+}
+
 /* Global Styles */
 * {
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Almarai', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 html {
@@ -11,37 +56,129 @@ html {
 
 /* Hero Section */
 .hero-bg {
-    background: linear-gradient(rgba(30, 64, 175, 0.8), rgba(30, 64, 175, 0.6)), 
+    background: linear-gradient(rgba(168, 101, 35, 0.85), rgba(233, 163, 25, 0.75)),
                 url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
+/* About Section */
+.about-bg {
+    background: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Enhanced Background Overlay for Better Text Readability */
+.about-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(168, 101, 35, 0.15) 0%,
+        rgba(233, 163, 25, 0.1) 50%,
+        rgba(168, 101, 35, 0.2) 100%
+    );
+    z-index: 1;
+}
+
+.about-bg > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* About Section Glassmorphism Card */
+.about-bg .bg-white\/10 {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.about-bg .bg-white\/10:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* About Section Value Cards */
+.about-bg .bg-white\/5 {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.about-bg .bg-white\/5:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+}
+
+/* About Section Responsive Design */
+@media (max-width: 1024px) {
+    .about-bg h2 {
+        font-size: 3rem !important;
+    }
+
+    .about-bg .min-h-screen {
+        min-height: auto;
+        padding: 4rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-bg h2 {
+        font-size: 2.5rem !important;
+    }
+
+    .about-bg .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-bg .bg-white\/10 {
+        margin-top: 2rem;
+    }
+}
+
 /* Feature Cards */
 .feature-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, var(--background-color) 0%, #ffffff 100%);
+    border: 1px solid var(--accent-color);
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(30, 64, 175, 0.1);
+    box-shadow: 0 20px 40px var(--shadow-warm);
+    border-color: var(--secondary-color);
 }
 
 /* Product Cards */
 .product-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ffffff;
+    border: 1px solid var(--accent-color);
 }
 
 .product-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 30px var(--shadow-golden);
+    border-color: var(--secondary-color);
 }
 
 /* Navigation */
 .navbar-scroll {
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.95);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    box-shadow: 0 4px 20px var(--shadow-warm);
 }
 
 /* Animations */
@@ -165,9 +302,53 @@ html {
     font-variant-numeric: tabular-nums;
 }
 
-/* Admin Cards Container */
+/* Admin Cards Container - Enhanced */
 .admin-cards-container {
-    /* Removed background and shadow */
+    display: flex;
+    gap: 1rem;
+    width: 95%;
+    height: 750px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Enhanced Admin Cards Responsive Design */
+@media (max-width: 1200px) {
+    .admin-cards-container {
+        height: 650px;
+        width: 98%;
+    }
+
+    .admin-card {
+        min-width: 240px !important;
+    }
+
+    .admin-card h3 {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-cards-container {
+        flex-direction: column;
+        height: auto;
+        gap: 1.5rem;
+    }
+
+    .admin-card {
+        min-width: auto !important;
+        height: 300px;
+        transform: skewX(0deg) !important;
+    }
+
+    .admin-card-content {
+        transform: skewX(0deg) !important;
+        padding: 2rem !important;
+    }
+
+    .admin-card h3 {
+        font-size: 1.75rem !important;
+    }
 }
 
 /* Admin Cards */
@@ -208,24 +389,24 @@ html {
 }
 
 .admin-card-team .admin-card-overlay {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(29, 78, 216, 0.3));
+    background: linear-gradient(135deg, rgba(168, 101, 35, 0.4), rgba(233, 163, 25, 0.3));
 }
 
 .admin-card-management .admin-card-overlay {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(4, 120, 87, 0.3));
+    background: linear-gradient(135deg, rgba(233, 163, 25, 0.4), rgba(250, 213, 154, 0.3));
 }
 
 .admin-card-ceo .admin-card-overlay {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(109, 40, 217, 0.3));
+    background: linear-gradient(135deg, rgba(168, 101, 35, 0.5), rgba(233, 163, 25, 0.4));
 }
 
 .admin-card-values .admin-card-overlay {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(217, 119, 6, 0.3));
+    background: linear-gradient(135deg, rgba(233, 163, 25, 0.4), rgba(168, 101, 35, 0.3));
 }
 
 /* Admin Card Hover Effects */
 .admin-card:hover {
-    box-shadow: 0 25px 50px rgba(30, 64, 175, 0.3);
+    box-shadow: 0 25px 50px var(--shadow-golden);
     z-index: 10;
 }
 
@@ -278,7 +459,7 @@ html {
 
 /* Contact Section Styles */
 #contact {
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+    background: linear-gradient(135deg, var(--background-color) 0%, #ffffff 50%, var(--accent-color) 100%);
 }
 
 .sun-background {
@@ -390,7 +571,9 @@ html {
 #contact select:focus,
 #contact textarea:focus {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2);
+    box-shadow: 0 10px 25px var(--shadow-golden);
+    border-color: var(--secondary-color) !important;
+    outline: none;
 }
 
 /* Button Hover Effects */
