@@ -1249,3 +1249,77 @@ section#services {
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
+
+/* Contact Modal Animations */
+#contactModal {
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    backdrop-filter: blur(0px);
+}
+
+#contactModal.show {
+    opacity: 1;
+    visibility: visible;
+    backdrop-filter: blur(5px);
+}
+
+#contactModal .bg-white {
+    transform: scale(0.7) translateY(-50px);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+#contactModal.show .bg-white {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* Contact Modal Animation Keyframes */
+@keyframes contactModalFadeIn {
+    from {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+}
+
+@keyframes contactModalFadeOut {
+    from {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.9);
+    }
+}
+
+@keyframes contactModalSlideIn {
+    from {
+        transform: scale(0.7) translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes contactModalSlideOut {
+    from {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.7) translateY(-50px);
+        opacity: 0;
+    }
+}

@@ -1295,6 +1295,15 @@
         function openContactModal() {
             const modal = document.getElementById('contactModal');
             modal.classList.remove('hidden');
+
+            // Force reflow to ensure the element is rendered
+            modal.offsetHeight;
+
+            // Add show class for animation
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
 
@@ -1306,8 +1315,15 @@
             }
 
             const modal = document.getElementById('contactModal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto'; // Restore scrolling
+
+            // Remove show class for animation
+            modal.classList.remove('show');
+
+            // Hide modal after animation completes
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }, 300);
         }
 
         // Close modal with Escape key
