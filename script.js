@@ -16,6 +16,32 @@ function checkTranslations() {
     }
 }
 
+// Helper function to get translation
+function getTranslation(key) {
+    // Debug logging
+    console.log(`Getting translation for key: ${key}, language: ${currentLanguage}`);
+    
+    if (typeof translations === 'undefined') {
+        console.error('Translations object is undefined!');
+        return key;
+    }
+    
+    if (!translations[currentLanguage]) {
+        console.error(`Language ${currentLanguage} not found in translations!`);
+        return key;
+    }
+    
+    if (!translations[currentLanguage][key]) {
+        console.warn(`Translation not found for key: ${key} in language: ${currentLanguage}`);
+        console.log('Available keys:', Object.keys(translations[currentLanguage]));
+        return key;
+    }
+    
+    const translation = translations[currentLanguage][key];
+    console.log(`Translation found: ${translation}`);
+    return translation;
+}
+
 // Language Functions
 function initializeLanguage() {
     // Check if translations are loaded from translations.js
@@ -24,11 +50,35 @@ function initializeLanguage() {
         return;
     }
 
-    // Check localStorage first, then browser language
+    // Check current page language from document or localStorage
     const savedLang = localStorage.getItem('preferred-language');
+    const docLang = document.documentElement.lang;
+    const docDir = document.documentElement.dir;
     const browserLang = navigator.language || navigator.userLanguage;
 
-    if (savedLang) {
+    // Check current page content to detect active language
+    const pageContent = document.body.textContent || '';
+    const hasEnglishNav = document.querySelector('[data-translate="nav_home"]')?.textContent === 'Home';
+    const hasArabicNav = document.querySelector('[data-translate="nav_home"]')?.textContent === 'الرئيسية';
+    const langToggleButton = document.querySelector('#lang-toggle');
+    const isCurrentlyEnglish = langToggleButton?.textContent?.includes('العربية') || hasEnglishNav;
+    
+    console.log('Language detection:', {
+        docLang, docDir, savedLang, browserLang,
+        hasEnglishNav, hasArabicNav, isCurrentlyEnglish,
+        langToggleText: langToggleButton?.textContent
+    });
+    
+    // Priority: 1. Current page state 2. Document lang/dir 3. Saved preference 4. Browser language
+    if (isCurrentlyEnglish) {
+        currentLanguage = 'en';
+    } else if (hasArabicNav) {
+        currentLanguage = 'ar';
+    } else if (docLang === 'en' || docDir === 'ltr') {
+        currentLanguage = 'en';
+    } else if (docLang === 'ar' || docDir === 'rtl') {
+        currentLanguage = 'ar';
+    } else if (savedLang) {
         currentLanguage = savedLang;
     } else if (browserLang.startsWith('ar')) {
         currentLanguage = 'ar';
@@ -36,6 +86,7 @@ function initializeLanguage() {
         currentLanguage = 'en';
     }
 
+    console.log('Initialized language to:', currentLanguage);
     setLanguage(currentLanguage);
 }
 
@@ -43,6 +94,16 @@ function toggleLanguage() {
     currentLanguage = currentLanguage === 'ar' ? 'en' : 'ar';
     setLanguage(currentLanguage);
     localStorage.setItem('preferred-language', currentLanguage);
+    
+    // If modal is open, update its content
+    if ($('#admin-detail-modal').is(':visible')) {
+        // Get the current section from the modal
+        const openSection = $('#admin-detail-modal').data('current-section');
+        if (openSection && typeof window.showAdminDetail === 'function') {
+            console.log('Updating modal content for language change, section:', openSection);
+            window.showAdminDetail(openSection);
+        }
+    }
 }
 
 // Force update translations
@@ -52,8 +113,10 @@ function forceUpdateTranslations() {
 }
 
 function setLanguage(lang) {
+    console.log('Setting language to:', lang);
     currentLanguage = lang;
     const isRTL = lang === 'ar';
+    console.log('Current language updated to:', currentLanguage);
 
     // Set document direction and language
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
@@ -374,7 +437,7 @@ $(document).ready(function() {
     });
 
     // Function to show admin detail modal
-    function showAdminDetail(section) {
+    window.showAdminDetail = function(section) {
         const modalContent = $('#modal-content');
         let content = '';
 
@@ -384,30 +447,30 @@ $(document).ready(function() {
                     <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
                         <div class="order-2 lg:order-1">
                             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                 alt="فريق العمل"
+                                 alt="${getTranslation('admin_team_title')}"
                                  class="detail-image rounded-xl shadow-2xl w-full">
                         </div>
                         <div class="order-1 lg:order-2">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-6">فريق العمل</h3>
+                            <h3 class="text-3xl font-bold text-gray-800 mb-6">${getTranslation('admin_team_title')}</h3>
                             <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                يضم فريق عمل شركة صن مجموعة من المتخصصين ذوي الخبرة العالية في مجال الاستيراد والتصدير. نحن نؤمن بأن القوة الحقيقية للشركة تكمن في فريق العمل المتفاني والمتخصص الذي يعمل بروح الفريق الواحد لتحقيق أهداف الشركة وتلبية احتياجات عملائنا.
+                                ${getTranslation('admin_team_full_desc')}
                             </p>
                             <div class="space-y-4">
                                 <div class="flex items-center space-x-3 space-x-reverse">
                                     <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">فريق متخصص ومتفاني يعمل بأعلى معايير الجودة</span>
+                                    <span style="color: var(--text-dark);">${getTranslation('admin_team_specialized')}</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
                                     <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">خبرة واسعة في مجال الاستيراد والتصدير والتجارة الدولية</span>
+                                    <span style="color: var(--text-dark);">${getTranslation('admin_team_experience')}</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
                                     <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">التزام بالتميز ونسعى دائماً لتقديم أفضل الخدمات</span>
+                                    <span style="color: var(--text-dark);">${getTranslation('admin_team_commitment')}</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
                                     <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">حلول مبتكرة ومتخصصة لجميع احتياجات عملائنا</span>
+                                    <span style="color: var(--text-dark);">${getTranslation('admin_team_innovative_solutions')}</span>
                                 </div>
                             </div>
                         </div>
@@ -420,26 +483,26 @@ $(document).ready(function() {
                     <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
                         <div class="order-2 lg:order-1">
                             <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                 alt="إدارة الشركة"
+                                 alt="${getTranslation('admin_management_title')}"
                                  class="detail-image rounded-xl shadow-2xl w-full">
                         </div>
                         <div class="order-1 lg:order-2">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-6">إدارة الشركة</h3>
+                            <h3 class="text-3xl font-bold text-gray-800 mb-6">${getTranslation('admin_management_title')}</h3>
                             <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                في شركة صن، يقودنا فريق إداري متميز ذو خبرة طويلة في صناعة الاستيراد والتصدير، حيث نؤمن أن القيادة الحكيمة والتخطيط الاستراتيجي هما أساس نجاحنا المستمر. يتمتع كل عضو في فريق الإدارة بمعرفة واسعة بمتطلبات السوق الزراعي، مما يعزز قدرتنا على تقديم حلول مبتكرة تلبي احتياجات عملائنا.
+                                ${getTranslation('admin_management_modal_desc')}
                             </p>
                             <div class="grid grid-cols-3 gap-6 mb-6">
                                 <div class="text-center">
                                     <div class="text-3xl font-bold mb-2" style="color: var(--secondary-color);">25+</div>
-                                    <div class="text-sm" style="color: var(--text-dark);">سنة خبرة</div>
+                                    <div class="text-sm" style="color: var(--text-dark);">${getTranslation('stats_experience')}</div>
                                 </div>
                                 <div class="text-center">
                                     <div class="text-3xl font-bold mb-2" style="color: var(--secondary-color);">100+</div>
-                                    <div class="text-sm" style="color: var(--text-dark);">مشروع ناجح</div>
+                                    <div class="text-sm" style="color: var(--text-dark);">${getTranslation('stats_successful_projects')}</div>
                                 </div>
                                 <div class="text-center">
                                     <div class="text-3xl font-bold mb-2" style="color: var(--secondary-color);">15+</div>
-                                    <div class="text-sm" style="color: var(--text-dark);">دولة شريكة</div>
+                                    <div class="text-sm" style="color: var(--text-dark);">${getTranslation('stats_partner_countries')}</div>
                                 </div>
                             </div>
                         </div>
@@ -451,16 +514,16 @@ $(document).ready(function() {
                 content = `
                     <div class="modal-content-section max-w-4xl mx-auto">
                         <div class="text-center mb-8">
-                            <h3 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">المدير العام</h3>
+                            <h3 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">${getTranslation('admin_ceo_title')}</h3>
                             <div class="w-24 h-1 mx-auto rounded-full" style="background: var(--secondary-color);"></div>
                         </div>
 
                         <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-8 mb-8">
                             <p class="text-xl text-gray-700 leading-relaxed text-center mb-6">
-                                بخبرة تمتد لأكثر من <span class="font-bold text-purple-600">12 سنة</span> في مجال التجارة الدولية والقطاع الزراعي، يقود <span class="font-bold text-purple-600">[اسم المدير العام]</span> شركة <span class="font-bold text-purple-600">[اسم الشركة]</span> برؤية استراتيجية طموحة تهدف إلى تحقيق النمو المستدام والريادة في الأسواق العالمية.
+                                ${getTranslation('admin_ceo_modal_desc1')}
                             </p>
                             <p class="text-lg text-gray-600 leading-relaxed text-center">
-                                من خلال قيادته الحكيمة ومهاراته الاستراتيجية المتقدمة، نجح في بناء شبكة واسعة من الشراكات الدولية وتعزيز مكانة الشركة كرائدة في مجال استيراد وتصدير المنتجات الزراعية عالية الجودة.
+                                ${getTranslation('admin_ceo_modal_desc2')}
                             </p>
                         </div>
 
@@ -469,29 +532,29 @@ $(document).ready(function() {
                                 <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--accent-color);">
                                     <i class="fas fa-globe text-2xl" style="color: var(--primary-color);"></i>
                                 </div>
-                                <h4 class="font-bold mb-2" style="color: var(--primary-color);">التجارة الدولية</h4>
-                                <p class="text-sm" style="color: var(--text-dark);">خبرة واسعة في الأسواق العالمية والتجارة الخارجية</p>
+                                <h4 class="font-bold mb-2" style="color: var(--primary-color);">${getTranslation('admin_ceo_international_trade')}</h4>
+                                <p class="text-sm" style="color: var(--text-dark);">${getTranslation('admin_ceo_international_trade_desc')}</p>
                             </div>
                             <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
                                 <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <i class="fas fa-seedling text-green-600 text-2xl"></i>
                                 </div>
-                                <h4 class="font-bold text-gray-800 mb-2">القطاع الزراعي</h4>
-                                <p class="text-sm text-gray-600">تخصص عميق في المنتجات الزراعية والحبوب</p>
+                                <h4 class="font-bold text-gray-800 mb-2">${getTranslation('admin_ceo_agricultural_sector')}</h4>
+                                <p class="text-sm text-gray-600">${getTranslation('admin_ceo_agricultural_sector_desc')}</p>
                             </div>
                             <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
                                 <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <i class="fas fa-chart-line text-purple-600 text-2xl"></i>
                                 </div>
-                                <h4 class="font-bold text-gray-800 mb-2">النمو الاستراتيجي</h4>
-                                <p class="text-sm text-gray-600">رؤية طموحة للتوسع والنمو المستدام</p>
+                                <h4 class="font-bold text-gray-800 mb-2">${getTranslation('admin_ceo_strategic_growth')}</h4>
+                                <p class="text-sm text-gray-600">${getTranslation('admin_ceo_strategic_growth_desc')}</p>
                             </div>
                             <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
                                 <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <i class="fas fa-handshake text-orange-600 text-2xl"></i>
                                 </div>
-                                <h4 class="font-bold text-gray-800 mb-2">بناء الشراكات</h4>
-                                <p class="text-sm text-gray-600">علاقات قوية مع العملاء والشركاء الدوليين</p>
+                                <h4 class="font-bold text-gray-800 mb-2">${getTranslation('admin_ceo_building_partnerships')}</h4>
+                                <p class="text-sm text-gray-600">${getTranslation('admin_ceo_building_partnerships_desc')}</p>
                             </div>
                         </div>
 
@@ -499,19 +562,19 @@ $(document).ready(function() {
                             <div class="flex flex-wrap justify-center gap-3">
                                 <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
                                     <i class="fas fa-medal text-xs ml-2"></i>
-                                    12+ سنة خبرة
+                                    ${getTranslation('admin_ceo_experience_badge')}
                                 </span>
                                 <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium" style="background: var(--accent-color); color: var(--primary-color);">
                                     <i class="fas fa-trophy text-xs ml-2"></i>
-                                    قائد متميز
+                                    ${getTranslation('admin_ceo_excellent_leader_badge')}
                                 </span>
                                 <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-green-100 text-green-800">
                                     <i class="fas fa-rocket text-xs ml-2"></i>
-                                    رؤية استراتيجية
+                                    ${getTranslation('admin_ceo_strategic_vision_badge')}
                                 </span>
                                 <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
                                     <i class="fas fa-globe text-xs ml-2"></i>
-                                    خبرة دولية
+                                    ${getTranslation('admin_ceo_international_experience_badge')}
                                 </span>
                             </div>
                         </div>
@@ -524,13 +587,13 @@ $(document).ready(function() {
                     <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
                         <div class="order-2 lg:order-1">
                             <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                 alt="قيمنا"
+                                 alt="${getTranslation('admin_values_title')}"
                                  class="detail-image rounded-xl shadow-2xl w-full">
                         </div>
                         <div class="order-1 lg:order-2">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-6">قيمنا</h3>
+                            <h3 class="text-3xl font-bold text-gray-800 mb-6">${getTranslation('admin_values_title')}</h3>
                             <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                                تقوم شركة صن على مجموعة من القيم الأساسية التي توجه عملنا وتحدد هويتنا في السوق. هذه القيم ليست مجرد كلمات، بل هي المبادئ التي نعيش بها ونطبقها في كل جانب من جوانب عملنا.
+                                ${getTranslation('modal_values_description')}
                             </p>
                             <div class="space-y-6">
                                 <div class="flex items-start space-x-4 space-x-reverse">
@@ -538,8 +601,8 @@ $(document).ready(function() {
                                         <i class="fas fa-award" style="color: var(--primary-color);"></i>
                                     </div>
                                     <div>
-                                        <h4 class="text-xl font-bold mb-2" style="color: var(--primary-color);">الجودة</h4>
-                                        <p style="color: var(--text-dark);">التزامنا بمعايير الجودة والتميز في كل خطوة</p>
+                                        <h4 class="text-xl font-bold mb-2" style="color: var(--primary-color);">${getTranslation('modal_values_quality_title')}</h4>
+                                        <p style="color: var(--text-dark);">${getTranslation('modal_values_quality_desc')}</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-4 space-x-reverse">
@@ -547,8 +610,8 @@ $(document).ready(function() {
                                         <i class="fas fa-handshake text-green-600"></i>
                                     </div>
                                     <div>
-                                        <h4 class="text-xl font-bold text-gray-800 mb-2">الشفافية</h4>
-                                        <p class="text-gray-600">نؤمن بالتعامل بشفافية مع عملائنا وشركائنا</p>
+                                        <h4 class="text-xl font-bold text-gray-800 mb-2">${getTranslation('modal_values_transparency_title')}</h4>
+                                        <p class="text-gray-600">${getTranslation('modal_values_transparency_desc')}</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-4 space-x-reverse">
@@ -556,8 +619,8 @@ $(document).ready(function() {
                                         <i class="fas fa-lightbulb text-purple-600"></i>
                                     </div>
                                     <div>
-                                        <h4 class="text-xl font-bold text-gray-800 mb-2">الابتكار</h4>
-                                        <p class="text-gray-600">نسعى دائماً لتقديم حلول جديدة ومبتكرة</p>
+                                        <h4 class="text-xl font-bold text-gray-800 mb-2">${getTranslation('modal_values_innovation_title')}</h4>
+                                        <p class="text-gray-600">${getTranslation('modal_values_innovation_desc')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -568,6 +631,8 @@ $(document).ready(function() {
         }
 
         modalContent.html(content);
+        // Store the current section for language toggle updates
+        $('#admin-detail-modal').data('current-section', section);
         $('#admin-detail-modal').fadeIn(300);
     }
 });

@@ -205,93 +205,89 @@ const translations = {
     admin_team_title: "فريق العمل",
     admin_team_desc: "فريق متخصص من الخبراء في مجال الاستيراد والتصدير",
     admin_team_full_desc: "فريق متخصص ومتفاني يعمل بأعلى معايير الجودة والمهنية في جميع جوانب العمل",
-
-    // Team Features
     admin_team_features_title: "مميزات الفريق:",
     admin_team_specialized: "فريق متخصص ومتفاني",
     admin_team_experience: "خبرة واسعة",
     admin_team_commitment: "التزام بالتميز",
-
     admin_team_specialization_title: "التخصص:",
     admin_team_specialization: "الاستيراد والتصدير والتجارة الدولية",
-
     admin_team_goal_title: "الهدف:",
     admin_team_goal: "تقديم أفضل الخدمات لعملائنا",
-
     admin_management_title: "إدارة الشركة",
     admin_management_desc: "إدارة محترفة تضمن سير العمل بكفاءة عالية",
     admin_management_full_desc: "قيادة حكيمة وتخطيط استراتيجي للنمو المستدام مع التركيز على التميز والابتكار",
-
-    // Management Features
     admin_management_features_title: "التوجهات الاستراتيجية:",
     admin_management_wise_leadership: "قيادة حكيمة",
     admin_management_strategic_planning: "تخطيط استراتيجي",
     admin_management_sustainable_growth: "نمو مستدام",
-
     admin_management_vision_title: "رؤيتنا:",
     admin_management_vision: "أن نكون الشركة الرائدة في مجال الاستيراد والتصدير في المنطقة",
-
     admin_management_mission_title: "مهمتنا:",
-    admin_management_mission: "تقديم خدمات متميزة في الاستيراد والتصدير مع الحفاظ على أعلى معايير",
-
+    admin_management_mission: "تقديم خدمات متميزة في الاستيراد والتصدير مع الحفاظ على أعلى معايير الجودة",
     admin_ceo_title: "المدير العام والمؤسس",
     admin_ceo_name: "أحمد عبدالفتاح متولي",
     admin_ceo_desc: "يتمتع بخبرة تزيد عن 20 عاماً في مجال التجارة الدولية والاستيراد والتصدير",
-
-    // CEO Qualifications
     admin_ceo_qualifications_title: "المؤهلات:",
     admin_ceo_experience: "خبرة +20 سنة",
     admin_ceo_international_trade: "التجارة الدولية",
     admin_ceo_strategic_leadership: "قيادة استراتيجية",
-
     admin_ceo_position_title: "المنصب:",
     admin_ceo_position: "المدير العام والمؤسس",
-
     admin_ceo_specialization_title: "التخصص:",
     admin_ceo_specialization: "التجارة الدولية والاستيراد والتصدير",
-
     admin_values_title: "قيمنا",
     admin_values_desc: "مبادئ أساسية توجه عملنا وتحدد هويتنا",
     admin_values_full_desc: "مبادئ أساسية توجه عملنا وتحدد هويتنا في جميع التعاملات التجارية والعلاقات مع العملاء",
-
-    // Core Values
     admin_core_values_title: "قيمنا الأساسية:",
     admin_value_credibility: "المصداقية",
     admin_value_quality: "الجودة",
     admin_value_customer_care: "الاهتمام بالعملاء",
     admin_value_innovation: "الابتكار",
-
-    // Value Descriptions
     admin_credibility_label: "المصداقية:",
     admin_credibility_desc: "الصدق والشفافية في جميع التعاملات",
     admin_quality_label: "الجودة:",
     admin_quality_desc: "أعلى المعايير في الخدمات والمنتجات",
+    admin_team_innovative_solutions: "حلول مبتكرة ومتخصصة لجميع احتياجات عملائنا",
+    admin_management_modal_desc: "في شركة صن، يقودنا فريق إداري متميز ذو خبرة طويلة في صناعة الاستيراد والتصدير، حيث نؤمن أن القيادة الحكيمة والتخطيط الاستراتيجي هما أساس نجاحنا المستمر. يتمتع كل عضو في فريق الإدارة بمعرفة واسعة بمتطلبات السوق الزراعي، مما يعزز قدرتنا على تقديم حلول مبتكرة تلبي احتياجات عملائنا.",
+    stats_successful_projects: "مشروع ناجح",
+    stats_partner_countries: "دولة شريكة",
+    admin_ceo_modal_desc1: "بخبرة تمتد لأكثر من <span class=\"font-bold text-purple-600\">12 سنة<\/span> في مجال التجارة الدولية والقطاع الزراعي، يقود <span class=\"font-bold text-purple-600\">[اسم المدير العام]<\/span> شركة <span class=\"font-bold text-purple-600\">[اسم الشركة]<\/span> برؤية استراتيجية طموحة تهدف إلى تحقيق النمو المستدام والريادة في الأسواق العالمية.",
+    admin_ceo_modal_desc2: "من خلال قيادته الحكيمة ومهاراته الاستراتيجية المتقدمة، نجح في بناء شبكة واسعة من الشراكات الدولية وتعزيز مكانة الشركة كرائدة في مجال استيراد وتصدير المنتجات الزراعية عالية الجودة.",
+    admin_ceo_agricultural_sector: "القطاع الزراعي",
+    admin_ceo_agricultural_sector_desc: "تخصص عميق في المنتجات الزراعية والحبوب",
+    admin_ceo_strategic_growth: "النمو الاستراتيجي",
+    admin_ceo_strategic_growth_desc: "رؤية طموحة للتوسع والنمو المستدام",
+    admin_ceo_building_partnerships: "بناء الشراكات",
+    admin_ceo_building_partnerships_desc: "علاقات قوية مع العملاء والشركاء الدوليين",
+    admin_ceo_experience_badge: "12+ سنة خبرة",
+    admin_ceo_excellent_leader_badge: "قائد متميز",
+    admin_ceo_strategic_vision_badge: "رؤية استراتيجية",
+    admin_ceo_international_experience_badge: "خبرة دولية",
+    admin_ceo_international_trade_desc: "خبرة واسعة في الأسواق العالمية والتجارة الخارجية",
     
-    // Contact
-    contact_title: "تواصل معنا",
-    contact_subtitle: "نحن هنا لخدمتكم ومساعدتكم في جميع احتياجاتكم التجارية. تواصلوا معنا للحصول على استشارة مجانية وعرض سعر مخصص",
-    contact_phone: "اتصل بنا",
+    // Modal Values Content
+    modal_values_description: "تقوم شركة صن على مجموعة من القيم الأساسية التي توجه عملنا وتحدد هويتنا في السوق. هذه القيم ليست مجرد كلمات، بل هي المبادئ التي نعيش بها ونطبقها في كل جانب من جوانب عملنا.",
+    modal_values_quality_title: "الجودة",
+    modal_values_quality_desc: "التزامنا بمعايير الجودة والتميز في كل خطوة",
+    modal_values_transparency_title: "الشفافية",
+    modal_values_transparency_desc: "نؤمن بالتعامل بشفافية مع عملائنا وشركائنا",
+    modal_values_innovation_title: "الابتكار",
+    modal_values_innovation_desc: "نسعى دائماً لتقديم حلول جديدة ومبتكرة",
+    
+    admin_phone_numbers: "أرقام الهاتف",
+    contact_phone_numbers: "اتصل بنا",
     contact_email: "راسلنا",
     contact_location: "زورنا",
     contact_send: "أرسل رسالة",
-
-    // Enhanced Contact Information
-    contact_phone_numbers: "أرقام الهاتف",
-    contact_direct_call: "للاتصال المباشر",
     contact_address_email: "العنوان والبريد الإلكتروني",
     contact_full_address: "العنوان الكامل:",
     contact_street: "7 شارع الشون",
     contact_area: "ساحل روض الفرج",
     contact_city: "القاهرة، مصر",
-    contact_email_label: "البريد الإلكتروني:",
     contact_email_address: "info@suncompany-egypt.org",
-
-    // Footer
     footer_company_name: "شركة صن للاستيراد والتصدير",
     footer_tagline: "متخصصون في التجارة الدولية",
     footer_copyright: "© 2024 شركة صن للاستيراد والتصدير. جميع الحقوق محفوظة.",
-
-    // Contact Form
     form_name: "الاسم",
     form_email: "البريد الإلكتروني",
     form_phone: "رقم الهاتف",
@@ -299,8 +295,6 @@ const translations = {
     form_message: "الرسالة",
     form_submit: "إرسال الرسالة",
     form_message_placeholder: "اكتب رسالتك هنا...",
-
-    // Form Select Options
     form_select_subject: "اختر الموضوع",
     form_option_import: "استيراد",
     form_option_export: "تصدير",
@@ -310,16 +304,12 @@ const translations = {
     form_option_shipping: "استشارات شحن",
     form_option_storage: "تخزين وتوزيع",
     form_option_other: "أخرى",
-    
-    // Common Buttons
     learn_more: "اعرف المزيد",
     get_quote: "اطلب عرض سعر",
     start_now: "ابدأ الآن",
     consult_experts: "استشر خبرائنا",
     book_space: "احجز مساحتك",
     contact_now: "تواصل الآن",
-    
-    // Language Toggle
     lang_toggle: "English"
   },
   
@@ -528,67 +518,77 @@ const translations = {
     admin_team_title: "Work Team",
     admin_team_desc: "A specialized team of experts in import and export",
     admin_team_full_desc: "A specialized and dedicated team working with the highest standards of quality and professionalism in all aspects of work",
-
-    // Team Features
     admin_team_features_title: "Team Features:",
     admin_team_specialized: "Specialized & Dedicated Team",
     admin_team_experience: "Extensive Experience",
     admin_team_commitment: "Commitment to Excellence",
-
     admin_team_specialization_title: "Specialization:",
     admin_team_specialization: "Import, Export & International Trade",
-
     admin_team_goal_title: "Goal:",
     admin_team_goal: "Providing the best services to our clients",
 
     admin_management_title: "Company Management",
     admin_management_desc: "Professional management ensuring efficient workflow",
     admin_management_full_desc: "Wise leadership and strategic planning for sustainable growth with focus on excellence and innovation",
-
-    // Management Features
     admin_management_features_title: "Strategic Directions:",
     admin_management_wise_leadership: "Wise Leadership",
     admin_management_strategic_planning: "Strategic Planning",
     admin_management_sustainable_growth: "Sustainable Growth",
-
     admin_management_vision_title: "Our Vision:",
     admin_management_vision: "To be the leading company in import and export in the region",
-
     admin_management_mission_title: "Our Mission:",
     admin_management_mission: "Providing excellent services in import and export while maintaining the highest standards",
 
     admin_ceo_title: "General Manager & Founder",
     admin_ceo_name: "Ahmed Abdel Fattah Metwally",
     admin_ceo_desc: "With over 20 years of experience in international trade, import and export",
-
-    // CEO Qualifications
     admin_ceo_qualifications_title: "Qualifications:",
     admin_ceo_experience: "+20 Years Experience",
     admin_ceo_international_trade: "International Trade",
     admin_ceo_strategic_leadership: "Strategic Leadership",
-
     admin_ceo_position_title: "Position:",
     admin_ceo_position: "General Manager & Founder",
-
     admin_ceo_specialization_title: "Specialization:",
     admin_ceo_specialization: "International Trade, Import & Export",
 
     admin_values_title: "Our Values",
     admin_values_desc: "Core principles that guide our work and define our identity",
     admin_values_full_desc: "Core principles that guide our work and define our identity in all business dealings and customer relationships",
-
-    // Core Values
     admin_core_values_title: "Our Core Values:",
     admin_value_credibility: "Credibility",
     admin_value_quality: "Quality",
     admin_value_customer_care: "Customer Care",
     admin_value_innovation: "Innovation",
-
-    // Value Descriptions
     admin_credibility_label: "Credibility:",
     admin_credibility_desc: "Honesty and transparency in all dealings",
     admin_quality_label: "Quality:",
     admin_quality_desc: "Highest standards in services and products",
+    admin_team_innovative_solutions: "Innovative and specialized solutions for all our clients' needs",
+    admin_management_modal_desc: "At Sun Company, we are led by a distinguished management team with long experience in the import and export industry, as we believe that wise leadership and strategic planning are the basis of our continued success. Each member of the management team has extensive knowledge of the requirements of the agricultural market, which enhances our ability to provide innovative solutions that meet the needs of our customers.",
+    stats_successful_projects: "Successful Projects",
+    stats_partner_countries: "Partner Countries",
+    admin_ceo_modal_desc1: "With over <span class=\"font-bold text-purple-600\">12 years<\/span> of experience in international trade and the agricultural sector, <span class=\"font-bold text-purple-600\">[CEO Name]<\/span> leads <span class=\"font-bold text-purple-600\">[Company Name]<\/span> with an ambitious strategic vision aimed at achieving sustainable growth and leadership in global markets.",
+    admin_ceo_modal_desc2: "Through his wise leadership and advanced strategic skills, he has succeeded in building a wide network of international partnerships and strengthening the company's position as a leader in the import and export of high-quality agricultural products.",
+    admin_ceo_agricultural_sector: "Agricultural Sector",
+    admin_ceo_agricultural_sector_desc: "Deep specialization in agricultural products and grains",
+    admin_ceo_strategic_growth: "Strategic Growth",
+    admin_ceo_strategic_growth_desc: "Ambitious vision for expansion and sustainable growth",
+    admin_ceo_building_partnerships: "Building Partnerships",
+    admin_ceo_building_partnerships_desc: "Strong relationships with clients and international partners",
+    admin_ceo_experience_badge: "12+ Years of Experience",
+    admin_ceo_excellent_leader_badge: "Excellent Leader",
+    admin_ceo_strategic_vision_badge: "Strategic Vision",
+    admin_ceo_international_experience_badge: "International Experience",
+    admin_ceo_international_trade_desc: "Extensive experience in global markets and foreign trade",
+
+    // Modal Values Content
+    modal_values_description: "Sun Company is based on a set of core values that guide our work and define our identity in the market. These values are not just words, but are the principles we live by and apply in every aspect of our work.",
+    modal_values_quality_title: "Quality",
+    modal_values_quality_desc: "Our commitment to quality standards and excellence in every step",
+    modal_values_transparency_title: "Transparency",
+    modal_values_transparency_desc: "We believe in dealing transparently with our clients and partners",
+    modal_values_innovation_title: "Innovation",
+    modal_values_innovation_desc: "We always strive to provide new and innovative solutions",
     
     // Contact
     contact_title: "Contact Us",
@@ -597,8 +597,6 @@ const translations = {
     contact_email: "Email Us",
     contact_location: "Visit Us",
     contact_send: "Send Message",
-
-    // Enhanced Contact Information
     contact_phone_numbers: "Phone Numbers",
     contact_direct_call: "For Direct Contact",
     contact_address_email: "Address & Email",
@@ -622,8 +620,6 @@ const translations = {
     form_message: "Message",
     form_submit: "Send Message",
     form_message_placeholder: "Write your message here...",
-
-    // Form Select Options
     form_select_subject: "Select Subject",
     form_option_import: "Import",
     form_option_export: "Export",
