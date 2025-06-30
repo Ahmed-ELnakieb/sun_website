@@ -1,5 +1,149 @@
 // Sun Trading Company - Main JavaScript
 
+// Language System
+// Note: translations object is loaded from translations.js file
+let currentLanguage = 'ar'; // Default to Arabic
+
+// Check if translations are loaded from translations.js
+function checkTranslations() {
+    if (typeof translations !== 'undefined') {
+        console.log('Translations loaded successfully from translations.js');
+        console.log('Available languages:', Object.keys(translations));
+        return true;
+    } else {
+        console.error('Translations not found! Make sure translations.js is loaded.');
+        return false;
+    }
+}
+
+// Language Functions
+function initializeLanguage() {
+    // Check if translations are loaded from translations.js
+    if (!checkTranslations()) {
+        console.error('Cannot initialize language system - translations not loaded');
+        return;
+    }
+
+    // Check localStorage first, then browser language
+    const savedLang = localStorage.getItem('preferred-language');
+    const browserLang = navigator.language || navigator.userLanguage;
+
+    if (savedLang) {
+        currentLanguage = savedLang;
+    } else if (browserLang.startsWith('ar')) {
+        currentLanguage = 'ar';
+    } else {
+        currentLanguage = 'en';
+    }
+
+    setLanguage(currentLanguage);
+}
+
+function toggleLanguage() {
+    currentLanguage = currentLanguage === 'ar' ? 'en' : 'ar';
+    setLanguage(currentLanguage);
+    localStorage.setItem('preferred-language', currentLanguage);
+}
+
+// Force update translations
+function forceUpdateTranslations() {
+    console.log('Manually updating translations...');
+    updateTranslations(currentLanguage);
+}
+
+function setLanguage(lang) {
+    currentLanguage = lang;
+    const isRTL = lang === 'ar';
+
+    // Set document direction and language
+    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
+
+    // Update body class for styling
+    document.body.classList.toggle('rtl', isRTL);
+    document.body.classList.toggle('ltr', !isRTL);
+
+    // Update all translatable elements
+    updateTranslations(lang);
+    updateIconDirection(isRTL);
+
+    // Update language toggle buttons
+    const langToggle = document.getElementById('lang-toggle');
+    const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+
+    if (langToggle && translations[lang] && translations[lang].lang_toggle) {
+        langToggle.textContent = translations[lang].lang_toggle;
+    }
+    if (mobileLangToggle && translations[lang] && translations[lang].lang_toggle) {
+        mobileLangToggle.textContent = translations[lang].lang_toggle;
+    }
+}
+
+// Function to update icon direction
+function updateIconDirection(isRTL) {
+    const iconElements = document.querySelectorAll('.icon-dynamic');
+
+    iconElements.forEach(icon => {
+        const hasPl2 = icon.classList.contains('pl-2');
+        const hasMl2 = icon.classList.contains('ml-2');
+        const hasPl3 = icon.classList.contains('pl-3');
+        const hasMl3 = icon.classList.contains('ml-3');
+
+        if (isRTL) {
+            // For Arabic (RTL)
+            if (hasPl2) icon.classList.remove('pl-2');
+            if (hasPl3) icon.classList.remove('pl-3');
+            if (!hasMl2 && (hasPl2 || hasMl2)) icon.classList.add('ml-2');
+            if (!hasMl3 && (hasPl3 || hasMl3)) icon.classList.add('ml-3');
+
+            if (icon.classList.contains('fa-arrow-right')) {
+                icon.classList.remove('fa-arrow-right');
+                icon.classList.add('fa-arrow-left');
+            }
+        } else {
+            // For English (LTR)
+            if (hasMl2) icon.classList.remove('ml-2');
+            if (hasMl3) icon.classList.remove('ml-3');
+            if (!hasPl2 && (hasMl2 || hasPl2)) icon.classList.add('pl-2');
+            if (!hasPl3 && (hasMl3 || hasPl3)) icon.classList.add('pl-3');
+
+            if (icon.classList.contains('fa-arrow-left')) {
+                icon.classList.remove('fa-arrow-left');
+                icon.classList.add('fa-arrow-right');
+            }
+        }
+    });
+}
+
+function updateTranslations(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+
+        if (translations[lang] && translations[lang][key]) {
+            if (element.tagName === 'INPUT' && element.type !== 'submit') {
+                element.placeholder = translations[lang][key];
+            } else if (element.tagName === 'TITLE') {
+                element.textContent = translations[lang][key];
+            } else if (element.tagName === 'META' && element.getAttribute('name') === 'description') {
+                element.setAttribute('content', translations[lang][key]);
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+
+    // Handle placeholder translations
+    const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+    placeholderElements.forEach(element => {
+        const key = element.getAttribute('data-translate-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+            element.placeholder = translations[lang][key];
+        }
+    });
+}
+
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
@@ -425,5 +569,78 @@ $(document).ready(function() {
 
         modalContent.html(content);
         $('#admin-detail-modal').fadeIn(300);
+    }
+});
+
+// Check if Font Awesome is loaded
+function checkFontAwesome() {
+    // Create a test element with Font Awesome icon
+    const testElement = document.createElement('i');
+    testElement.className = 'fas fa-home';
+    testElement.style.position = 'absolute';
+    testElement.style.left = '-9999px';
+    document.body.appendChild(testElement);
+
+    // Check if the icon font is loaded
+    const computedStyle = window.getComputedStyle(testElement);
+    const fontFamily = computedStyle.getPropertyValue('font-family');
+
+    document.body.removeChild(testElement);
+
+    // If Font Awesome is not loaded, add fallback
+    if (!fontFamily.includes('Font Awesome')) {
+        console.warn('Font Awesome not loaded, adding fallback');
+        addIconFallbacks();
+    }
+}
+
+// Add fallback text for icons if Font Awesome fails
+function addIconFallbacks() {
+    const iconMappings = {
+        'fa-bars': '☰',
+        'fa-home': '🏠',
+        'fa-building': '🏢',
+        'fa-box': '📦',
+        'fa-cogs': '⚙️',
+        'fa-users': '👥',
+        'fa-phone': '📞',
+        'fa-envelope': '✉️',
+        'fa-map-marker-alt': '📍',
+        'fa-paper-plane': '✈️',
+        'fa-globe': '🌍',
+        'fa-award': '🏆',
+        'fa-handshake': '🤝',
+        'fa-lightbulb': '💡',
+        'fa-check-circle': '✅',
+        'fa-calculator': '🧮',
+        'fa-seedling': '🌱',
+        'fa-chart-line': '📈',
+        'fa-rocket': '🚀',
+        'fa-medal': '🏅',
+        'fa-trophy': '🏆'
+    };
+
+    // Replace icons with fallback text
+    Object.keys(iconMappings).forEach(iconClass => {
+        const elements = document.querySelectorAll(`.${iconClass}`);
+        elements.forEach(element => {
+            element.textContent = iconMappings[iconClass];
+            element.style.fontFamily = 'Arial, sans-serif';
+        });
+    });
+}
+
+// Initialize language system when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize language system
+    initializeLanguage();
+
+    // Check Font Awesome after a short delay
+    setTimeout(checkFontAwesome, 1000);
+
+    // Update mobile language toggle
+    const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+    if (mobileLangToggle && translations[currentLanguage] && translations[currentLanguage].lang_toggle) {
+        mobileLangToggle.textContent = translations[currentLanguage].lang_toggle;
     }
 });
