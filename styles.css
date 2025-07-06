@@ -327,10 +327,10 @@ section#services {
     right: 0;
     bottom: 0;
     background: linear-gradient(45deg,
-        rgba(168, 101, 35, 0.85),
-        rgba(233, 163, 25, 0.75),
         rgba(168, 101, 35, 0.65),
-        rgba(233, 163, 25, 0.85));
+        rgba(233, 163, 25, 0.55),
+        rgba(168, 101, 35, 0.45),
+        rgba(233, 163, 25, 0.65));
     background-size: 400% 400%;
     animation: gradientShift 8s ease-in-out infinite;
     z-index: 1;
@@ -344,23 +344,23 @@ section#services {
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
-        opacity: 0.85;
+        opacity: 0.65;
     }
     25% {
         background-position: 100% 50%;
-        opacity: 0.75;
+        opacity: 0.55;
     }
     50% {
         background-position: 100% 100%;
-        opacity: 0.65;
+        opacity: 0.45;
     }
     75% {
         background-position: 0% 100%;
-        opacity: 0.8;
+        opacity: 0.6;
     }
     100% {
         background-position: 0% 50%;
-        opacity: 0.85;
+        opacity: 0.65;
     }
 }
 
@@ -488,8 +488,8 @@ section#services {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
     box-shadow: 0 4px 20px var(--shadow-warm) !important;
     transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
 }
 
 /* Make logo smaller when navbar is scrolled */
