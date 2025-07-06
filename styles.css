@@ -312,7 +312,7 @@ section#services {
 
 /* Hero Section */
 .hero-bg {
-    background: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background: url('images/background2.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -488,6 +488,14 @@ section#services {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
     box-shadow: 0 4px 20px var(--shadow-warm) !important;
     transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+/* Make logo smaller when navbar is scrolled */
+.navbar-scroll img {
+    height: 3rem !important; /* h-12 equivalent, reduced from h-20 */
+    transition: height 0.3s ease !important;
 }
 
 /* Smooth background appearance animation */

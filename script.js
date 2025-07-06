@@ -215,9 +215,14 @@ window.addEventListener('scroll', function() {
 
     if (window.scrollY > 100) {
         navbar.classList.add('navbar-scroll');
-        // Logo text stays white for better contrast on the gradient background
-        logoText.classList.add('text-white');
-        logoSubtitle.style.color = 'var(--accent-color)';
+        
+        // Logo text stays white for better contrast on the gradient background (only if elements exist)
+        if (logoText) {
+            logoText.classList.add('text-white');
+        }
+        if (logoSubtitle) {
+            logoSubtitle.style.color = 'var(--accent-color)';
+        }
 
         // Nav links stay white for better contrast
         const navLinks = document.querySelectorAll('.nav-link');
@@ -227,9 +232,14 @@ window.addEventListener('scroll', function() {
         });
     } else {
         navbar.classList.remove('navbar-scroll');
-        // Keep logo text white for consistency
-        logoText.classList.add('text-white');
-        logoSubtitle.style.color = 'var(--accent-color)';
+        
+        // Keep logo text white for consistency (only if elements exist)
+        if (logoText) {
+            logoText.classList.add('text-white');
+        }
+        if (logoSubtitle) {
+            logoSubtitle.style.color = 'var(--accent-color)';
+        }
 
         // Keep nav links white
         const navLinks = document.querySelectorAll('.nav-link');
