@@ -164,6 +164,8 @@ const translations = {
     origin_beans: "تركيا، الأرجنتين، كندا",
     origin_lentils: "تركيا، كندا، أستراليا",
     origin_chickpeas: "تركيا، المكسيك، أستراليا",
+    origin_rice: "مصر، استراليا",
+    origin_fava_beans: "مصر، استراليا",
 
     // Usage descriptions
     usage_wheat: "الخبز، المعجنات، الصناعات الغذائية",
@@ -172,6 +174,8 @@ const translations = {
     usage_beans: "الطبخ المنزلي، الصناعات الغذائية",
     usage_lentils: "الشوربات، الأطباق الرئيسية",
     usage_chickpeas: "الحمص المسلوق، الفلافل، الحمص بالطحينة",
+    usage_rice: "الطبخ المنزلي",
+    usage_fava_beans: "الطبخ المنزلي",
 
     // Services
     services_title: "خدماتنا",
@@ -275,6 +279,35 @@ const translations = {
     admin_ceo_strategic_vision_badge: "رؤية استراتيجية",
     admin_ceo_international_experience_badge: "خبرة دولية",
     admin_ceo_international_trade_desc: "خبرة واسعة في الأسواق العالمية والتجارة الخارجية",
+    
+    // CEO Modal Content
+    admin_ceo_modal_title: "المدير العام والمؤسس",
+    admin_ceo_modal_desc1: "بخبرة تمتد لأكثر من 12 سنة في مجال التجارة الدولية والقطاع الزراعي، يقود أحمد عبدالفتاح متولي شركة صن برؤية استراتيجية طموحة تهدف إلى تحقيق النمو المستدام والريادة في الأسواق العالمية.",
+    admin_ceo_modal_desc2: "من خلال قيادته الحكيمة ومهاراته الاستراتيجية المتقدمة، نجح في بناء شبكة واسعة من الشراكات الدولية وتعزيز مكانة الشركة كرائدة في مجال استيراد وتصدير المنتجات الزراعية عالية الجودة.",
+    admin_ceo_international_trade_title: "التجارة الدولية",
+    admin_ceo_international_trade_modal_desc: "خبرة واسعة في الأسواق العالمية والتجارة الخارجية",
+    admin_ceo_agricultural_sector_title: "القطاع الزراعي",
+    admin_ceo_agricultural_sector_modal_desc: "تخصص عميق في المنتجات الزراعية والحبوب",
+    admin_ceo_strategic_growth_title: "النمو الاستراتيجي",
+    admin_ceo_strategic_growth_modal_desc: "رؤية طموحة للتوسع والنمو المستدام",
+    admin_ceo_building_partnerships_title: "بناء الشراكات",
+    admin_ceo_building_partnerships_modal_desc: "علاقات قوية مع العملاء والشركاء الدوليين",
+    
+    // Additional Administration Modal Content
+    admin_team_features_title: "مميزات الفريق",
+    admin_team_cooperation: "التعاون والعمل الجماعي",
+    admin_team_time_commitment: "الالتزام بالمواعيد والجودة",
+    admin_management_modal_description: "في شركة صن، يقودنا فريق إداري متميز ذو خبرة طويلة في صناعة الاستيراد والتصدير، حيث نؤمن أن القيادة الحكيمة والتخطيط الاستراتيجي هما أساس نجاحنا المستمر. يتمتع كل عضو في فريق الإدارة بمعرفة واسعة بمتطلبات السوق الزراعي، مما يعزز قدرتنا على تقديم حلول مبتكرة تلبي احتياجات عملائنا.",
+    admin_stats_years_experience: "سنة خبرة",
+    admin_stats_successful_projects: "مشروع ناجح", 
+    admin_stats_partner_countries: "دولة شريكة",
+    admin_values_modal_description: "تقوم شركة صن على مجموعة من القيم الأساسية التي توجه عملنا وتحدد هويتنا في السوق. هذه القيم ليست مجرد كلمات، بل هي المبادئ التي نعيش بها ونطبقها في كل جانب من جوانب عملنا.",
+    admin_values_quality_title: "الجودة",
+    admin_values_quality_desc: "التزامنا بمعايير الجودة والتميز في كل خطوة",
+    admin_values_transparency_title: "الشفافية", 
+    admin_values_transparency_desc: "نؤمن بالتعامل بشفافية مع عملائنا وشركائنا",
+    admin_values_innovation_title: "الابتكار",
+    admin_values_innovation_desc: "نسعى دائماً لتقديم حلول جديدة ومبتكرة",
     
     // Modal Values Content
     modal_values_description: "تقوم شركة صن على مجموعة من القيم الأساسية التي توجه عملنا وتحدد هويتنا في السوق. هذه القيم ليست مجرد كلمات، بل هي المبادئ التي نعيش بها ونطبقها في كل جانب من جوانب عملنا.",
@@ -489,6 +522,8 @@ const translations = {
     origin_beans: "Turkey, Argentina, Canada",
     origin_lentils: "Turkey, Canada, Australia",
     origin_chickpeas: "Turkey, Mexico, Australia",
+    origin_rice: "Egypt, Australia",
+    origin_fava_beans: "Egypt, Australia",
 
     // Usage descriptions
     usage_wheat: "Bread, Pastries, Food Industries",
@@ -497,6 +532,8 @@ const translations = {
     usage_beans: "Home Cooking, Food Industries",
     usage_lentils: "Soups, Main Dishes",
     usage_chickpeas: "Boiled Chickpeas, Falafel, Hummus",
+    usage_rice: "Home Cooking",
+    usage_fava_beans: "Home Cooking",
 
     // Services
     services_title: "Our Services",
@@ -603,6 +640,35 @@ const translations = {
     admin_ceo_strategic_vision_badge: "Strategic Vision",
     admin_ceo_international_experience_badge: "International Experience",
     admin_ceo_international_trade_desc: "Extensive experience in global markets and foreign trade",
+
+    // CEO Modal Content
+    admin_ceo_modal_title: "General Manager and Founder",
+    admin_ceo_modal_desc1: "With experience spanning more than 12 years in international trade and the agricultural sector, Ahmed Abdel Fattah Metwally leads Sun Company with an ambitious strategic vision aimed at achieving sustainable growth and leadership in global markets.",
+    admin_ceo_modal_desc2: "Through his wise leadership and advanced strategic skills, he has succeeded in building a wide network of international partnerships and enhancing the company's position as a leader in importing and exporting high-quality agricultural products.",
+    admin_ceo_international_trade_title: "International Trade",
+    admin_ceo_international_trade_modal_desc: "Extensive experience in global markets and foreign trade",
+    admin_ceo_agricultural_sector_title: "Agricultural Sector",
+    admin_ceo_agricultural_sector_modal_desc: "Deep specialization in agricultural products and grains",
+    admin_ceo_strategic_growth_title: "Strategic Growth",
+    admin_ceo_strategic_growth_modal_desc: "Ambitious vision for expansion and sustainable growth",
+    admin_ceo_building_partnerships_title: "Building Partnerships",
+    admin_ceo_building_partnerships_modal_desc: "Strong relationships with clients and international partners",
+
+    // Additional Administration Modal Content
+    admin_team_features_title: "Team Features",
+    admin_team_cooperation: "Cooperation and Teamwork",
+    admin_team_time_commitment: "Commitment to Deadlines and Quality",
+    admin_management_modal_description: "At Sun Company, we are led by a distinguished administrative team with extensive experience in the import and export industry, where we believe that wise leadership and strategic planning are the foundation of our continued success. Each member of the management team has extensive knowledge of agricultural market requirements, which enhances our ability to provide innovative solutions that meet our customers' needs.",
+    admin_stats_years_experience: "Years of Experience",
+    admin_stats_successful_projects: "Successful Projects",
+    admin_stats_partner_countries: "Partner Countries",
+    admin_values_modal_description: "Sun Company is based on a set of core values that guide our work and define our identity in the market. These values are not just words, but are the principles we live by and apply in every aspect of our work.",
+    admin_values_quality_title: "Quality",
+    admin_values_quality_desc: "Our commitment to quality standards and excellence in every step",
+    admin_values_transparency_title: "Transparency",
+    admin_values_transparency_desc: "We believe in dealing transparently with our clients and partners",
+    admin_values_innovation_title: "Innovation",
+    admin_values_innovation_desc: "We always strive to provide new and innovative solutions",
 
     // Modal Values Content
     modal_values_description: "Sun Company is based on a set of core values that guide our work and define our identity in the market. These values are not just words, but are the principles we live by and apply in every aspect of our work.",

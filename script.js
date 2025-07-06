@@ -466,7 +466,7 @@ $(document).ready(function() {
                         </div>
                         <div class="space-y-6">
                             <div class="text-center lg:text-right">
-                                <h4 class="text-2xl font-bold mb-4" style="color: var(--primary-color);">مميزات الفريق</h4>
+                                <h4 class="text-2xl font-bold mb-4" style="color: var(--primary-color);">${getTranslation('admin_team_features_title')}</h4>
                             </div>
                             <div class="space-y-3">
                                 <div class="flex items-center space-x-3 space-x-reverse">
@@ -479,11 +479,11 @@ $(document).ready(function() {
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
                                     <i class="fas fa-handshake text-xl" style="color: var(--secondary-color);"></i>
-                                    <span class="font-medium" style="color: var(--text-dark);">التعاون والعمل الجماعي</span>
+                                    <span class="font-medium" style="color: var(--text-dark);">${getTranslation('admin_team_cooperation')}</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
                                     <i class="fas fa-clock text-xl" style="color: var(--secondary-color);"></i>
-                                    <span class="font-medium" style="color: var(--text-dark);">الالتزام بالمواعيد والجودة</span>
+                                    <span class="font-medium" style="color: var(--text-dark);">${getTranslation('admin_team_time_commitment')}</span>
                                 </div>
                             </div>
                         </div>
@@ -501,22 +501,22 @@ $(document).ready(function() {
                         
                         <div class="mb-8">
                             <p class="text-lg leading-relaxed max-w-3xl mx-auto" style="color: var(--text-dark);">
-                                في شركة صن، يقودنا فريق إداري متميز ذو خبرة طويلة في صناعة الاستيراد والتصدير، حيث نؤمن أن القيادة الحكيمة والتخطيط الاستراتيجي هما أساس نجاحنا المستمر. يتمتع كل عضو في فريق الإدارة بمعرفة واسعة بمتطلبات السوق الزراعي، مما يعزز قدرتنا على تقديم حلول مبتكرة تلبي احتياجات عملائنا.
+                                ${getTranslation('admin_management_modal_description')}
                             </p>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
                             <div class="text-center p-6 rounded-xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1));">
                                 <div class="text-4xl font-bold mb-2" style="color: var(--primary-color);">25+</div>
-                                <div class="text-sm font-medium" style="color: var(--text-dark);">سنة خبرة</div>
+                                <div class="text-sm font-medium" style="color: var(--text-dark);">${getTranslation('admin_stats_years_experience')}</div>
                             </div>
                             <div class="text-center p-6 rounded-xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1));">
                                 <div class="text-4xl font-bold mb-2" style="color: var(--primary-color);">100+</div>
-                                <div class="text-sm font-medium" style="color: var(--text-dark);">مشروع ناجح</div>
+                                <div class="text-sm font-medium" style="color: var(--text-dark);">${getTranslation('admin_stats_successful_projects')}</div>
                             </div>
                             <div class="text-center p-6 rounded-xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1));">
                                 <div class="text-4xl font-bold mb-2" style="color: var(--primary-color);">15+</div>
-                                <div class="text-sm font-medium" style="color: var(--text-dark);">دولة شريكة</div>
+                                <div class="text-sm font-medium" style="color: var(--text-dark);">${getTranslation('admin_stats_partner_countries')}</div>
                             </div>
                         </div>
                     </div>
@@ -527,16 +527,16 @@ $(document).ready(function() {
                 content = `
                     <div class="modal-content-section max-w-5xl mx-auto text-center">
                         <div class="mb-8">
-                            <h3 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">المدير العام والمؤسس</h3>
+                            <h3 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">${getTranslation('admin_ceo_modal_title')}</h3>
                             <div class="w-24 h-1 mx-auto rounded-full" style="background: var(--secondary-color);"></div>
                         </div>
 
                         <div class="mb-8 space-y-6">
                             <p class="text-lg leading-relaxed max-w-4xl mx-auto" style="color: var(--text-dark);">
-                                بخبرة تمتد لأكثر من 12 سنة في مجال التجارة الدولية والقطاع الزراعي، يقود أحمد عبدالفتاح متولي شركة صن برؤية استراتيجية طموحة تهدف إلى تحقيق النمو المستدام والريادة في الأسواق العالمية.
+                                ${getTranslation('admin_ceo_modal_desc1')}
                             </p>
                             <p class="text-lg leading-relaxed max-w-4xl mx-auto" style="color: var(--text-dark);">
-                                من خلال قيادته الحكيمة ومهاراته الاستراتيجية المتقدمة، نجح في بناء شبكة واسعة من الشراكات الدولية وتعزيز مكانة الشركة كرائدة في مجال استيراد وتصدير المنتجات الزراعية عالية الجودة.
+                                ${getTranslation('admin_ceo_modal_desc2')}
                             </p>
                         </div>
 
@@ -545,32 +545,32 @@ $(document).ready(function() {
                                 <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
                                     <i class="fas fa-globe text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">التجارة الدولية</h4>
-                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">خبرة واسعة في الأسواق العالمية والتجارة الخارجية</p>
+                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">${getTranslation('admin_ceo_international_trade_title')}</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">${getTranslation('admin_ceo_international_trade_modal_desc')}</p>
                             </div>
                             
                             <div class="text-center p-6 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
                                 <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
                                     <i class="fas fa-seedling text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">القطاع الزراعي</h4>
-                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">تخصص عميق في المنتجات الزراعية والحبوب</p>
+                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">${getTranslation('admin_ceo_agricultural_sector_title')}</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">${getTranslation('admin_ceo_agricultural_sector_modal_desc')}</p>
                             </div>
                             
                             <div class="text-center p-6 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
                                 <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
                                     <i class="fas fa-chart-line text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">النمو الاستراتيجي</h4>
-                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">رؤية طموحة للتوسع والنمو المستدام</p>
+                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">${getTranslation('admin_ceo_strategic_growth_title')}</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">${getTranslation('admin_ceo_strategic_growth_modal_desc')}</p>
                             </div>
                             
                             <div class="text-center p-6 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
                                 <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
                                     <i class="fas fa-handshake text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">بناء الشراكات</h4>
-                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">علاقات قوية مع العملاء والشركاء الدوليين</p>
+                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">${getTranslation('admin_ceo_building_partnerships_title')}</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">${getTranslation('admin_ceo_building_partnerships_modal_desc')}</p>
                             </div>
                         </div>
                     </div>
@@ -587,7 +587,7 @@ $(document).ready(function() {
                         
                         <div class="mb-10">
                             <p class="text-lg leading-relaxed max-w-3xl mx-auto" style="color: var(--text-dark);">
-                                تقوم شركة صن على مجموعة من القيم الأساسية التي توجه عملنا وتحدد هويتنا في السوق. هذه القيم ليست مجرد كلمات، بل هي المبادئ التي نعيش بها ونطبقها في كل جانب من جوانب عملنا.
+                                ${getTranslation('admin_values_modal_description')}
                             </p>
                         </div>
                         
@@ -596,24 +596,24 @@ $(document).ready(function() {
                                 <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
                                     <i class="fas fa-award text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <h4 class="text-xl font-bold mb-3" style="color: var(--primary-color);">الجودة</h4>
-                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">التزامنا بمعايير الجودة والتميز في كل خطوة</p>
+                                <h4 class="text-xl font-bold mb-3" style="color: var(--primary-color);">${getTranslation('admin_values_quality_title')}</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">${getTranslation('admin_values_quality_desc')}</p>
                             </div>
                             
                             <div class="text-center p-8 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
                                 <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
                                     <i class="fas fa-handshake text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <h4 class="text-xl font-bold mb-3" style="color: var(--primary-color);">الشفافية</h4>
-                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">نؤمن بالتعامل بشفافية مع عملائنا وشركائنا</p>
+                                <h4 class="text-xl font-bold mb-3" style="color: var(--primary-color);">${getTranslation('admin_values_transparency_title')}</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">${getTranslation('admin_values_transparency_desc')}</p>
                             </div>
                             
                             <div class="text-center p-8 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
                                 <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
                                     <i class="fas fa-lightbulb text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <h4 class="text-xl font-bold mb-3" style="color: var(--primary-color);">الابتكار</h4>
-                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">نسعى دائماً لتقديم حلول جديدة ومبتكرة</p>
+                                <h4 class="text-xl font-bold mb-3" style="color: var(--primary-color);">${getTranslation('admin_values_innovation_title')}</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">${getTranslation('admin_values_innovation_desc')}</p>
                             </div>
                         </div>
                     </div>
