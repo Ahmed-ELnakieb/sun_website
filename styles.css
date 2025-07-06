@@ -690,19 +690,19 @@ section#services {
 }
 
 .admin-card-team {
-    background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+    background-image: url('images/administration/Administration4.png');
 }
 
 .admin-card-management {
-    background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+    background-image: url('images/administration/Administration3.png');
 }
 
 .admin-card-ceo {
-    background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+    background-image: url('images/administration/Administration2.png');
 }
 
 .admin-card-values {
-    background-image: url('https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+    background-image: url('images/administration/Administration1.png');
 }
 
 /* Admin Card Overlays */
