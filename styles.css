@@ -763,10 +763,29 @@ section#services {
     backdrop-filter: blur(5px);
 }
 
+#admin-detail-modal .bg-white {
+    min-height: 400px;
+    max-height: 85vh;
+}
+
+#modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 350px;
+}
+
 .modal-content-section {
     opacity: 0;
     transform: translateY(20px);
     animation: modalSlideIn 0.5s ease-out forwards;
+    height: auto;
+    min-height: 300px;
+}
+
+.modal-content-section.grid {
+    align-items: center;
+    gap: 2rem;
 }
 
 @keyframes modalSlideIn {

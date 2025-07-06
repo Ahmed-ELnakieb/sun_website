@@ -444,33 +444,46 @@ $(document).ready(function() {
         switch(section) {
             case 'team':
                 content = `
-                    <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
-                        <div class="order-2 lg:order-1">
-                            <img src="images/ChatGPT Image Jul 5, 2025, 08_28_03 PM.png"
-                                 alt="${getTranslation('admin_team_title')}"
-                                 class="detail-image rounded-xl shadow-2xl w-full">
-                        </div>
-                        <div class="order-1 lg:order-2">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-6">${getTranslation('admin_team_title')}</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    <div class="modal-content-section grid lg:grid-cols-2 gap-8 items-start h-full">
+                        <div class="space-y-6">
+                            <div class="text-center lg:text-right">
+                                <h3 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">${getTranslation('admin_team_title')}</h3>
+                                <div class="w-24 h-1 mx-auto lg:mx-0 lg:mr-auto rounded-full" style="background: var(--secondary-color);"></div>
+                            </div>
+                            <p class="text-lg leading-relaxed" style="color: var(--text-dark);">
                                 ${getTranslation('admin_team_full_desc')}
                             </p>
-                            <div class="space-y-4">
+                            <div class="space-y-3">
                                 <div class="flex items-center space-x-3 space-x-reverse">
-                                    <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">${getTranslation('admin_team_specialized')}</span>
+                                    <i class="fas fa-users text-xl" style="color: var(--secondary-color);"></i>
+                                    <span class="font-medium" style="color: var(--text-dark);">${getTranslation('admin_team_specialized')}</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
-                                    <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">${getTranslation('admin_team_experience')}</span>
+                                    <i class="fas fa-star text-xl" style="color: var(--secondary-color);"></i>
+                                    <span class="font-medium" style="color: var(--text-dark);">${getTranslation('admin_team_experience')}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="text-center lg:text-right">
+                                <h4 class="text-2xl font-bold mb-4" style="color: var(--primary-color);">مميزات الفريق</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3 space-x-reverse">
+                                    <i class="fas fa-check-circle text-xl" style="color: var(--secondary-color);"></i>
+                                    <span class="font-medium" style="color: var(--text-dark);">${getTranslation('admin_team_commitment')}</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
-                                    <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">${getTranslation('admin_team_commitment')}</span>
+                                    <i class="fas fa-lightbulb text-xl" style="color: var(--secondary-color);"></i>
+                                    <span class="font-medium" style="color: var(--text-dark);">${getTranslation('admin_team_innovative_solutions')}</span>
                                 </div>
                                 <div class="flex items-center space-x-3 space-x-reverse">
-                                    <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i>
-                                    <span style="color: var(--text-dark);">${getTranslation('admin_team_innovative_solutions')}</span>
+                                    <i class="fas fa-handshake text-xl" style="color: var(--secondary-color);"></i>
+                                    <span class="font-medium" style="color: var(--text-dark);">التعاون والعمل الجماعي</span>
+                                </div>
+                                <div class="flex items-center space-x-3 space-x-reverse">
+                                    <i class="fas fa-clock text-xl" style="color: var(--secondary-color);"></i>
+                                    <span class="font-medium" style="color: var(--text-dark);">الالتزام بالمواعيد والجودة</span>
                                 </div>
                             </div>
                         </div>
@@ -480,30 +493,30 @@ $(document).ready(function() {
 
             case 'management':
                 content = `
-                    <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
-                        <div class="order-2 lg:order-1">
-                            <img src="images/WhatsApp Image 2025-07-05 at 7.49.18 PM (1).jpeg"
-                                 alt="${getTranslation('admin_management_title')}"
-                                 class="detail-image rounded-xl shadow-2xl w-full">
+                    <div class="modal-content-section max-w-4xl mx-auto text-center">
+                        <div class="mb-8">
+                            <h3 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">${getTranslation('admin_management_title')}</h3>
+                            <div class="w-24 h-1 mx-auto rounded-full" style="background: var(--secondary-color);"></div>
                         </div>
-                        <div class="order-1 lg:order-2">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-6">${getTranslation('admin_management_title')}</h3>
-                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                                ${getTranslation('admin_management_modal_desc')}
+                        
+                        <div class="mb-8">
+                            <p class="text-lg leading-relaxed max-w-3xl mx-auto" style="color: var(--text-dark);">
+                                في شركة صن، يقودنا فريق إداري متميز ذو خبرة طويلة في صناعة الاستيراد والتصدير، حيث نؤمن أن القيادة الحكيمة والتخطيط الاستراتيجي هما أساس نجاحنا المستمر. يتمتع كل عضو في فريق الإدارة بمعرفة واسعة بمتطلبات السوق الزراعي، مما يعزز قدرتنا على تقديم حلول مبتكرة تلبي احتياجات عملائنا.
                             </p>
-                            <div class="grid grid-cols-3 gap-6 mb-6">
-                                <div class="text-center">
-                                    <div class="text-3xl font-bold mb-2" style="color: var(--secondary-color);">25+</div>
-                                    <div class="text-sm" style="color: var(--text-dark);">${getTranslation('stats_experience')}</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="text-3xl font-bold mb-2" style="color: var(--secondary-color);">100+</div>
-                                    <div class="text-sm" style="color: var(--text-dark);">${getTranslation('stats_successful_projects')}</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="text-3xl font-bold mb-2" style="color: var(--secondary-color);">15+</div>
-                                    <div class="text-sm" style="color: var(--text-dark);">${getTranslation('stats_partner_countries')}</div>
-                                </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+                            <div class="text-center p-6 rounded-xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1));">
+                                <div class="text-4xl font-bold mb-2" style="color: var(--primary-color);">25+</div>
+                                <div class="text-sm font-medium" style="color: var(--text-dark);">سنة خبرة</div>
+                            </div>
+                            <div class="text-center p-6 rounded-xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1));">
+                                <div class="text-4xl font-bold mb-2" style="color: var(--primary-color);">100+</div>
+                                <div class="text-sm font-medium" style="color: var(--text-dark);">مشروع ناجح</div>
+                            </div>
+                            <div class="text-center p-6 rounded-xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1));">
+                                <div class="text-4xl font-bold mb-2" style="color: var(--primary-color);">15+</div>
+                                <div class="text-sm font-medium" style="color: var(--text-dark);">دولة شريكة</div>
                             </div>
                         </div>
                     </div>
@@ -584,45 +597,41 @@ $(document).ready(function() {
 
             case 'values':
                 content = `
-                    <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
-                        <div class="order-2 lg:order-1">
-                            <img src="images/WhatsApp Image 2025-07-05 at 7.49.18 PM (2).jpeg"
-                                 alt="${getTranslation('admin_values_title')}"
-                                 class="detail-image rounded-xl shadow-2xl w-full">
+                    <div class="modal-content-section max-w-4xl mx-auto text-center">
+                        <div class="mb-8">
+                            <h3 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">${getTranslation('admin_values_title')}</h3>
+                            <div class="w-24 h-1 mx-auto rounded-full" style="background: var(--secondary-color);"></div>
                         </div>
-                        <div class="order-1 lg:order-2">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-6">${getTranslation('admin_values_title')}</h3>
-                            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                                ${getTranslation('modal_values_description')}
+                        
+                        <div class="mb-10">
+                            <p class="text-lg leading-relaxed max-w-3xl mx-auto" style="color: var(--text-dark);">
+                                تقوم شركة صن على مجموعة من القيم الأساسية التي توجه عملنا وتحدد هويتنا في السوق. هذه القيم ليست مجرد كلمات، بل هي المبادئ التي نعيش بها ونطبقها في كل جانب من جوانب عملنا.
                             </p>
-                            <div class="space-y-6">
-                                <div class="flex items-start space-x-4 space-x-reverse">
-                                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--accent-color);">
-                                        <i class="fas fa-award" style="color: var(--primary-color);"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-bold mb-2" style="color: var(--primary-color);">${getTranslation('modal_values_quality_title')}</h4>
-                                        <p style="color: var(--text-dark);">${getTranslation('modal_values_quality_desc')}</p>
-                                    </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                            <div class="text-center p-8 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
+                                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
+                                    <i class="fas fa-award text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <div class="flex items-start space-x-4 space-x-reverse">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-handshake text-green-600"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-bold text-gray-800 mb-2">${getTranslation('modal_values_transparency_title')}</h4>
-                                        <p class="text-gray-600">${getTranslation('modal_values_transparency_desc')}</p>
-                                    </div>
+                                <h4 class="text-xl font-bold mb-3" style="color: var(--primary-color);">الجودة</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">التزامنا بمعايير الجودة والتميز في كل خطوة</p>
+                            </div>
+                            
+                            <div class="text-center p-8 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
+                                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
+                                    <i class="fas fa-handshake text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <div class="flex items-start space-x-4 space-x-reverse">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-lightbulb text-purple-600"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-bold text-gray-800 mb-2">${getTranslation('modal_values_innovation_title')}</h4>
-                                        <p class="text-gray-600">${getTranslation('modal_values_innovation_desc')}</p>
-                                    </div>
+                                <h4 class="text-xl font-bold mb-3" style="color: var(--primary-color);">الشفافية</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">نؤمن بالتعامل بشفافية مع عملائنا وشركائنا</p>
+                            </div>
+                            
+                            <div class="text-center p-8 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
+                                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
+                                    <i class="fas fa-lightbulb text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
+                                <h4 class="text-xl font-bold mb-3" style="color: var(--primary-color);">الابتكار</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">نسعى دائماً لتقديم حلول جديدة ومبتكرة</p>
                             </div>
                         </div>
                     </div>
