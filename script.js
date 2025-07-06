@@ -525,70 +525,52 @@ $(document).ready(function() {
 
             case 'ceo':
                 content = `
-                    <div class="modal-content-section max-w-4xl mx-auto">
-                        <div class="text-center mb-8">
-                            <h3 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">${getTranslation('admin_ceo_title')}</h3>
+                    <div class="modal-content-section max-w-5xl mx-auto text-center">
+                        <div class="mb-8">
+                            <h3 class="text-4xl font-bold mb-4" style="color: var(--primary-color);">المدير العام والمؤسس</h3>
                             <div class="w-24 h-1 mx-auto rounded-full" style="background: var(--secondary-color);"></div>
                         </div>
 
-                        <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-8 mb-8">
-                            <p class="text-xl text-gray-700 leading-relaxed text-center mb-6">
-                                ${getTranslation('admin_ceo_modal_desc1')}
+                        <div class="mb-8 space-y-6">
+                            <p class="text-lg leading-relaxed max-w-4xl mx-auto" style="color: var(--text-dark);">
+                                بخبرة تمتد لأكثر من 12 سنة في مجال التجارة الدولية والقطاع الزراعي، يقود أحمد عبدالفتاح متولي شركة صن برؤية استراتيجية طموحة تهدف إلى تحقيق النمو المستدام والريادة في الأسواق العالمية.
                             </p>
-                            <p class="text-lg text-gray-600 leading-relaxed text-center">
-                                ${getTranslation('admin_ceo_modal_desc2')}
+                            <p class="text-lg leading-relaxed max-w-4xl mx-auto" style="color: var(--text-dark);">
+                                من خلال قيادته الحكيمة ومهاراته الاستراتيجية المتقدمة، نجح في بناء شبكة واسعة من الشراكات الدولية وتعزيز مكانة الشركة كرائدة في مجال استيراد وتصدير المنتجات الزراعية عالية الجودة.
                             </p>
                         </div>
 
-                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                            <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--accent-color);">
-                                    <i class="fas fa-globe text-2xl" style="color: var(--primary-color);"></i>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="text-center p-6 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
+                                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
+                                    <i class="fas fa-globe text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <h4 class="font-bold mb-2" style="color: var(--primary-color);">${getTranslation('admin_ceo_international_trade')}</h4>
-                                <p class="text-sm" style="color: var(--text-dark);">${getTranslation('admin_ceo_international_trade_desc')}</p>
+                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">التجارة الدولية</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">خبرة واسعة في الأسواق العالمية والتجارة الخارجية</p>
                             </div>
-                            <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-seedling text-green-600 text-2xl"></i>
+                            
+                            <div class="text-center p-6 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
+                                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
+                                    <i class="fas fa-seedling text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <h4 class="font-bold text-gray-800 mb-2">${getTranslation('admin_ceo_agricultural_sector')}</h4>
-                                <p class="text-sm text-gray-600">${getTranslation('admin_ceo_agricultural_sector_desc')}</p>
+                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">القطاع الزراعي</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">تخصص عميق في المنتجات الزراعية والحبوب</p>
                             </div>
-                            <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-chart-line text-purple-600 text-2xl"></i>
+                            
+                            <div class="text-center p-6 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
+                                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
+                                    <i class="fas fa-chart-line text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <h4 class="font-bold text-gray-800 mb-2">${getTranslation('admin_ceo_strategic_growth')}</h4>
-                                <p class="text-sm text-gray-600">${getTranslation('admin_ceo_strategic_growth_desc')}</p>
+                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">النمو الاستراتيجي</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">رؤية طموحة للتوسع والنمو المستدام</p>
                             </div>
-                            <div class="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-handshake text-orange-600 text-2xl"></i>
+                            
+                            <div class="text-center p-6 rounded-2xl" style="background: linear-gradient(135deg, var(--accent-color), rgba(233, 163, 25, 0.1)); border: 2px solid rgba(168, 101, 35, 0.1);">
+                                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--primary-color);">
+                                    <i class="fas fa-handshake text-2xl" style="color: var(--accent-color);"></i>
                                 </div>
-                                <h4 class="font-bold text-gray-800 mb-2">${getTranslation('admin_ceo_building_partnerships')}</h4>
-                                <p class="text-sm text-gray-600">${getTranslation('admin_ceo_building_partnerships_desc')}</p>
-                            </div>
-                        </div>
-
-                        <div class="text-center mt-8">
-                            <div class="flex flex-wrap justify-center gap-3">
-                                <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
-                                    <i class="fas fa-medal text-xs ml-2"></i>
-                                    ${getTranslation('admin_ceo_experience_badge')}
-                                </span>
-                                <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium" style="background: var(--accent-color); color: var(--primary-color);">
-                                    <i class="fas fa-trophy text-xs ml-2"></i>
-                                    ${getTranslation('admin_ceo_excellent_leader_badge')}
-                                </span>
-                                <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                                    <i class="fas fa-rocket text-xs ml-2"></i>
-                                    ${getTranslation('admin_ceo_strategic_vision_badge')}
-                                </span>
-                                <span class="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
-                                    <i class="fas fa-globe text-xs ml-2"></i>
-                                    ${getTranslation('admin_ceo_international_experience_badge')}
-                                </span>
+                                <h4 class="text-lg font-bold mb-3" style="color: var(--primary-color);">بناء الشراكات</h4>
+                                <p class="text-sm leading-relaxed" style="color: var(--text-dark);">علاقات قوية مع العملاء والشركاء الدوليين</p>
                             </div>
                         </div>
                     </div>
