@@ -293,19 +293,16 @@
                 <button class="category-btn px-6 py-3 rounded-full font-medium transition-all duration-300" data-category="legumes" style="background: var(--accent-color); color: var(--primary-color);" data-translate="category_legumes">
                     البقوليات
                 </button>
-                <button class="category-btn px-6 py-3 rounded-full font-medium transition-all duration-300" data-category="seeds" style="background: var(--accent-color); color: var(--primary-color);" data-translate="category_seeds">
-                    البذور
-                </button>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
                 <!-- Product 1 - Wheat -->
                 <div class="product-card card-fade-in animate-delay-1 rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="wheat">
                     <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        <img src="images/products/wheat.png"
                              alt="القمح"
                              class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'القمح')">
+                             onclick="openFullscreenImage('images/products/wheat.png', 'القمح')">
                         <div class="absolute top-4 right-4">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product1_type">حبوب</span>
                         </div>
@@ -352,10 +349,10 @@
                 <!-- Product 2 - Corn -->
                 <div class="product-card card-fade-in animate-delay-2 rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="corn">
                     <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        <img src="images/products/zora.png"
                              alt="الذرة"
                              class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'الذرة')">
+                             onclick="openFullscreenImage('images/products/zora.png', 'الذرة')">
                         <div class="absolute top-4 right-4">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product2_type">حبوب</span>
                         </div>
@@ -393,28 +390,28 @@
                         <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product2_name">الذرة</h3>
                         <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product2_desc">ذرة صفراء عالية الجودة للاستخدامات المتعددة</p>
                         <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product2_category">علف وغذاء</span>
+                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product2_category">حبوب</span>
                             <i class="fas fa-seedling" style="color: var(--secondary-color);"></i>
                         </div>
                     </div>
                 </div>
 
-                <!-- Product 3 - Barley -->
-                <div class="product-card card-fade-in animate-delay-3 rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="barley">
+                <!-- Product 3 - Cowpea -->
+                <div class="product-card card-fade-in animate-delay-3 rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="cowpea">
                     <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                             alt="الشعير"
+                        <img src="images/products/lobia.png"
+                             alt="لوبيا"
                              class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'الشعير')">
+                             onclick="openFullscreenImage('images/products/lobia.png', 'لوبيا')">
                         <div class="absolute top-4 right-4">
-                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product3_type">حبوب</span>
+                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product3_type">بقوليات</span>
                         </div>
 
                         <!-- Hover Details Overlay -->
                         <div class="hover-overlay">
                             <div class="hover-content">
-                                <h3 data-translate="product3_name">الشعير</h3>
-                                <p data-translate="product3_full_desc">شعير عالي الجودة للأعلاف والاستخدامات الصناعية مع ضمان النقاوة والجودة</p>
+                                <h3 data-translate="product3_name">لوبيا</h3>
+                                <p data-translate="product3_full_desc">لوبيا عالية الجودة للاستخدامات المتعددة مع ضمان النقاوة والجودة</p>
 
                                 <div class="features-section">
                                     <div class="features-title" data-translate="features_label">المميزات:</div>
@@ -429,22 +426,22 @@
                                 <div class="info-grid">
                                     <div class="info-item">
                                         <div class="info-label" data-translate="origin_label">المنشأ:</div>
-                                        <div data-translate="origin_barley">فرنسا، ألمانيا، أستراليا</div>
+                                        <div>مصر، تركيا</div>
                                     </div>
                                     <div class="info-item">
                                         <div class="info-label" data-translate="usage_label">الاستخدامات:</div>
-                                        <div data-translate="usage_barley">أعلاف الحيوانات، الصناعات</div>
+                                        <div>الطبخ المنزلي</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product3_name">الشعير</h3>
-                        <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product3_desc">شعير عالي الجودة للأعلاف والاستخدامات الصناعية</p>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product3_name">لوبيا</h3>
+                        <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product3_desc">لوبيا عالية الجودة للاستخدامات المتعددة</p>
                         <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product3_category">أعلاف</span>
-                            <i class="fas fa-seedling" style="color: var(--secondary-color);"></i>
+                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product3_category">بقوليات</span>
+                            <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
                         </div>
                     </div>
                 </div>
@@ -452,10 +449,10 @@
                 <!-- Product 4 - Beans -->
                 <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="beans">
                     <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        <img src="images/products/fasolia.png"
                              alt="الفاصوليا"
                              class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'الفاصوليا البيضاء')">
+                             onclick="openFullscreenImage('images/products/fasolia.png', 'الفاصوليا البيضاء')">
                         <div class="absolute top-4 right-4">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product4_type">بقوليات</span>
                         </div>
@@ -502,10 +499,10 @@
                 <!-- Product 5 - Lentils -->
                 <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="lentils">
                     <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        <img src="images/products/ads.png"
                              alt="العدس"
                              class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'العدس')">
+                             onclick="openFullscreenImage('images/products/ads.png', 'العدس')">
                         <div class="absolute top-4 right-4">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product5_type">بقوليات</span>
                         </div>
@@ -552,10 +549,10 @@
                 <!-- Product 6 - Chickpeas -->
                 <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="chickpeas">
                     <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        <img src="images/products/homos.png"
                              alt="الحمص"
                              class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90', 'الحمص')">
+                             onclick="openFullscreenImage('images/products/homos.png', 'الحمص')">
                         <div class="absolute top-4 right-4">
                             <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product6_type">بقوليات</span>
                         </div>
@@ -594,6 +591,106 @@
                         <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product6_desc">حمص عالي الجودة ومنتقى من أفضل المصادر</p>
                         <div class="flex items-center justify-between">
                             <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product6_category">بروتين طبيعي</span>
+                            <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 - Rice -->
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="rice">
+                    <div class="relative overflow-hidden">
+                        <img src="images/products/rice.png"
+                             alt="رز"
+                             class="w-full object-cover" style="height: 280px; width: 100%;"
+                             onclick="openFullscreenImage('images/products/rice.png', 'رز')">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product7_type">حبوب</span>
+                        </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="hover-overlay">
+                            <div class="hover-content">
+                                <h3 data-translate="product7_name">رز</h3>
+                                <p data-translate="product7_full_desc">رز عالي الجودة من أفضل المصادر العالمية، يتميز بنقاوته العالية ومحتواه الغذائي الممتاز</p>
+
+                                <div class="features-section">
+                                    <div class="features-title" data-translate="features_label">المميزات:</div>
+                                    <div>
+                                        <span class="feature-badge green" data-translate="feature_high_purity">نقاوة عالية</span>
+                                        <span class="feature-badge green" data-translate="feature_no_impurities">خالي من الشوائب</span>
+                                        <span class="feature-badge green" data-translate="feature_international_standards">معايير دولية</span>
+                                        <span class="feature-badge green" data-translate="feature_safe_storage">تخزين آمن</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <div class="info-label" data-translate="origin_label">المنشأ:</div>
+                                        <div>مصر، الهند</div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-label" data-translate="usage_label">الاستخدامات:</div>
+                                        <div>الطبخ المنزلي</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class.="p-6">
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product7_name">رز</h3>
+                        <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product7_desc">رز عالي الجودة من أفضل المصادر العالمية</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product7_category">منتج أساسي</span>
+                            <i class="fas fa-seedling" style="color: var(--secondary-color);"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 - Fava Beans -->
+                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="fava-beans">
+                    <div class="relative overflow-hidden">
+                        <img src="images/products/fol.png"
+                             alt="فول"
+                             class="w-full object-cover" style="height: 280px; width: 100%;"
+                             onclick="openFullscreenImage('images/products/fol.png', 'فول')">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product8_type">بقوليات</span>
+                        </div>
+
+                        <!-- Hover Details Overlay -->
+                        <div class="hover-overlay">
+                            <div class="hover-content">
+                                <h3 data-translate="product8_name">فول</h3>
+                                <p data-translate="product8_full_desc">فول عالي الجودة ومنتقى بعناية، غني بالبروتين والألياف</p>
+
+                                <div class="features-section">
+                                    <div class="features-title" data-translate="features_label">المميزات:</div>
+                                    <div>
+                                        <span class="feature-badge red" data-translate="feature_protein_rich">غني بالبروتين</span>
+                                        <span class="feature-badge orange" data-translate="feature_quick_cook">سريع الطبخ</span>
+                                        <span class="feature-badge green" data-translate="feature_variety_colors">ألوان متنوعة</span>
+                                        <span class="feature-badge blue" data-translate="feature_high_nutrition_value">قيمة غذائية عالية</span>
+                                    </div>
+                                </div>
+
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <div class="info-label" data-translate="origin_label">المنشأ:</div>
+                                        <div>مصر، استراليا</div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-label" data-translate="usage_label">الاستخدامات:</div>
+                                        <div>الطبخ المنزلي</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product8_name">فول</h3>
+                        <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product8_desc">فول عالي الجودة ومنتقى بعناية</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product8_category">غذاء صحي</span>
                             <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
                         </div>
                     </div>

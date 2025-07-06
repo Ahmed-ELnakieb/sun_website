@@ -446,7 +446,7 @@ $(document).ready(function() {
                 content = `
                     <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
                         <div class="order-2 lg:order-1">
-                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            <img src="images/ChatGPT Image Jul 5, 2025, 08_28_03 PM.png"
                                  alt="${getTranslation('admin_team_title')}"
                                  class="detail-image rounded-xl shadow-2xl w-full">
                         </div>
@@ -482,7 +482,7 @@ $(document).ready(function() {
                 content = `
                     <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
                         <div class="order-2 lg:order-1">
-                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            <img src="images/WhatsApp Image 2025-07-05 at 7.49.18 PM (1).jpeg"
                                  alt="${getTranslation('admin_management_title')}"
                                  class="detail-image rounded-xl shadow-2xl w-full">
                         </div>
@@ -586,7 +586,7 @@ $(document).ready(function() {
                 content = `
                     <div class="modal-content-section grid lg:grid-cols-2 gap-12 items-center">
                         <div class="order-2 lg:order-1">
-                            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            <img src="images/WhatsApp Image 2025-07-05 at 7.49.18 PM (2).jpeg"
                                  alt="${getTranslation('admin_values_title')}"
                                  class="detail-image rounded-xl shadow-2xl w-full">
                         </div>

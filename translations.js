@@ -64,22 +64,21 @@ const translations = {
     category_all: "جميع المنتجات",
     category_grains: "الحبوب",
     category_legumes: "البقوليات",
-    category_seeds: "البذور",
 
     product1_name: "القمح",
     product1_desc: "قمح عالي الجودة من أفضل المصادر العالمية",
     product1_category: "منتج أساسي",
     product1_type: "حبوب",
 
-    product2_name: "الذرة",
-    product2_desc: "ذرة صفراء عالية الجودة للاستخدامات المتعددة",
-    product2_category: "علف وغذاء",
+    product2_name: "ذرة",
+    product2_desc: "ذرة عالية الجودة للاستخدامات المتعددة",
+    product2_category: "حبوب",
     product2_type: "حبوب",
 
-    product3_name: "الشعير",
-    product3_desc: "شعير عالي الجودة للأعلاف والاستخدامات الصناعية",
-    product3_category: "أعلاف",
-    product3_type: "حبوب",
+    product3_name: "لوبيا",
+    product3_desc: "لوبيا عالية الجودة للاستخدامات المتعددة",
+    product3_category: "بقوليات",
+    product3_type: "بقوليات",
 
     // Additional Products
     product4_name: "الفاصوليا البيضاء",
@@ -99,6 +98,18 @@ const translations = {
     product6_category: "بروتين طبيعي",
     product6_type: "بقوليات",
     product6_full_desc: "حمص عالي الجودة ومنتقى من أفضل المصادر، مصدر طبيعي للبروتين والألياف",
+
+    product7_name: "رز",
+    product7_desc: "رز عالي الجودة من أفضل المصادر العالمية",
+    product7_category: "منتج أساسي",
+    product7_type: "حبوب",
+    product7_full_desc: "رز عالي الجودة من أفضل المصادر العالمية، يتميز بنقاوته العالية ومحتواه الغذائي الممتاز",
+
+    product8_name: "فول",
+    product8_desc: "فول عالي الجودة ومنتقى بعناية",
+    product8_category: "غذاء صحي",
+    product8_type: "بقوليات",
+    product8_full_desc: "فول عالي الجودة ومنتقى بعناية، غني بالبروتين والألياف",
 
     // Product Details & Features
     product1_full_desc: "قمح عالي الجودة من أفضل المصادر العالمية، يتميز بنقاوته العالية ومحتواه الغذائي الممتاز",
@@ -385,14 +396,14 @@ const translations = {
     product1_type: "Grains",
 
     product2_name: "Corn",
-    product2_desc: "High-quality yellow corn for multiple uses",
-    product2_category: "Feed & Food",
+    product2_desc: "High-quality corn for multiple uses",
+    product2_category: "Grains",
     product2_type: "Grains",
 
-    product3_name: "Barley",
-    product3_desc: "High-quality barley for feed and industrial uses",
-    product3_category: "Feed",
-    product3_type: "Grains",
+    product3_name: "Cowpea",
+    product3_desc: "High-quality cowpea for multiple uses",
+    product3_category: "Legumes",
+    product3_type: "Legumes",
 
     // Additional Products
     product4_name: "White Beans",
@@ -412,6 +423,18 @@ const translations = {
     product6_category: "Natural Protein",
     product6_type: "Legumes",
     product6_full_desc: "High-quality chickpeas selected from the best sources, a natural source of protein and fiber",
+
+    product7_name: "Rice",
+    product7_desc: "High-quality rice from the best global sources",
+    product7_category: "Essential Product",
+    product7_type: "Grains",
+    product7_full_desc: "High-quality rice from the best global sources, characterized by high purity and excellent nutritional content",
+
+    product8_name: "Fava Beans",
+    product8_desc: "High-quality fava beans carefully selected",
+    product8_category: "Healthy Food",
+    product8_type: "Legumes",
+    product8_full_desc: "High-quality fava beans carefully selected, rich in protein and fiber",
 
     // Product Details & Features
     product1_full_desc: "High-quality wheat from the best global sources, characterized by high purity and excellent nutritional content",
