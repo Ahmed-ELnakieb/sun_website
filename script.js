@@ -250,6 +250,43 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Active navbar link functionality
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let currentSection = '';
+    const scrollPosition = window.scrollY + 150; // Offset for better detection
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    
+    // Remove active class from all nav links
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    // Add active class to current section's nav link
+    if (currentSection) {
+        const activeLink = document.querySelector(`.nav-link[href="#${currentSection}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+    }
+}
+
+// Update active nav link on scroll
+window.addEventListener('scroll', updateActiveNavLink);
+
+// Update active nav link on page load
+document.addEventListener('DOMContentLoaded', updateActiveNavLink);
+
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
