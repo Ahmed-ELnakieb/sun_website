@@ -1,7 +1,7 @@
 // Sun Trading Company - Service Worker
-// Version 1.0.0
+// Version 1.2.0 - Fully offline with local packages and images
 
-const CACHE_NAME = 'sun-trading-v1.0.0';
+const CACHE_NAME = 'sun-trading-v1.2.0';
 const OFFLINE_URL = '/offline.html';
 
 // Files to cache for offline functionality
@@ -17,6 +17,9 @@ const CACHE_FILES = [
   '/images/logo.png',
   '/images/background1.png',
   '/images/background2.png',
+  '/images/hero-background.jpg',
+  '/images/background2.jpg',
+  '/images/background3.jpg',
   
   // Product images
   '/images/products/wheat.png',
@@ -41,11 +44,32 @@ const CACHE_FILES = [
   '/fonts/ltr/Sora-Regular.ttf',
   '/fonts/ltr/Sora-Bold.ttf',
   
-  // External resources (cached separately)
-  'https://cdn.tailwindcss.com',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
-  'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
-  'https://code.jquery.com/jquery-3.7.1.min.js',
+  // Local packages (faster loading)
+  '/packages/tailwind/tailwind.min.css',
+  '/packages/fontawesome/all.min.css',
+  '/packages/bootstrap/bootstrap.min.css',
+  '/packages/bootstrap/bootstrap.bundle.min.js',
+  '/packages/jquery/jquery-3.7.1.min.js',
+  
+  // FontAwesome webfonts
+  '/packages/fontawesome/webfonts/fa-brands-400.woff2',
+  '/packages/fontawesome/webfonts/fa-brands-400.ttf',
+  '/packages/fontawesome/webfonts/fa-regular-400.woff2',
+  '/packages/fontawesome/webfonts/fa-regular-400.ttf',
+  '/packages/fontawesome/webfonts/fa-solid-900.woff2',
+  '/packages/fontawesome/webfonts/fa-solid-900.ttf',
+  '/packages/fontawesome/webfonts/fa-v4compatibility.woff2',
+  '/packages/fontawesome/webfonts/fa-v4compatibility.ttf',
+  
+  // FontAwesome webfonts (CSS expected path)
+  '/packages/webfonts/fa-brands-400.woff2',
+  '/packages/webfonts/fa-brands-400.ttf',
+  '/packages/webfonts/fa-regular-400.woff2',
+  '/packages/webfonts/fa-regular-400.ttf',
+  '/packages/webfonts/fa-solid-900.woff2',
+  '/packages/webfonts/fa-solid-900.ttf',
+  '/packages/webfonts/fa-v4compatibility.woff2',
+  '/packages/webfonts/fa-v4compatibility.ttf',
   
   // Offline page
   OFFLINE_URL

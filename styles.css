@@ -1696,7 +1696,7 @@ section#services {
 
 /* About Section */
 .about-bg {
-    background: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background: url('images/hero-background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2239,11 +2239,11 @@ section#services {
         /* Dark gradient overlay for text readability */
         linear-gradient(135deg, rgba(45, 80, 22, 0.85) 0%, rgba(74, 124, 89, 0.8) 25%, rgba(93, 138, 102, 0.75) 50%, rgba(107, 155, 122, 0.8) 75%, rgba(127, 176, 105, 0.85) 100%),
         /* Primary crops image - wheat field */
-        url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80'),
+        url('images/hero-background.jpg'),
         /* Backup crops image - green crops */
-        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80'),
+        url('images/background2.jpg'),
         /* Third fallback - agricultural field */
-        url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80'),
+        url('images/background3.jpg'),
         /* Final fallback gradient if all images fail to load */
         linear-gradient(135deg, #2d5016 0%, #4a7c59 25%, #5d8a66 50%, #6b9b7a 75%, #7fb069 100%);
 
