@@ -48,13 +48,13 @@
                 <div class="company-subtitle">Import & Export</div>
             </div>
         </div>
-    </div>
-
-    <!-- Developer Credit -->
-    <div class="developer-credit">
-        <span class="developer-text">Design and Developed by </span>
-        <a href="mailto:ahmedrmohamed2017@gmail.com" class="developer-link">Elnakieb</a>
-        <div class="copyright-text">© 2024 All Rights Reserved</div>
+        
+        <!-- Developer Credit (Only shown during loading) -->
+        <div class="developer-credit">
+            <span class="developer-text">Design and Developed by </span>
+            <a href="mailto:ahmedrmohamed2017@gmail.com" class="developer-link">Elnakieb</a>
+            <div class="copyright-text">© 2024 All Rights Reserved</div>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -115,32 +115,49 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white">
-        <div class="container mx-auto px-4 text-center animate-fade-in">
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="hero-particles"></div>
+        <div class="hero-glow-orb hero-glow-orb-1"></div>
+        <div class="hero-glow-orb hero-glow-orb-2"></div>
+        <div class="hero-glow-orb hero-glow-orb-3"></div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
             <div class="max-w-4xl mx-auto">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6" data-translate="hero_title">
-                    مرحباً بكم في شركة صن
+                <!-- Main Title with Spectacular Animation -->
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 hero-title-animate" data-translate="hero_title">
+                    <span class="hero-word hero-word-1">مرحباً</span>
+                    <span class="hero-word hero-word-2">بكم</span>
+                    <span class="hero-word hero-word-3">في</span>
+                    <span class="hero-word hero-word-4">شركة</span>
+                    <span class="hero-word hero-word-5">صن</span>
                 </h1>
-                <h2 class="text-2xl md:text-4xl font-medium mb-8" style="color: var(--accent-color);" data-translate="company_subtitle">
+                
+                <!-- Subtitle with Slide Animation -->
+                <h2 class="text-2xl md:text-4xl font-medium mb-8 hero-subtitle-animate" style="color: var(--accent-color);" data-translate="company_subtitle">
                     للاستيراد والتصدير
                 </h2>
-                <p class="text-xl md:text-2xl mb-12 leading-relaxed text-white" data-translate="hero_subtitle">
+                
+                <!-- Description with Fade Up Animation -->
+                <p class="text-xl md:text-2xl mb-12 leading-relaxed text-white hero-description-animate" data-translate="hero_subtitle">
                     شريككم الموثوق في تجارة القمح والسلع الأساسية
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#services" class="text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105" style="background: var(--secondary-color); box-shadow: 0 8px 25px var(--shadow-golden);" data-translate="hero_discover">
+                
+                <!-- Buttons with Slide Up Animation -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center hero-buttons-animate">
+                    <a href="#services" class="text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 hero-button-primary" style="background: var(--secondary-color); box-shadow: 0 8px 25px var(--shadow-golden);" data-translate="hero_discover">
                         اكتشف خدماتنا
                     </a>
-                    <button onclick="openContactModal()" class="border-2 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer" style="border-color: var(--accent-color);" data-translate="hero_contact">
+                    <button onclick="openContactModal()" class="border-2 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer hero-button-secondary" style="border-color: var(--accent-color);" data-translate="hero_contact">
                         تواصل معنا
                     </button>
                 </div>
             </div>
         </div>
         
-        <!-- Scroll Down Arrow -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#features" class="text-2xl" style="color: var(--accent-color);">
+        <!-- Scroll Down Arrow with Enhanced Animation -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 hero-scroll-animate">
+            <a href="#features" class="text-2xl hero-scroll-arrow" style="color: var(--accent-color);">
                 <i class="fas fa-chevron-down"></i>
             </a>
         </div>
