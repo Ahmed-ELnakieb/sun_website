@@ -1,8 +1,123 @@
 // Sun Trading Company - Main JavaScript
 
+// Theme System
+let currentTheme = 'golden'; // Default theme
+
+// Theme definitions
+const themes = {
+    golden: {
+        name: 'Golden',
+        nameAr: 'ذهبي',
+        icon: '🌟'
+    },
+    ocean: {
+        name: 'Ocean Blue',
+        nameAr: 'أزرق المحيط',
+        icon: '🌊'
+    },
+    forest: {
+        name: 'Forest Green',
+        nameAr: 'أخضر الغابة',
+        icon: '🌲'
+    },
+    purple: {
+        name: 'Royal Purple',
+        nameAr: 'بنفسجي ملكي',
+        icon: '👑'
+    },
+    sunset: {
+        name: 'Sunset Red',
+        nameAr: 'أحمر الغروب',
+        icon: '🌅'
+    }
+};
+
 // Language System
 // Note: translations object is loaded from translations.js file
 let currentLanguage = 'ar'; // Default to Arabic
+
+// Theme Functions
+function initializeTheme() {
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('preferred-theme');
+    if (savedTheme && themes[savedTheme]) {
+        currentTheme = savedTheme;
+    }
+    
+    // Apply the theme
+    setTheme(currentTheme);
+    
+    console.log('Theme initialized to:', currentTheme);
+}
+
+function setTheme(themeName) {
+    if (!themes[themeName]) {
+        console.error('Theme not found:', themeName);
+        return;
+    }
+    
+    currentTheme = themeName;
+    
+    // Add theme changing animation
+    document.body.classList.add('theme-changing');
+    
+    // Apply theme to document
+    document.documentElement.setAttribute('data-theme', themeName);
+    
+    // Update theme switcher UI
+    updateThemeSwitcherUI();
+    
+    // Save preference
+    localStorage.setItem('preferred-theme', themeName);
+    
+    // Remove animation class after transition
+    setTimeout(() => {
+        document.body.classList.remove('theme-changing');
+    }, 300);
+    
+    console.log('Theme set to:', themeName);
+}
+
+function updateThemeSwitcherUI() {
+    const theme = themes[currentTheme];
+    
+    // Update desktop theme switcher
+    const currentThemePreview = document.getElementById('current-theme-preview');
+    
+    if (currentThemePreview) {
+        currentThemePreview.setAttribute('data-theme', currentTheme);
+        currentThemePreview.className = 'theme-color-preview';
+    }
+    
+    // Update mobile theme switcher
+    const mobileCurrentThemePreview = document.getElementById('mobile-current-theme-preview');
+    
+    if (mobileCurrentThemePreview) {
+        mobileCurrentThemePreview.setAttribute('data-theme', currentTheme);
+        mobileCurrentThemePreview.className = 'theme-color-preview';
+    }
+    
+    // Update active state in dropdown
+    document.querySelectorAll('.theme-option').forEach(option => {
+        option.classList.remove('active');
+        if (option.getAttribute('data-theme') === currentTheme) {
+            option.classList.add('active');
+        }
+    });
+}
+
+function toggleTheme() {
+    const themeKeys = Object.keys(themes);
+    const currentIndex = themeKeys.indexOf(currentTheme);
+    const nextIndex = (currentIndex + 1) % themeKeys.length;
+    const nextTheme = themeKeys[nextIndex];
+    
+    setTheme(nextTheme);
+}
+
+function cycleToNextTheme() {
+    toggleTheme();
+}
 
 // Check if translations are loaded from translations.js
 function checkTranslations() {
@@ -140,6 +255,9 @@ function setLanguage(lang) {
     if (mobileLangToggle && translations[lang] && translations[lang].lang_toggle) {
         mobileLangToggle.textContent = translations[lang].lang_toggle;
     }
+    
+    // Update theme switcher UI for new language
+    updateThemeSwitcherUI();
 }
 
 // Function to update icon direction
@@ -781,6 +899,9 @@ function addIconFallbacks() {
 
 // Initialize language system when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize theme system
+    initializeTheme();
+    
     // Initialize language system
     initializeLanguage();
 
@@ -791,6 +912,42 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileLangToggle = document.getElementById('mobile-lang-toggle');
     if (mobileLangToggle && translations[currentLanguage] && translations[currentLanguage].lang_toggle) {
         mobileLangToggle.textContent = translations[currentLanguage].lang_toggle;
+    }
+    
+    // Theme switcher event listeners
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeDropdown = document.getElementById('theme-dropdown');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    
+    // Desktop theme switcher
+    if (themeToggle && themeDropdown) {
+        themeToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            themeDropdown.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!themeToggle.contains(e.target) && !themeDropdown.contains(e.target)) {
+                themeDropdown.classList.remove('show');
+            }
+        });
+        
+        // Theme option clicks
+        document.querySelectorAll('.theme-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const themeName = this.getAttribute('data-theme');
+                setTheme(themeName);
+                themeDropdown.classList.remove('show');
+            });
+        });
+    }
+    
+    // Mobile theme switcher (cycles through themes)
+    if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', function() {
+            cycleToNextTheme();
+        });
     }
 });
 
@@ -827,6 +984,58 @@ document.addEventListener('DOMContentLoaded', function() {
     if (servicesSection) sectionObserver.observe(servicesSection);
     if (contactSection) sectionObserver.observe(contactSection);
 });
+
+// Animation trigger functions
+function triggerServicesAnimations() {
+    // Add animation classes to service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('animate-in');
+        }, index * 100);
+    });
+}
+
+function triggerContactAnimations() {
+    // Add animation classes to contact elements
+    const contactElements = document.querySelectorAll('.contact-title-animate, .contact-form-animate');
+    contactElements.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.add('animate-in');
+        }, index * 200);
+    });
+}
+
+// Contact modal functions (if not already defined)
+function openContactModal() {
+    // Simple implementation - you can enhance this
+    alert('Contact modal would open here. This is a placeholder implementation.');
+}
+
+// Debug function to test themes
+function testThemes() {
+    console.log('Testing all themes...');
+    const themeKeys = Object.keys(themes);
+    let index = 0;
+    
+    const testInterval = setInterval(() => {
+        if (index >= themeKeys.length) {
+            clearInterval(testInterval);
+            console.log('Theme testing complete!');
+            return;
+        }
+        
+        const themeName = themeKeys[index];
+        console.log(`Testing theme: ${themeName}`);
+        setTheme(themeName);
+        index++;
+    }, 2000);
+}
+
+// Add to window for debugging
+window.testThemes = testThemes;
+window.setTheme = setTheme;
+window.themes = themes;
 
 // Trigger Services Section Animations
 function triggerServicesAnimations() {

@@ -29,27 +29,58 @@
     <script src="translations.js"></script>
 </head>
 <body class="bg-gray-50">
-    <!-- Modern Shams Company Loader -->
+    <!-- Agricultural Trading Company Loader -->
     <div class="loader-container" id="loader">
-        <div class="sun-loader">
-            <!-- Multi-Layer Modern Glow Effects -->
-            <div class="sun-glow-4"></div>
-            <div class="sun-glow-3"></div>
-            <div class="sun-glow-2"></div>
-            <div class="sun-glow"></div>
+        <div class="agricultural-loader">
+            <!-- Animated Background Elements -->
+            <div class="loader-particles"></div>
+            <div class="loader-glow-orb loader-glow-1"></div>
+            <div class="loader-glow-orb loader-glow-2"></div>
+            <div class="loader-glow-orb loader-glow-3"></div>
             
-            <!-- Modern Sun Symbol with Dynamic Rays -->
-            <div class="sun-core"></div>
-            
-            <!-- Modern Company Name -->
-            <div class="company-name">
-                <div class="company-name-arabic">شركة الشمس</div>
-                <div class="company-name-english">SUN COMPANY</div>
-                <div class="company-subtitle">Import & Export</div>
+            <!-- Main Logo Container -->
+            <div class="loader-logo-container">
+                <div class="loader-logo-circle">
+                    <!-- Rotating Grain Elements -->
+                    <div class="grain-orbit grain-orbit-1">
+                        <div class="grain-item grain-wheat">🌾</div>
+                        <div class="grain-item grain-corn">🌽</div>
+                        <div class="grain-item grain-rice">🌾</div>
+                    </div>
+                    <div class="grain-orbit grain-orbit-2">
+                        <div class="grain-item grain-beans">🫘</div>
+                        <div class="grain-item grain-lentils">🫛</div>
+                        <div class="grain-item grain-chickpeas">🫛</div>
+                    </div>
+                    
+                    <!-- Central Sun Logo -->
+                    <div class="loader-sun-center">
+                        <div class="sun-rays"></div>
+                        <div class="sun-core-new">
+                            <span class="sun-icon">☀️</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Company Name -->
+                <div class="loader-company-name">
+                    <div class="loader-name-arabic">شركة صن</div>
+                    <div class="loader-name-english">SUN COMPANY</div>
+                    <div class="loader-subtitle">Import & Export</div>
+                    <div class="loader-tagline">Agricultural Trading Excellence</div>
+                </div>
+                
+                <!-- Loading Progress -->
+                <div class="loading-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="loading-text">Loading...</div>
+                </div>
             </div>
         </div>
         
-        <!-- Developer Credit (Only shown during loading) -->
+        <!-- Developer Credit -->
         <div class="developer-credit">
             <span class="developer-text">Design and Developed by </span>
             <a href="mailto:ahmedrmohamed2017@gmail.com" class="developer-link">Elnakieb</a>
@@ -83,6 +114,36 @@
                     <a href="#services" class="text-white transition-colors nav-link nav-item nav-delay-5" data-translate="nav_services">الخدمات</a>
                     <a href="#contact" class="text-white transition-colors nav-link nav-item nav-delay-6" data-translate="nav_contact">اتصل بنا</a>
 
+                    <!-- Theme Switcher -->
+                    <div class="theme-switcher">
+                        <button class="theme-button" id="theme-toggle">
+                            <div class="theme-color-preview" id="current-theme-preview"></div>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="theme-dropdown" id="theme-dropdown">
+                            <div class="theme-option active" data-theme="golden">
+                                <div class="theme-color-preview"></div>
+                                <span data-translate="theme_golden">Golden</span>
+                            </div>
+                            <div class="theme-option" data-theme="ocean">
+                                <div class="theme-color-preview"></div>
+                                <span data-translate="theme_ocean">Ocean Blue</span>
+                            </div>
+                            <div class="theme-option" data-theme="forest">
+                                <div class="theme-color-preview"></div>
+                                <span data-translate="theme_forest">Forest Green</span>
+                            </div>
+                            <div class="theme-option" data-theme="purple">
+                                <div class="theme-color-preview"></div>
+                                <span data-translate="theme_purple">Royal Purple</span>
+                            </div>
+                            <div class="theme-option" data-theme="sunset">
+                                <div class="theme-color-preview"></div>
+                                <span data-translate="theme_sunset">Sunset Red</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Language Toggle Button -->
                     <button id="lang-toggle" onclick="toggleLanguage()" class="text-white bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-sm transition-all duration-300 border border-white/30">
                         English
@@ -104,9 +165,18 @@
                 <a href="#services" class="block py-2 transition-colors nav-link nav-item nav-delay-5" style="color: var(--primary-color);" data-translate="nav_services">الخدمات</a>
                 <a href="#contact" class="block py-2 transition-colors nav-link nav-item nav-delay-6" style="color: var(--primary-color);" data-translate="nav_contact">اتصل بنا</a>
 
-                <!-- Mobile Language Toggle -->
+                <!-- Mobile Theme & Language Toggle -->
                 <div class="mt-4 pt-4 border-t border-gray-300">
-                    <button onclick="toggleLanguage()" class="w-full text-center py-2 px-4 rounded-lg transition-all duration-300" style="background: var(--secondary-color); color: white;" id="mobile-lang-toggle">
+                    <!-- Mobile Theme Switcher -->
+                    <div class="mobile-theme-switcher">
+                        <button class="mobile-theme-button" id="mobile-theme-toggle">
+                            <div class="theme-color-preview" id="mobile-current-theme-preview"></div>
+                            <i class="fas fa-palette"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Mobile Language Toggle -->
+                    <button onclick="toggleLanguage()" class="w-full text-center py-2 px-4 rounded-lg transition-all duration-300 mt-3" style="background: var(--secondary-color); color: white;" id="mobile-lang-toggle">
                         English
                     </button>
                 </div>

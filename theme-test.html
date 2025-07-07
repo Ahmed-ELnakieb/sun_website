@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="golden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme System Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .test-container {
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-card {
+            background: var(--background-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px var(--shadow-warm);
+        }
+        .test-title {
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .test-subtitle {
+            color: var(--secondary-color);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .test-text {
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        .theme-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .theme-test-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .theme-test-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .golden { background: #E9A319; color: #A86523; }
+        .ocean { background: #3B82F6; color: #1E3A8A; }
+        .forest { background: #22C55E; color: #166534; }
+        .purple { background: #A855F7; color: #6B21A8; }
+        .sunset { background: #EF4444; color: #B91C1C; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="test-title">🎨 Theme System Test</h1>
+        
+        <div class="test-card">
+            <div class="test-title">Current Theme Colors</div>
+            <div class="test-subtitle">Primary, Secondary, and Accent Colors</div>
+            <div class="test-text">
+                This card demonstrates how the theme colors are applied to different elements.
+                The background, borders, text colors, and shadows all change based on the selected theme.
+            </div>
+        </div>
+
+        <div class="theme-buttons">
+            <button class="theme-test-btn golden" onclick="setTheme('golden')">🌟 Golden</button>
+            <button class="theme-test-btn ocean" onclick="setTheme('ocean')">🌊 Ocean Blue</button>
+            <button class="theme-test-btn forest" onclick="setTheme('forest')">🌲 Forest Green</button>
+            <button class="theme-test-btn purple" onclick="setTheme('purple')">👑 Royal Purple</button>
+            <button class="theme-test-btn sunset" onclick="setTheme('sunset')">🌅 Sunset Red</button>
+        </div>
+
+        <div class="test-card">
+            <div class="test-title">Theme Variables</div>
+            <div class="test-subtitle">CSS Custom Properties</div>
+            <div class="test-text">
+                <strong>Primary:</strong> <span style="color: var(--primary-color);">var(--primary-color)</span><br>
+                <strong>Secondary:</strong> <span style="color: var(--secondary-color);">var(--secondary-color)</span><br>
+                <strong>Accent:</strong> <span style="color: var(--accent-color);">var(--accent-color)</span><br>
+                <strong>Background:</strong> <span style="background: var(--background-color); padding: 2px 8px; border-radius: 4px;">var(--background-color)</span>
+            </div>
+        </div>
+
+        <div class="test-card">
+            <div class="test-title">JavaScript Console</div>
+            <div class="test-subtitle">Debug Functions</div>
+            <div class="test-text">
+                Open browser console and try:<br>
+                • <code>testThemes()</code> - Cycles through all themes<br>
+                • <code>setTheme('ocean')</code> - Sets specific theme<br>
+                • <code>themes</code> - Shows available themes
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize theme system for test
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Theme test page loaded');
+            console.log('Available themes:', Object.keys(themes));
+            console.log('Current theme:', currentTheme);
+            
+            // Test theme switching
+            console.log('You can test themes by clicking the buttons above or using the console commands.');
+        });
+    </script>
+</body>
+</html>

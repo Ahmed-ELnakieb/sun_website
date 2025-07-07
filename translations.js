@@ -728,6 +728,13 @@ const translations = {
     contact_now: "Contact Now",
     
     // Language Toggle
-    lang_toggle: "العربية"
+    lang_toggle: "العربية",
+    
+    // Theme Names
+    theme_golden: "Golden",
+    theme_ocean: "Ocean Blue",
+    theme_forest: "Forest Green",
+    theme_purple: "Royal Purple",
+    theme_sunset: "Sunset Red"
   }
 };
