@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>غير متصل - شركة صن للاستيراد والتصدير</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #A86523 0%, #E9A319 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .offline-container {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .offline-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .offline-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #FAD59A;
+        }
+        
+        .offline-subtitle {
+            font-size: 18px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .offline-message {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        
+        .retry-button {
+            background: #FAD59A;
+            color: #A86523;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .retry-button:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .offline-features {
+            margin-top: 30px;
+            text-align: right;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .feature-icon {
+            margin-left: 10px;
+            font-size: 18px;
+            color: #FAD59A;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .offline-container {
+                padding: 30px 20px;
+            }
+            
+            .offline-icon {
+                font-size: 60px;
+            }
+            
+            .offline-title {
+                font-size: 24px;
+            }
+            
+            .offline-subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📡</div>
+        <h1 class="offline-title">غير متصل بالإنترنت</h1>
+        <h2 class="offline-subtitle">Offline Mode</h2>
+        <p class="offline-message">
+            لا يمكن الاتصال بالإنترنت حالياً. يمكنك تصفح المحتوى المحفوظ أو المحاولة مرة أخرى عند توفر الاتصال.
+        </p>
+        
+        <button class="retry-button" onclick="window.location.reload()">
+            🔄 إعادة المحاولة
+        </button>
+        
+        <button class="retry-button" onclick="window.location.href='/'">
+            🏠 العودة للرئيسية
+        </button>
+        
+        <div class="offline-features">
+            <div class="feature-item">
+                <span class="feature-icon">📱</span>
+                <span>يمكنك تصفح المحتوى المحفوظ</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">💾</span>
+                <span>البيانات محفوظة محلياً</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔄</span>
+                <span>سيتم المزامنة عند الاتصال</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">⚡</span>
+                <span>تجربة سريعة حتى بدون إنترنت</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Check for connection and auto-retry
+        function checkConnection() {
+            if (navigator.onLine) {
+                window.location.reload();
+            }
+        }
+        
+        // Listen for online event
+        window.addEventListener('online', checkConnection);
+        
+        // Auto-retry every 30 seconds
+        setInterval(checkConnection, 30000);
+        
+        // Show connection status
+        window.addEventListener('load', () => {
+            if (navigator.onLine) {
+                checkConnection();
+            }
+        });
+    </script>
+</body>
+</html>

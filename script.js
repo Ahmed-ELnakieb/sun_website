@@ -1037,6 +1037,254 @@ window.testThemes = testThemes;
 window.setTheme = setTheme;
 window.themes = themes;
 
+// PWA Functionality
+class PWAManager {
+    constructor() {
+        this.deferredPrompt = null;
+        this.isInstalled = false;
+        this.init();
+    }
+
+    init() {
+        // Register Service Worker
+        this.registerServiceWorker();
+        
+        // Handle install prompt
+        this.handleInstallPrompt();
+        
+        // Check if already installed
+        this.checkInstallStatus();
+        
+        // Handle app installed event
+        this.handleAppInstalled();
+        
+        // Request notification permission
+        this.requestNotificationPermission();
+    }
+
+    async registerServiceWorker() {
+        if ('serviceWorker' in navigator) {
+            try {
+                const registration = await navigator.serviceWorker.register('/sw.js');
+                console.log('✅ Service Worker registered successfully:', registration);
+                
+                // Handle updates
+                registration.addEventListener('updatefound', () => {
+                    const newWorker = registration.installing;
+                    newWorker.addEventListener('statechange', () => {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            this.showUpdateAvailable();
+                        }
+                    });
+                });
+                
+            } catch (error) {
+                console.error('❌ Service Worker registration failed:', error);
+            }
+        }
+    }
+
+    handleInstallPrompt() {
+        window.addEventListener('beforeinstallprompt', (e) => {
+            console.log('💾 Install prompt available');
+            e.preventDefault();
+            this.deferredPrompt = e;
+            this.showInstallButton();
+        });
+    }
+
+    showInstallButton() {
+        // Create install button
+        const installButton = document.createElement('button');
+        installButton.innerHTML = `
+            <i class="fas fa-download"></i>
+            <span data-translate="install_app">تثبيت التطبيق</span>
+        `;
+        installButton.className = 'pwa-install-btn';
+        installButton.onclick = () => this.installApp();
+        
+        // Add to navigation
+        const navbar = document.querySelector('#navbar .container .flex');
+        if (navbar) {
+            navbar.appendChild(installButton);
+        }
+    }
+
+    async installApp() {
+        if (this.deferredPrompt) {
+            this.deferredPrompt.prompt();
+            const { outcome } = await this.deferredPrompt.userChoice;
+            console.log(`User response to install prompt: ${outcome}`);
+            this.deferredPrompt = null;
+            
+            // Hide install button
+            const installBtn = document.querySelector('.pwa-install-btn');
+            if (installBtn) {
+                installBtn.remove();
+            }
+        }
+    }
+
+    handleAppInstalled() {
+        window.addEventListener('appinstalled', () => {
+            console.log('🎉 PWA was installed successfully');
+            this.isInstalled = true;
+            this.showWelcomeMessage();
+        });
+    }
+
+    checkInstallStatus() {
+        // Check if running in standalone mode
+        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+            this.isInstalled = true;
+            console.log('📱 Running as installed PWA');
+        }
+    }
+
+    async requestNotificationPermission() {
+        if ('Notification' in window) {
+            const permission = await Notification.requestPermission();
+            console.log('🔔 Notification permission:', permission);
+            
+            if (permission === 'granted') {
+                this.setupPushNotifications();
+            }
+        }
+    }
+
+    async setupPushNotifications() {
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
+            try {
+                const registration = await navigator.serviceWorker.ready;
+                
+                // Subscribe to push notifications
+                const subscription = await registration.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: this.urlBase64ToUint8Array('YOUR_VAPID_PUBLIC_KEY') // Replace with actual key
+                });
+                
+                console.log('🔔 Push subscription:', subscription);
+                // Send subscription to server
+                this.sendSubscriptionToServer(subscription);
+                
+            } catch (error) {
+                console.error('❌ Push subscription failed:', error);
+            }
+        }
+    }
+
+    urlBase64ToUint8Array(base64String) {
+        const padding = '='.repeat((4 - base64String.length % 4) % 4);
+        const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+        const rawData = window.atob(base64);
+        const outputArray = new Uint8Array(rawData.length);
+        for (let i = 0; i < rawData.length; ++i) {
+            outputArray[i] = rawData.charCodeAt(i);
+        }
+        return outputArray;
+    }
+
+    sendSubscriptionToServer(subscription) {
+        // Send subscription to your server
+        console.log('📤 Sending subscription to server:', subscription);
+        // Implement server communication here
+    }
+
+    showUpdateAvailable() {
+        const updateBanner = document.createElement('div');
+        updateBanner.className = 'pwa-update-banner';
+        updateBanner.innerHTML = `
+            <div class="update-content">
+                <span>🔄 تحديث جديد متوفر</span>
+                <button onclick="window.location.reload()" class="update-btn">تحديث الآن</button>
+                <button onclick="this.parentElement.parentElement.remove()" class="close-btn">×</button>
+            </div>
+        `;
+        document.body.appendChild(updateBanner);
+    }
+
+    showWelcomeMessage() {
+        const welcomeMessage = document.createElement('div');
+        welcomeMessage.className = 'pwa-welcome-message';
+        welcomeMessage.innerHTML = `
+            <div class="welcome-content">
+                <h3>🎉 مرحباً بك في تطبيق شركة صن!</h3>
+                <p>يمكنك الآن تصفح منتجاتنا حتى بدون إنترنت</p>
+                <button onclick="this.parentElement.parentElement.remove()">حسناً</button>
+            </div>
+        `;
+        document.body.appendChild(welcomeMessage);
+        
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            if (welcomeMessage.parentElement) {
+                welcomeMessage.remove();
+            }
+        }, 5000);
+    }
+
+    // Offline form handling
+    async saveOfflineForm(formData, type = 'contact') {
+        if ('indexedDB' in window) {
+            try {
+                const db = await this.openDB();
+                const transaction = db.transaction([type + 'Forms'], 'readwrite');
+                const store = transaction.objectStore(type + 'Forms');
+                
+                await store.add({
+                    data: formData,
+                    timestamp: Date.now(),
+                    synced: false
+                });
+                
+                console.log('💾 Form saved offline for later sync');
+                this.showOfflineMessage();
+                
+            } catch (error) {
+                console.error('❌ Failed to save offline form:', error);
+            }
+        }
+    }
+
+    openDB() {
+        return new Promise((resolve, reject) => {
+            const request = indexedDB.open('SunTradingDB', 1);
+            request.onerror = () => reject(request.error);
+            request.onsuccess = () => resolve(request.result);
+            request.onupgradeneeded = (event) => {
+                const db = event.target.result;
+                if (!db.objectStoreNames.contains('contactForms')) {
+                    db.createObjectStore('contactForms', { keyPath: 'id', autoIncrement: true });
+                }
+                if (!db.objectStoreNames.contains('quoteForms')) {
+                    db.createObjectStore('quoteForms', { keyPath: 'id', autoIncrement: true });
+                }
+            };
+        });
+    }
+
+    showOfflineMessage() {
+        const offlineMsg = document.createElement('div');
+        offlineMsg.className = 'pwa-offline-message';
+        offlineMsg.innerHTML = `
+            <div class="offline-content">
+                <span>📱 تم حفظ طلبك. سيتم إرساله عند الاتصال بالإنترنت</span>
+                <button onclick="this.parentElement.parentElement.remove()">حسناً</button>
+            </div>
+        `;
+        document.body.appendChild(offlineMsg);
+        
+        setTimeout(() => {
+            if (offlineMsg.parentElement) {
+                offlineMsg.remove();
+            }
+        }, 4000);
+    }
+}
+
+// Initialize PWA
+const pwaManager = new PWAManager();
+
 // Trigger Services Section Animations
 function triggerServicesAnimations() {
     const elementsToAnimate = [

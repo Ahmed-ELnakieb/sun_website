@@ -735,6 +735,17 @@ const translations = {
     theme_ocean: "Ocean Blue",
     theme_forest: "Forest Green",
     theme_purple: "Royal Purple",
-    theme_sunset: "Sunset Red"
+    theme_sunset: "Sunset Red",
+    
+    // PWA Translations
+    install_app: "Install App",
+    update_available: "Update Available",
+    update_now: "Update Now",
+    app_installed: "App Installed Successfully!",
+    offline_saved: "Request saved. Will be sent when online",
+    welcome_pwa: "Welcome to Sun Trading App!",
+    offline_browsing: "You can now browse our products offline",
+    connection_restored: "Internet connection restored",
+    sync_complete: "Data synchronized successfully"
   }
 };
