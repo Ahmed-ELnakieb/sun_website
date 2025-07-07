@@ -980,24 +980,29 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 relative overflow-hidden">
+    <section id="services" class="py-20 relative overflow-hidden services-section">
+        <!-- Animated Background Elements -->
+        <div class="services-particles"></div>
+        <div class="services-glow-orb services-glow-orb-1"></div>
+        <div class="services-glow-orb services-glow-orb-2"></div>
+        
         <!-- Background with gradient overlay -->
         <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100"></div>
 
         <div class="container mx-auto px-4 relative z-10">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold mb-6 text-fade-up" style="color: var(--primary-color);" data-translate="services_title">خدماتنا</h2>
-                <p class="text-xl max-w-3xl mx-auto leading-relaxed text-fade-up animate-delay-1" style="color: var(--text-dark);" data-translate="services_subtitle">
+                <h2 class="text-5xl font-bold mb-6 services-title-animate" style="color: var(--primary-color);" data-translate="services_title">خدماتنا</h2>
+                <p class="text-xl max-w-3xl mx-auto leading-relaxed services-subtitle-animate" style="color: var(--text-dark);" data-translate="services_subtitle">
                     نقدم مجموعة شاملة من الخدمات المتخصصة في مجال الاستيراد والتصدير لضمان نجاح أعمالكم التجارية
                 </p>
-                <div class="w-24 h-1 mx-auto mt-6 rounded-full scale-in animate-delay-2" style="background: linear-gradient(to right, var(--secondary-color), var(--primary-color));"></div>
+                <div class="w-24 h-1 mx-auto mt-6 rounded-full services-line-animate" style="background: linear-gradient(to right, var(--secondary-color), var(--primary-color));"></div>
             </div>
 
             <!-- Services Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <!-- Service 1: Import/Export Consulting -->
-                <div class="service-card bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div class="service-card service-card-1 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
                     <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));">
                         <i class="fas fa-handshake text-white text-2xl"></i>
                     </div>
@@ -1014,7 +1019,7 @@
                 </div>
 
                 <!-- Service 2: Price Quotations -->
-                <div class="service-card bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div class="service-card service-card-2 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
                     <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--secondary-color), var(--accent-color));">
                         <i class="fas fa-calculator text-white text-2xl"></i>
                     </div>
@@ -1031,7 +1036,7 @@
                 </div>
 
                 <!-- Service 3: Machinery Import -->
-                <div class="service-card slide-in-right animate-delay-3 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div class="service-card service-card-3 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
                     <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--accent-color), var(--primary-color));">
                         <i class="fas fa-cogs text-white text-2xl"></i>
                     </div>
@@ -1048,7 +1053,7 @@
                 </div>
 
                 <!-- Service 4: International Marketing -->
-                <div class="service-card bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div class="service-card service-card-4 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
                     <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--primary-color), var(--accent-color));">
                         <i class="fas fa-globe text-white text-2xl"></i>
                     </div>
@@ -1065,7 +1070,7 @@
                 </div>
 
                 <!-- Service 5: Shipping Consulting -->
-                <div class="service-card bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div class="service-card service-card-5 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
                     <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--secondary-color), var(--primary-color));">
                         <i class="fas fa-ship text-white text-2xl"></i>
                     </div>
@@ -1082,7 +1087,7 @@
                 </div>
 
                 <!-- Service 6: Storage & Distribution -->
-                <div class="service-card bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div class="service-card service-card-6 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
                     <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--accent-color), var(--secondary-color));">
                         <i class="fas fa-warehouse text-white text-2xl"></i>
                     </div>
@@ -1151,18 +1156,25 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
-        <div class="container mx-auto px-6">
+    <section id="contact" class="py-20 relative overflow-hidden contact-section" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+        <!-- Animated Background Elements -->
+        <div class="contact-particles"></div>
+        <div class="contact-wave contact-wave-1"></div>
+        <div class="contact-wave contact-wave-2"></div>
+        <div class="contact-glow-orb contact-glow-orb-1"></div>
+        <div class="contact-glow-orb contact-glow-orb-2"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
             <div class="text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-translate="contact_title">تواصل معنا</h2>
-                <p class="text-xl mb-12 text-white/90 max-w-3xl mx-auto" data-translate="contact_subtitle">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white contact-title-animate" data-translate="contact_title">تواصل معنا</h2>
+                <p class="text-xl mb-12 text-white/90 max-w-3xl mx-auto contact-subtitle-animate" data-translate="contact_subtitle">
                     نحن هنا لخدمتكم ومساعدتكم في جميع احتياجاتكم التجارية. تواصلوا معنا للحصول على استشارة مجانية وعرض سعر مخصص
                 </p>
 
                 <div class="grid md:grid-cols-3 gap-8 mb-12">
                     <!-- Phone -->
-                    <div class="text-center">
-                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                    <div class="text-center contact-card contact-card-1">
+                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4 contact-icon-animate">
                             <i class="fas fa-phone text-white text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2" data-translate="contact_phone">اتصل بنا</h3>
@@ -1170,8 +1182,8 @@
                     </div>
 
                     <!-- Email -->
-                    <div class="text-center">
-                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                    <div class="text-center contact-card contact-card-2">
+                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4 contact-icon-animate">
                             <i class="fas fa-envelope text-white text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2" data-translate="contact_email">راسلنا</h3>
@@ -1179,8 +1191,8 @@
                     </div>
 
                     <!-- Location -->
-                    <div class="text-center">
-                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                    <div class="text-center contact-card contact-card-3">
+                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4 contact-icon-animate">
                             <i class="fas fa-map-marker-alt text-white text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2" data-translate="contact_location">زورنا</h3>
@@ -1188,7 +1200,7 @@
                     </div>
                 </div>
 
-                <button onclick="openContactModal()" class="inline-flex items-center px-12 py-4 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style="background: white; color: var(--primary-color);">
+                <button onclick="openContactModal()" class="contact-button-animate inline-flex items-center px-12 py-4 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style="background: white; color: var(--primary-color);">
                     <span data-translate="contact_send">أرسل رسالة</span>
                     <i class="fas fa-paper-plane icon-dynamic ml-3"></i>
                 </button>

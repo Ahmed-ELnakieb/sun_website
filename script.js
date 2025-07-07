@@ -793,3 +793,92 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileLangToggle.textContent = translations[currentLanguage].lang_toggle;
     }
 });
+
+// Intersection Observer for Section Animations
+document.addEventListener('DOMContentLoaded', function() {
+    // Create intersection observer for section animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const section = entry.target;
+                
+                // Services Section Animation
+                if (section.id === 'services') {
+                    triggerServicesAnimations();
+                }
+                
+                // Contact Section Animation
+                if (section.id === 'contact') {
+                    triggerContactAnimations();
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observe sections
+    const servicesSection = document.getElementById('services');
+    const contactSection = document.getElementById('contact');
+    
+    if (servicesSection) sectionObserver.observe(servicesSection);
+    if (contactSection) sectionObserver.observe(contactSection);
+});
+
+// Trigger Services Section Animations
+function triggerServicesAnimations() {
+    const elementsToAnimate = [
+        '.services-title-animate',
+        '.services-subtitle-animate',
+        '.services-line-animate',
+        '.service-card-1',
+        '.service-card-2',
+        '.service-card-3',
+        '.service-card-4',
+        '.service-card-5',
+        '.service-card-6'
+    ];
+    
+    elementsToAnimate.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            // Reset animation
+            element.style.animation = 'none';
+            element.offsetHeight; // Trigger reflow
+            
+            // Re-apply animation
+            setTimeout(() => {
+                element.style.animation = '';
+            }, index * 50);
+        }
+    });
+}
+
+// Trigger Contact Section Animations
+function triggerContactAnimations() {
+    const elementsToAnimate = [
+        '.contact-title-animate',
+        '.contact-subtitle-animate',
+        '.contact-card-1',
+        '.contact-card-2',
+        '.contact-card-3',
+        '.contact-button-animate'
+    ];
+    
+    elementsToAnimate.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            // Reset animation
+            element.style.animation = 'none';
+            element.offsetHeight; // Trigger reflow
+            
+            // Re-apply animation
+            setTimeout(() => {
+                element.style.animation = '';
+            }, index * 50);
+        }
+    });
+}
