@@ -287,6 +287,52 @@ window.addEventListener('scroll', updateActiveNavLink);
 // Update active nav link on page load
 document.addEventListener('DOMContentLoaded', updateActiveNavLink);
 
+// Shams Company Loader Functionality
+let loaderStartTime = Date.now();
+let isLoaderHidden = false;
+
+function hideLoader() {
+    if (isLoaderHidden) return;
+    
+    const loader = document.getElementById('loader');
+    if (loader) {
+        isLoaderHidden = true;
+        loader.classList.add('fade-out');
+        
+        // Remove loader from DOM after fade out
+        setTimeout(function() {
+            loader.remove();
+        }, 1000);
+    }
+}
+
+function checkMinimumLoadTime() {
+    const elapsedTime = Date.now() - loaderStartTime;
+    const minimumLoadTime = 2000; // 2 seconds minimum
+    
+    if (elapsedTime >= minimumLoadTime) {
+        hideLoader();
+    } else {
+        // Wait for remaining time to reach minimum
+        setTimeout(hideLoader, minimumLoadTime - elapsedTime);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for sun animation to complete (8 seconds) or minimum load time
+    setTimeout(function() {
+        checkMinimumLoadTime();
+    }, 8000);
+});
+
+// Hide loader when page is fully loaded (but respect minimum time)
+window.addEventListener('load', function() {
+    // Add small delay to ensure all resources are loaded
+    setTimeout(function() {
+        checkMinimumLoadTime();
+    }, 500);
+});
+
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
