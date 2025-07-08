@@ -65,11 +65,6 @@ const translations = {
     category_grains: "الحبوب",
     category_legumes: "البقوليات",
 
-    product1_name: "القمح",
-    product1_desc: "قمح عالي الجودة من أفضل المصادر العالمية",
-    product1_category: "منتج أساسي",
-    product1_type: "حبوب",
-
     product2_name: "ذرة",
     product2_desc: "ذرة عالية الجودة للاستخدامات المتعددة",
     product2_category: "حبوب",
@@ -112,7 +107,6 @@ const translations = {
     product8_full_desc: "فول عالي الجودة ومنتقى بعناية، غني بالبروتين والألياف",
 
     // Product Details & Features
-    product1_full_desc: "قمح عالي الجودة من أفضل المصادر العالمية، يتميز بنقاوته العالية ومحتواه الغذائي الممتاز",
     product2_full_desc: "ذرة صفراء عالية الجودة للاستخدامات المتعددة في الأعلاف والصناعات الغذائية",
     product3_full_desc: "شعير عالي الجودة للأعلاف والاستخدامات الصناعية مع ضمان النقاوة والجودة",
 
@@ -158,7 +152,6 @@ const translations = {
     feature_distinctive_taste: "طعم مميز",
 
     // Origins
-    origin_wheat: "أستراليا، كندا، روسيا",
     origin_corn: "الأرجنتين، البرازيل، أوكرانيا",
     origin_barley: "فرنسا، ألمانيا، أستراليا",
     origin_beans: "تركيا، الأرجنتين، كندا",
@@ -168,7 +161,6 @@ const translations = {
     origin_fava_beans: "مصر، استراليا",
 
     // Usage descriptions
-    usage_wheat: "الخبز، المعجنات، الصناعات الغذائية",
     usage_corn: "الأعلاف، الصناعات الغذائية، النشا",
     usage_barley: "أعلاف الحيوانات، الصناعات",
     usage_beans: "الطبخ المنزلي، الصناعات الغذائية",
@@ -361,12 +353,12 @@ const translations = {
   
   en: {
     // Page Meta
-    page_title: "Sun Import & Export Company - Your Trusted Partner in Wheat and Essential Commodities Trading",
-    page_description: "Sun Import & Export Company - Your trusted partner in importing and exporting wheat, grains and essential commodities. Long experience and high quality service.",
+    page_title: "Sun Export & Import Company - Your Trusted Partner in Import and Export for All Countries",
+    page_description: "Sun Export & Import Company - Your trusted partner in importing and exporting for all countries. Long experience and high quality service.",
     
     // Logo
     logo_title: "Sun Company",
-    logo_subtitle: "Import & Export",
+    logo_subtitle: "Export & Import",
 
     // Navigation
     nav_home: "Home",
@@ -378,10 +370,10 @@ const translations = {
     
     // Hero Section
     hero_title: "Welcome to Sun Trading Company",
-    hero_subtitle: "Your trusted partner in wheat and essential commodities trading",
+    hero_subtitle: "Your trusted partner in import and export for all countries",
     hero_discover: "Discover Our Services",
     hero_contact: "Contact Us",
-    company_subtitle: "Import & Export",
+    company_subtitle: "Export & Import",
     
     // Features Section
     features_title: "Why Choose Sun Company?",
@@ -393,11 +385,11 @@ const translations = {
     feature3_title: "Excellent Service",
     feature3_desc: "We ensure outstanding customer service and flexible solutions",
     feature4_title: "Long Experience",
-    feature4_desc: "Years of experience in import and export",
+    feature4_desc: "Years of experience in export and import",
     
     // About Section
     about_title: "About Our Company",
-    about_text1: "Sun Import and Export Company was established to work in the field of importing and exporting agricultural crops and basic commodities. It has become the owner of the strongest work team that selects high-quality crops, sorts, purifies and exports them to all countries of the world such as Iraq, Romania, Turkey, Spain and others.",
+    about_text1: "Sun Export and Import Company was established to work in the field of importing and exporting agricultural crops and basic commodities. It has become the owner of the strongest work team that selects high-quality crops, sorts, purifies and exports them to all countries of the world such as Iraq, Romania, Turkey, Spain and others.",
     about_text2: "We seek to expand in this field and provide the best services to our customers, while ensuring competitive prices suitable for all types of markets and maintaining the highest quality standards.",
     about_cta: "Contact Us Now",
     
@@ -424,11 +416,6 @@ const translations = {
     category_grains: "Grains",
     category_legumes: "Legumes",
     category_seeds: "Seeds",
-
-    product1_name: "Wheat",
-    product1_desc: "High-quality wheat from the best global sources",
-    product1_category: "Essential Product",
-    product1_type: "Grains",
 
     product2_name: "Corn",
     product2_desc: "High-quality corn for multiple uses",
@@ -518,7 +505,6 @@ const translations = {
     feature_distinctive_taste: "Distinctive Taste",
 
     // Origins
-    origin_wheat: "Australia, Canada, Russia",
     origin_corn: "Argentina, Brazil, Ukraine",
     origin_barley: "France, Germany, Australia",
     origin_beans: "Turkey, Argentina, Canada",
@@ -528,7 +514,6 @@ const translations = {
     origin_fava_beans: "Egypt, Australia",
 
     // Usage descriptions
-    usage_wheat: "Bread, Pastries, Food Industries",
     usage_corn: "Animal Feed, Food Industries, Starch",
     usage_barley: "Animal Feed, Industries",
     usage_beans: "Home Cooking, Food Industries",
@@ -539,10 +524,10 @@ const translations = {
 
     // Services
     services_title: "Our Services",
-    services_subtitle: "We provide a comprehensive range of specialized services in import and export to ensure the success of your business",
+    services_subtitle: "We provide a comprehensive range of specialized services in export and import to ensure the success of your business",
 
-    service1_title: "Import/Export Consulting",
-    service1_desc: "A team of specialists providing comprehensive consulting in import and export for agricultural, industrial and commercial sectors",
+    service1_title: "Export/Import Consulting",
+    service1_desc: "A team of specialists providing comprehensive consulting in export and import for agricultural, industrial and commercial sectors",
 
     service2_title: "Price Quotations",
     service2_desc: "We provide the best prices for our customers and help them achieve the best possible price while maintaining quality and reliability",
@@ -575,17 +560,17 @@ const translations = {
 
     // Administration
     admin_title: "Administration",
-    admin_subtitle: "Meet our distinguished management team that leads Sun Company towards success and excellence in import and export",
+    admin_subtitle: "Meet our distinguished management team that leads Sun Company towards success and excellence in export and import",
 
     admin_team_title: "Work Team",
-    admin_team_desc: "A specialized team of experts in import and export",
+    admin_team_desc: "A specialized team of experts in export and import",
     admin_team_full_desc: "A specialized and dedicated team working with the highest standards of quality and professionalism in all aspects of work",
     admin_team_features_title: "Team Features:",
     admin_team_specialized: "Specialized & Dedicated Team",
     admin_team_experience: "Extensive Experience",
     admin_team_commitment: "Commitment to Excellence",
     admin_team_specialization_title: "Specialization:",
-    admin_team_specialization: "Import, Export & International Trade",
+    admin_team_specialization: "Export, Import & International Trade",
     admin_team_goal_title: "Goal:",
     admin_team_goal: "Providing the best services to our clients",
 
@@ -611,7 +596,7 @@ const translations = {
     admin_ceo_position_title: "Position:",
     admin_ceo_position: "General Manager & Founder",
     admin_ceo_specialization_title: "Specialization:",
-    admin_ceo_specialization: "International Trade, Import & Export",
+    admin_ceo_specialization: "International Trade, Export & Import",
 
     admin_values_title: "Our Values",
     admin_values_desc: "Core principles that guide our work and define our identity",
@@ -699,9 +684,9 @@ const translations = {
     contact_email_address: "info@suncompany-egypt.org",
 
     // Footer
-    footer_company_name: "Sun Import & Export Company",
+    footer_company_name: "Sun Export & Import Company",
     footer_tagline: "Specialists in International Trade",
-    footer_copyright: "© 2024 Sun Import & Export Company. All rights reserved.",
+    footer_copyright: "© 2024 Sun Export & Import Company. All rights reserved.",
     developer_credit: "Designed and Developed by",
     developer_name: "Elnakieb",
 
