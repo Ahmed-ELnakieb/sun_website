@@ -168,10 +168,17 @@
                     </button>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+                <!-- Mobile Menu Button & Language Toggle -->
+                <div class="md:hidden flex items-center space-x-3 space-x-reverse">
+                    <!-- Mobile Language Toggle -->
+                    <button onclick="toggleLanguage()" class="text-white bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-sm transition-all duration-300 border border-white/30" id="mobile-lang-toggle">
+                        English
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
             </div>
 
             <!-- Mobile Menu -->
@@ -192,11 +199,6 @@
                             <i class="fas fa-palette"></i>
                         </button>
                     </div>
-                    
-                    <!-- Mobile Language Toggle -->
-                    <button onclick="toggleLanguage()" class="w-full text-center py-2 px-4 rounded-lg transition-all duration-300 mt-3" style="background: var(--secondary-color); color: white;" id="mobile-lang-toggle">
-                        English
-                    </button>
                 </div>
             </div>
         </div>
