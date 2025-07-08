@@ -1208,7 +1208,7 @@ class PWAManager {
         welcomeMessage.className = 'pwa-welcome-message';
         welcomeMessage.innerHTML = `
             <div class="welcome-content">
-                <h3>🎉 مرحباً بك في تطبيق شركة صن!</h3>
+                <h3>🎉 مرحباً بك في تطبيق شركة الشمس!</h3>
                 <p>يمكنك الآن تصفح منتجاتنا حتى بدون إنترنت</p>
                 <button onclick="this.parentElement.parentElement.remove()">حسناً</button>
             </div>
