@@ -1195,6 +1195,15 @@
     }
 }
 
+@keyframes shine {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
 @keyframes subtle-fade {
     0%, 100% {
         opacity: 0.6;
@@ -3409,6 +3418,27 @@ section#services {
 .hover-overlay .feature-badge.yellow {
     background-color: #f59e0b;
     color: black;
+}
+
+/* Shine Effect for Elnakieb */
+.shine-effect {
+    position: relative;
+    background: linear-gradient(
+        110deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.8) 50%,
+        transparent 65%
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shine 3s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.shine-effect:hover {
+    animation-duration: 1s;
+    animation-delay: 0s;
 }
 
 .hover-overlay .feature-badge.blue {

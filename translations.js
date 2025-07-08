@@ -332,6 +332,8 @@ const translations = {
     footer_company_name: "شركة الشمس للاستيراد والتصدير",
     footer_tagline: "متخصصون في التجارة الدولية",
     footer_copyright: "© 2024 شركة الشمس للاستيراد والتصدير. جميع الحقوق محفوظة.",
+    developer_credit: "تصميم وتطوير بواسطه",
+    developer_name: "النقيب",
     form_name: "الاسم",
     form_email: "البريد الإلكتروني",
     form_phone: "رقم الهاتف",
@@ -700,6 +702,8 @@ const translations = {
     footer_company_name: "Sun Import & Export Company",
     footer_tagline: "Specialists in International Trade",
     footer_copyright: "© 2024 Sun Import & Export Company. All rights reserved.",
+    developer_credit: "Designed and Developed by",
+    developer_name: "Elnakieb",
 
     // Contact Form
     form_name: "Name",
