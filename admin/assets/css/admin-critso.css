@@ -1,0 +1,428 @@
+/* Admin Panel Custom Styles - Developed by Elnakieb */
+
+/* Alert Boxes */
+.alert-box {
+    padding: 16px 20px;
+    border-radius: 8px;
+    border: 1px solid;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    border-color: #ffeaa7;
+    color: #856404;
+}
+
+.alert-info {
+    background-color: #cce7ff;
+    border-color: #b3d9ff;
+    color: #084298;
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+/* Product Images */
+.image-product {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-current {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 8px;
+}
+
+.image-default {
+    width: 50px;
+    height: 50px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    color: #6c757d;
+}
+
+/* Status Blocks */
+.block-available {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.block-available.available {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.block-available.pending {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.block-available.featured {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* Action Icons */
+.list-icon-function {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.list-icon-function .item {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.list-icon-function .item.edit {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.list-icon-function .item.edit:hover {
+    background-color: #bbdefb;
+}
+
+.list-icon-function .item.trash {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.list-icon-function .item.trash:hover {
+    background-color: #ffcdd2;
+}
+
+/* Image Item Styling */
+.image-item {
+    position: relative;
+}
+
+.image-item .image {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.badge-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 500;
+    top: 8px;
+    left: 8px;
+}
+
+.btn-delete {
+    background-color: rgba(220, 53, 69, 0.9);
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    top: 8px;
+    right: 8px;
+    transition: background-color 0.2s;
+}
+
+.btn-delete:hover {
+    background-color: rgba(220, 53, 69, 1);
+}
+
+/* Form Styling Enhancements */
+.wg-box.style-2 {
+    border-left: 4px solid var(--primary-color);
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 1.5fr 2fr;
+    gap: 22px;
+    width: 100%;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+}
+
+.gap8 {
+    gap: 8px;
+}
+
+.gap10 {
+    gap: 10px;
+}
+
+.gap16 {
+    gap: 16px;
+}
+
+.gap22 {
+    gap: 22px;
+}
+
+/* Quick Actions Styling */
+.flex.gap16 {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.tf-button.gap8 {
+    gap: 8px;
+}
+
+.tf-button .fas {
+    font-size: 14px;
+}
+
+/* Responsive for Quick Actions */
+@media (max-width: 768px) {
+    .flex.gap16 {
+        flex-direction: column;
+    }
+
+    .tf-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mt-12 {
+    margin-top: 12px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-4 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .cols {
+        display: block;
+    }
+
+    .cols fieldset {
+        margin-bottom: 16px;
+    }
+
+    .wg-filter .flex {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .wg-filter .tf-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .grid-4 {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+}
+
+/* Position utilities */
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+/* Text utilities */
+.text-center {
+    text-align: center;
+}
+
+/* Bootstrap Row Gap Fix */
+.row.gap22 {
+    margin-left: -11px;
+    margin-right: -11px;
+}
+
+.row.gap22>[class*="col-"] {
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-bottom: 22px;
+}
+
+/* Filter Form Enhancements */
+.wg-filter .form-filter {
+    margin: 0;
+}
+
+.wg-filter fieldset {
+    margin-bottom: 16px;
+}
+
+.wg-filter .tf-button {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Icon fixes for FontAwesome */
+.fas {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* Scrollbar fixes */
+body.counter-scroll {
+    overflow-x: hidden !important;
+    overflow-y: hidden;
+}
+
+.section-content-right {
+    max-width: calc(100vw - 280px);
+    overflow-x: hidden;
+}
+
+.main-content {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.main-content-wrap {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.wg-table {
+    overflow-x: auto;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Button styles override */
+.tf-button.type-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.tf-button.type-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Table responsive wrapper */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Enhanced table styling */
+.wg-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wg-table table th,
+.wg-table table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.wg-table table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}
+
+.wg-table table tr:hover {
+    background-color: #f8f9fa;
+}

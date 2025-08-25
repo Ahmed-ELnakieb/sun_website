@@ -4,7 +4,7 @@ const translations = {
     // Page Meta
     page_title: "شركة الشمس للتصدير والاستيراد - شريككم الموثوق في الاستيراد والتصدير لجميع البلدان",
     page_description: "شركة الشمس للتصدير والاستيراد - شريككم الموثوق في الاستيراد والتصدير لجميع البلدان. خبرة طويلة وجودة عالية في الخدمة.",
-    
+
     // Logo
     logo_title: "شركة الشمس",
     logo_subtitle: "للتصدير والاستيراد",
@@ -16,14 +16,14 @@ const translations = {
     nav_services: "الخدمات",
     nav_administration: "الاداره",
     nav_contact: "اتصل بنا",
-    
+
     // Hero Section
     hero_title: "مرحباً بكم في شركة الشمس",
     hero_subtitle: "شريككم الموثوق في الاستيراد والتصدير لجميع البلدان",
     hero_discover: "اكتشف خدماتنا",
     hero_contact: "تواصل معنا",
     company_subtitle: "للتصدير والاستيراد",
-    
+
     // Features Section
     features_title: "لماذا تختار شركة الشمس؟",
     features_subtitle: "نتميز بخبرة طويلة في مجال استيراد وتصدير المنتجات الزراعية ونعمل على توفير مجموعة من المنتجات عالية الجودة التي تلبي احتياجات السوق",
@@ -35,18 +35,25 @@ const translations = {
     feature3_desc: "نحرص على توفير خدمة عملاء مميزة وحلول مرنة",
     feature4_title: "خبرة طويلة",
     feature4_desc: "سنوات من الخبرة في مجال الاستيراد والتصدير",
-    
+
     // About Section
     about_title: "نبذة عن الشركة",
     about_text1: "تأسست شركة الشمس للتصدير والاستيراد لتعمل في مجال استيراد وتصدير الحاصلات الزراعية والسلع الأساسية، وقد أصبحت تمتلك أقوى فريق عمل ينتقي المحاصيل ذات الجودة العالية ويقوم بفرزها وتنقيتها وتصديرها لكل بلدان العالم مثل العراق ورومانيا وتركيا وإسبانيا وغيرها.",
     about_text2: "نسعى للتوسع في هذا المجال وتقديم أفضل الخدمات لعملائنا، مع الحرص على تقديم أسعار مناسبة تناسب جميع أنواع الأسواق والحفاظ على أعلى معايير الجودة.",
     about_cta: "تواصل معنا الآن",
-    
+
     // Stats
     stats_experience: "سنة خبرة",
+    stats_years_experience: "سنوات خبرة",
+    stats_products: "منتج متنوع",
     stats_clients: "عميل راضي",
+    stats_happy_clients: "عميل راضي",
     stats_countries: "دولة نصدر إليها",
-    
+
+    // Footer
+    footer_quick_links: "روابط سريعة",
+    footer_contact_info: "معلومات الاتصال",
+
     // Values
     values_title: "قيمنا الأساسية",
     value1_title: "الجودة",
@@ -55,7 +62,7 @@ const translations = {
     value2_desc: "نؤمن بالتعامل بشفافية مع عملائنا وشركائنا",
     value3_title: "الابتكار",
     value3_desc: "نسعى دائماً لتقديم حلول جديدة ومبتكرة",
-    
+
     // Products
     products_title: "منتجاتنا",
     products_subtitle: "نقدم مجموعة متنوعة من المنتجات الزراعية عالية الجودة التي تلبي احتياجات السوق المحلي والدولي",
@@ -107,6 +114,12 @@ const translations = {
     product8_full_desc: "فول عالي الجودة ومنتقى بعناية، غني بالبروتين والألياف",
 
     // Product Details & Features
+    product_features: "المميزات",
+    product_origin: "المنشأ",
+    product_uses: "الاستخدامات",
+    product_details: "تفاصيل المنتج",
+    product_featured: "مميز",
+    product_default_description: "منتج عالي الجودة للتصدير والاستيراد",
     product2_full_desc: "ذرة صفراء عالية الجودة للاستخدامات المتعددة في الأعلاف والصناعات الغذائية",
     product3_full_desc: "شعير عالي الجودة للأعلاف والاستخدامات الصناعية مع ضمان النقاوة والجودة",
 
@@ -271,7 +284,7 @@ const translations = {
     admin_ceo_strategic_vision_badge: "رؤية استراتيجية",
     admin_ceo_international_experience_badge: "خبرة دولية",
     admin_ceo_international_trade_desc: "خبرة واسعة في الأسواق العالمية والتجارة الخارجية",
-    
+
     // CEO Modal Content
     admin_ceo_modal_title: "المدير العام والمؤسس",
     admin_ceo_modal_desc1: "بخبرة تمتد لأكثر من 12 سنة في مجال التجارة الدولية والقطاع الزراعي، يقود أحمد عبدالفتاح متولي شركة الشمس برؤية استراتيجية طموحة تهدف إلى تحقيق النمو المستدام والريادة في الأسواق العالمية.",
@@ -284,23 +297,23 @@ const translations = {
     admin_ceo_strategic_growth_modal_desc: "رؤية طموحة للتوسع والنمو المستدام",
     admin_ceo_building_partnerships_title: "بناء الشراكات",
     admin_ceo_building_partnerships_modal_desc: "علاقات قوية مع العملاء والشركاء الدوليين",
-    
+
     // Additional Administration Modal Content
     admin_team_features_title: "مميزات الفريق",
     admin_team_cooperation: "التعاون والعمل الجماعي",
     admin_team_time_commitment: "الالتزام بالمواعيد والجودة",
     admin_management_modal_description: "في شركة الشمس، يقودنا فريق إداري متميز ذو خبرة طويلة في صناعة الاستيراد والتصدير، حيث نؤمن أن القيادة الحكيمة والتخطيط الاستراتيجي هما أساس نجاحنا المستمر. يتمتع كل عضو في فريق الإدارة بمعرفة واسعة بمتطلبات السوق الزراعي، مما يعزز قدرتنا على تقديم حلول مبتكرة تلبي احتياجات عملائنا.",
     admin_stats_years_experience: "سنة خبرة",
-    admin_stats_successful_projects: "مشروع ناجح", 
+    admin_stats_successful_projects: "مشروع ناجح",
     admin_stats_partner_countries: "دولة شريكة",
     admin_values_modal_description: "تقوم شركة الشمس على مجموعة من القيم الأساسية التي توجه عملنا وتحدد هويتنا في السوق. هذه القيم ليست مجرد كلمات، بل هي المبادئ التي نعيش بها ونطبقها في كل جانب من جوانب عملنا.",
     admin_values_quality_title: "الجودة",
     admin_values_quality_desc: "التزامنا بمعايير الجودة والتميز في كل خطوة",
-    admin_values_transparency_title: "الشفافية", 
+    admin_values_transparency_title: "الشفافية",
     admin_values_transparency_desc: "نؤمن بالتعامل بشفافية مع عملائنا وشركائنا",
     admin_values_innovation_title: "الابتكار",
     admin_values_innovation_desc: "نسعى دائماً لتقديم حلول جديدة ومبتكرة",
-    
+
     // Modal Values Content
     modal_values_description: "تقوم شركة الشمس على مجموعة من القيم الأساسية التي توجه عملنا وتحدد هويتنا في السوق. هذه القيم ليست مجرد كلمات، بل هي المبادئ التي نعيش بها ونطبقها في كل جانب من جوانب عملنا.",
     modal_values_quality_title: "الجودة",
@@ -309,7 +322,7 @@ const translations = {
     modal_values_transparency_desc: "نؤمن بالتعامل بشفافية مع عملائنا وشركائنا",
     modal_values_innovation_title: "الابتكار",
     modal_values_innovation_desc: "نسعى دائماً لتقديم حلول جديدة ومبتكرة",
-    
+
     admin_phone_numbers: "أرقام الهاتف",
     contact_phone_numbers: "اتصل بنا",
     contact_email: "راسلنا",
@@ -350,12 +363,12 @@ const translations = {
     contact_now: "تواصل الآن",
     lang_toggle: "English"
   },
-  
+
   en: {
     // Page Meta
     page_title: "Sun Export & Import Company - Your Trusted Partner in Import and Export for All Countries",
     page_description: "Sun Export & Import Company - Your trusted partner in importing and exporting for all countries. Long experience and high quality service.",
-    
+
     // Logo
     logo_title: "Sun Company",
     logo_subtitle: "Export & Import",
@@ -367,14 +380,14 @@ const translations = {
     nav_services: "Services",
     nav_administration: "Administration",
     nav_contact: "Contact Us",
-    
+
     // Hero Section
     hero_title: "Welcome to Sun Trading Company",
     hero_subtitle: "Your trusted partner in import and export for all countries",
     hero_discover: "Discover Our Services",
     hero_contact: "Contact Us",
     company_subtitle: "Export & Import",
-    
+
     // Features Section
     features_title: "Why Choose Sun Company?",
     features_subtitle: "We excel with extensive experience in importing and exporting agricultural products and work to provide high-quality products that meet market needs",
@@ -386,18 +399,25 @@ const translations = {
     feature3_desc: "We ensure outstanding customer service and flexible solutions",
     feature4_title: "Long Experience",
     feature4_desc: "Years of experience in export and import",
-    
+
     // About Section
     about_title: "About Our Company",
     about_text1: "Sun Export and Import Company was established to work in the field of importing and exporting agricultural crops and basic commodities. It has become the owner of the strongest work team that selects high-quality crops, sorts, purifies and exports them to all countries of the world such as Iraq, Romania, Turkey, Spain and others.",
     about_text2: "We seek to expand in this field and provide the best services to our customers, while ensuring competitive prices suitable for all types of markets and maintaining the highest quality standards.",
     about_cta: "Contact Us Now",
-    
+
     // Stats
     stats_experience: "Years Experience",
+    stats_years_experience: "Years Experience",
+    stats_products: "Products",
     stats_clients: "Satisfied Clients",
+    stats_happy_clients: "Happy Clients",
     stats_countries: "Export Countries",
-    
+
+    // Footer
+    footer_quick_links: "Quick Links",
+    footer_contact_info: "Contact Information",
+
     // Values
     values_title: "Our Core Values",
     value1_title: "Quality",
@@ -406,7 +426,7 @@ const translations = {
     value2_desc: "We believe in dealing transparently with our clients and partners",
     value3_title: "Innovation",
     value3_desc: "We always strive to provide new and innovative solutions",
-    
+
     // Products
     products_title: "Our Products",
     products_subtitle: "We offer a diverse range of high-quality agricultural products that meet local and international market needs",
@@ -459,6 +479,12 @@ const translations = {
     product8_full_desc: "High-quality fava beans carefully selected, rich in protein and fiber",
 
     // Product Details & Features
+    product_features: "Features",
+    product_origin: "Origin",
+    product_uses: "Uses",
+    product_details: "Product Details",
+    product_featured: "Featured",
+    product_default_description: "High quality product for export and import",
     product1_full_desc: "High-quality wheat from the best global sources, characterized by high purity and excellent nutritional content",
     product2_full_desc: "High-quality yellow corn for multiple uses in feed and food industries",
     product3_full_desc: "High-quality barley for feed and industrial uses with guaranteed purity and quality",
@@ -665,7 +691,7 @@ const translations = {
     modal_values_transparency_desc: "We believe in dealing transparently with our clients and partners",
     modal_values_innovation_title: "Innovation",
     modal_values_innovation_desc: "We always strive to provide new and innovative solutions",
-    
+
     // Contact
     contact_title: "Contact Us",
     contact_subtitle: "We are here to serve you and help you with all your business needs. Contact us for a free consultation and custom quote",
@@ -707,7 +733,7 @@ const translations = {
     form_option_shipping: "Shipping Consulting",
     form_option_storage: "Storage & Distribution",
     form_option_other: "Other",
-    
+
     // Common Buttons
     learn_more: "Learn More",
     get_quote: "Get Quote",
@@ -715,17 +741,17 @@ const translations = {
     consult_experts: "Consult Our Experts",
     book_space: "Book Your Space",
     contact_now: "Contact Now",
-    
+
     // Language Toggle
     lang_toggle: "العربية",
-    
+
     // Theme Names
     theme_golden: "Golden",
     theme_ocean: "Ocean Blue",
     theme_forest: "Forest Green",
     theme_purple: "Royal Purple",
     theme_sunset: "Sunset Red",
-    
+
     // PWA Translations
     install_app: "Install App",
     update_available: "Update Available",

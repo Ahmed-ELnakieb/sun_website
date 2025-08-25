@@ -12,7 +12,7 @@ const CACHE_FILES = [
   '/script.js',
   '/translations.js',
   '/manifest.json',
-  
+
   // Images
   '/images/logo.png',
   '/images/background1.png',
@@ -20,7 +20,7 @@ const CACHE_FILES = [
   '/images/hero-background.jpg',
   '/images/background2.jpg',
   '/images/background3.jpg',
-  
+
   // Product images
   '/images/products/wheat.png',
   '/images/products/zora.png',
@@ -30,27 +30,27 @@ const CACHE_FILES = [
   '/images/products/homos.png',
   '/images/products/rice.png',
   '/images/products/fol.png',
-  
+
   // Administration images
   '/images/administration/company_managment.png',
   '/images/administration/Administration4.png',
   '/images/administration/general_manager.png',
   '/images/administration/our_values.png',
   '/images/administration/work_team.png',
-  
+
   // Fonts
   '/fonts/Almarai-Regular.ttf',
   '/fonts/Almarai-Bold.ttf',
   '/fonts/ltr/Sora-Regular.ttf',
   '/fonts/ltr/Sora-Bold.ttf',
-  
+
   // Local packages (faster loading)
   '/packages/tailwind/tailwind.min.css',
   '/packages/fontawesome/all.min.css',
   '/packages/bootstrap/bootstrap.min.css',
   '/packages/bootstrap/bootstrap.bundle.min.js',
   '/packages/jquery/jquery-3.7.1.min.js',
-  
+
   // FontAwesome webfonts
   '/packages/fontawesome/webfonts/fa-brands-400.woff2',
   '/packages/fontawesome/webfonts/fa-brands-400.ttf',
@@ -60,7 +60,7 @@ const CACHE_FILES = [
   '/packages/fontawesome/webfonts/fa-solid-900.ttf',
   '/packages/fontawesome/webfonts/fa-v4compatibility.woff2',
   '/packages/fontawesome/webfonts/fa-v4compatibility.ttf',
-  
+
   // FontAwesome webfonts (CSS expected path)
   '/packages/webfonts/fa-brands-400.woff2',
   '/packages/webfonts/fa-brands-400.ttf',
@@ -70,49 +70,49 @@ const CACHE_FILES = [
   '/packages/webfonts/fa-solid-900.ttf',
   '/packages/webfonts/fa-v4compatibility.woff2',
   '/packages/webfonts/fa-v4compatibility.ttf',
-  
+
   // Offline page
   OFFLINE_URL
 ];
 
 // Install event - Cache resources
 self.addEventListener('install', (event) => {
-  console.log('🚀 Service Worker: Installing...');
-  
+  // Service Worker: Installing
+
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('📦 Service Worker: Caching files');
+        // Service Worker: Caching files
         return cache.addAll(CACHE_FILES);
       })
       .then(() => {
-        console.log('✅ Service Worker: All files cached successfully');
+        // Service Worker: All files cached successfully
         return self.skipWaiting();
       })
       .catch((error) => {
-        console.error('❌ Service Worker: Caching failed', error);
+        // Service Worker: Caching failed
       })
   );
 });
 
 // Activate event - Clean up old caches
 self.addEventListener('activate', (event) => {
-  console.log('🔄 Service Worker: Activating...');
-  
+  // Service Worker: Activating
+
   event.waitUntil(
     caches.keys()
       .then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
             if (cacheName !== CACHE_NAME) {
-              console.log('🗑️ Service Worker: Deleting old cache', cacheName);
+              // Service Worker: Deleting old cache
               return caches.delete(cacheName);
             }
           })
         );
       })
       .then(() => {
-        console.log('✅ Service Worker: Activated successfully');
+        // Service Worker: Activated successfully
         return self.clients.claim();
       })
   );
@@ -122,19 +122,19 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   // Skip non-GET requests
   if (event.request.method !== 'GET') return;
-  
+
   // Skip chrome-extension and other non-http requests
   if (!event.request.url.startsWith('http')) return;
-  
+
   event.respondWith(
     caches.match(event.request)
       .then((cachedResponse) => {
         // Return cached version if available
         if (cachedResponse) {
-          console.log('📦 Serving from cache:', event.request.url);
+          // Serving from cache
           return cachedResponse;
         }
-        
+
         // Try to fetch from network
         return fetch(event.request)
           .then((response) => {
@@ -142,16 +142,16 @@ self.addEventListener('fetch', (event) => {
             if (!response || response.status !== 200 || response.type !== 'basic') {
               return response;
             }
-            
+
             // Clone the response for caching
             const responseToCache = response.clone();
-            
+
             // Cache the new response
             caches.open(CACHE_NAME)
               .then((cache) => {
                 cache.put(event.request, responseToCache);
               });
-            
+
             return response;
           })
           .catch(() => {
@@ -159,7 +159,7 @@ self.addEventListener('fetch', (event) => {
             if (event.request.destination === 'document') {
               return caches.match(OFFLINE_URL);
             }
-            
+
             // For other requests, return a generic offline response
             return new Response('Offline - Content not available', {
               status: 503,
@@ -175,12 +175,12 @@ self.addEventListener('fetch', (event) => {
 
 // Background sync for offline actions
 self.addEventListener('sync', (event) => {
-  console.log('🔄 Background sync:', event.tag);
-  
+  // Background sync
+
   if (event.tag === 'contact-form-sync') {
     event.waitUntil(syncContactForms());
   }
-  
+
   if (event.tag === 'quote-request-sync') {
     event.waitUntil(syncQuoteRequests());
   }
@@ -188,8 +188,8 @@ self.addEventListener('sync', (event) => {
 
 // Push notification handler
 self.addEventListener('push', (event) => {
-  console.log('🔔 Push notification received');
-  
+  // Push notification received
+
   const options = {
     body: event.data ? event.data.text() : 'New update from Sun Trading Company',
     icon: '/images/pwa/icon-192x192.png',
@@ -212,7 +212,7 @@ self.addEventListener('push', (event) => {
       }
     ]
   };
-  
+
   event.waitUntil(
     self.registration.showNotification('Sun Trading Company', options)
   );
@@ -220,10 +220,10 @@ self.addEventListener('push', (event) => {
 
 // Notification click handler
 self.addEventListener('notificationclick', (event) => {
-  console.log('🔔 Notification clicked:', event.action);
-  
+  // Notification clicked
+
   event.notification.close();
-  
+
   if (event.action === 'explore') {
     event.waitUntil(
       clients.openWindow('/')
@@ -236,18 +236,18 @@ async function syncContactForms() {
   try {
     const db = await openDB();
     const forms = await getOfflineContactForms(db);
-    
+
     for (const form of forms) {
       try {
         await submitContactForm(form.data);
         await deleteOfflineContactForm(db, form.id);
-        console.log('✅ Contact form synced successfully');
+        // Contact form synced successfully
       } catch (error) {
-        console.error('❌ Failed to sync contact form:', error);
+        // Failed to sync contact form
       }
     }
   } catch (error) {
-    console.error('❌ Background sync failed:', error);
+    // Background sync failed
   }
 }
 
@@ -255,18 +255,18 @@ async function syncQuoteRequests() {
   try {
     const db = await openDB();
     const quotes = await getOfflineQuoteRequests(db);
-    
+
     for (const quote of quotes) {
       try {
         await submitQuoteRequest(quote.data);
         await deleteOfflineQuoteRequest(db, quote.id);
-        console.log('✅ Quote request synced successfully');
+        // Quote request synced successfully
       } catch (error) {
-        console.error('❌ Failed to sync quote request:', error);
+        // Failed to sync quote request
       }
     }
   } catch (error) {
-    console.error('❌ Quote sync failed:', error);
+    // Quote sync failed
   }
 }
 
@@ -311,10 +311,10 @@ async function getOfflineQuoteRequests(db) {
 // Placeholder functions for actual form submission
 async function submitContactForm(formData) {
   // Implement actual form submission logic
-  console.log('Submitting contact form:', formData);
+  // Submitting contact form
 }
 
 async function submitQuoteRequest(quoteData) {
   // Implement actual quote submission logic
-  console.log('Submitting quote request:', quoteData);
+  // Submitting quote request
 }

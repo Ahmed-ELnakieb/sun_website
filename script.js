@@ -1,4 +1,6 @@
 // Sun Trading Company - Main JavaScript
+// Debug: Script loading confirmation
+// Script loaded successfully
 
 // Theme System
 let currentTheme = 'golden'; // Default theme
@@ -43,60 +45,59 @@ function initializeTheme() {
     if (savedTheme && themes[savedTheme]) {
         currentTheme = savedTheme;
     }
-    
+
     // Apply the theme
     setTheme(currentTheme);
-    
-    console.log('Theme initialized to:', currentTheme);
+
+    // Theme initialized
 }
 
 function setTheme(themeName) {
     if (!themes[themeName]) {
-        console.error('Theme not found:', themeName);
         return;
     }
-    
+
     currentTheme = themeName;
-    
+
     // Add theme changing animation
     document.body.classList.add('theme-changing');
-    
+
     // Apply theme to document
     document.documentElement.setAttribute('data-theme', themeName);
-    
+
     // Update theme switcher UI
     updateThemeSwitcherUI();
-    
+
     // Save preference
     localStorage.setItem('preferred-theme', themeName);
-    
+
     // Remove animation class after transition
     setTimeout(() => {
         document.body.classList.remove('theme-changing');
     }, 300);
-    
-    console.log('Theme set to:', themeName);
+
+    // Theme set
 }
 
 function updateThemeSwitcherUI() {
     const theme = themes[currentTheme];
-    
+
     // Update desktop theme switcher
     const currentThemePreview = document.getElementById('current-theme-preview');
-    
+
     if (currentThemePreview) {
         currentThemePreview.setAttribute('data-theme', currentTheme);
         currentThemePreview.className = 'theme-color-preview';
     }
-    
+
     // Update mobile theme switcher
     const mobileCurrentThemePreview = document.getElementById('mobile-current-theme-preview');
-    
+
     if (mobileCurrentThemePreview) {
         mobileCurrentThemePreview.setAttribute('data-theme', currentTheme);
         mobileCurrentThemePreview.className = 'theme-color-preview';
     }
-    
+
     // Update active state in dropdown
     document.querySelectorAll('.theme-option').forEach(option => {
         option.classList.remove('active');
@@ -111,7 +112,7 @@ function toggleTheme() {
     const currentIndex = themeKeys.indexOf(currentTheme);
     const nextIndex = (currentIndex + 1) % themeKeys.length;
     const nextTheme = themeKeys[nextIndex];
-    
+
     setTheme(nextTheme);
 }
 
@@ -122,38 +123,32 @@ function cycleToNextTheme() {
 // Check if translations are loaded from translations.js
 function checkTranslations() {
     if (typeof translations !== 'undefined') {
-        console.log('Translations loaded successfully from translations.js');
-        console.log('Available languages:', Object.keys(translations));
+        // Translations loaded successfully from translations.js
+        // Available languages loaded
         return true;
     } else {
-        console.error('Translations not found! Make sure translations.js is loaded.');
+        // Translations not found
         return false;
     }
 }
 
 // Helper function to get translation
 function getTranslation(key) {
-    // Debug logging
-    console.log(`Getting translation for key: ${key}, language: ${currentLanguage}`);
-    
+    // Getting translation for key
+
     if (typeof translations === 'undefined') {
-        console.error('Translations object is undefined!');
         return key;
     }
-    
+
     if (!translations[currentLanguage]) {
-        console.error(`Language ${currentLanguage} not found in translations!`);
         return key;
     }
-    
+
     if (!translations[currentLanguage][key]) {
-        console.warn(`Translation not found for key: ${key} in language: ${currentLanguage}`);
-        console.log('Available keys:', Object.keys(translations[currentLanguage]));
         return key;
     }
-    
+
     const translation = translations[currentLanguage][key];
-    console.log(`Translation found: ${translation}`);
     return translation;
 }
 
@@ -161,9 +156,12 @@ function getTranslation(key) {
 function initializeLanguage() {
     // Check if translations are loaded from translations.js
     if (!checkTranslations()) {
-        console.error('Cannot initialize language system - translations not loaded');
         return;
     }
+
+    // Check URL parameter first (to match PHP logic)
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
 
     // Check current page language from document or localStorage
     const savedLang = localStorage.getItem('preferred-language');
@@ -172,20 +170,17 @@ function initializeLanguage() {
     const browserLang = navigator.language || navigator.userLanguage;
 
     // Check current page content to detect active language
-    const pageContent = document.body.textContent || '';
     const hasEnglishNav = document.querySelector('[data-translate="nav_home"]')?.textContent === 'Home';
     const hasArabicNav = document.querySelector('[data-translate="nav_home"]')?.textContent === 'الرئيسية';
     const langToggleButton = document.querySelector('#lang-toggle');
     const isCurrentlyEnglish = langToggleButton?.textContent?.includes('العربية') || hasEnglishNav;
-    
-    console.log('Language detection:', {
-        docLang, docDir, savedLang, browserLang,
-        hasEnglishNav, hasArabicNav, isCurrentlyEnglish,
-        langToggleText: langToggleButton?.textContent
-    });
-    
-    // Priority: 1. Current page state 2. Document lang/dir 3. Saved preference 4. Browser language
-    if (isCurrentlyEnglish) {
+
+    // Language detection complete
+
+    // Priority: 1. URL parameter 2. Current page state 3. Document lang/dir 4. Saved preference 5. Browser language
+    if (urlLang === 'en' || urlLang === 'ar') {
+        currentLanguage = urlLang;
+    } else if (isCurrentlyEnglish) {
         currentLanguage = 'en';
     } else if (hasArabicNav) {
         currentLanguage = 'ar';
@@ -201,37 +196,30 @@ function initializeLanguage() {
         currentLanguage = 'en';
     }
 
-    console.log('Initialized language to:', currentLanguage);
+    // Language initialized
     setLanguage(currentLanguage);
 }
 
 function toggleLanguage() {
     currentLanguage = currentLanguage === 'ar' ? 'en' : 'ar';
-    setLanguage(currentLanguage);
     localStorage.setItem('preferred-language', currentLanguage);
-    
-    // If modal is open, update its content
-    if ($('#admin-detail-modal').is(':visible')) {
-        // Get the current section from the modal
-        const openSection = $('#admin-detail-modal').data('current-section');
-        if (openSection && typeof window.showAdminDetail === 'function') {
-            console.log('Updating modal content for language change, section:', openSection);
-            window.showAdminDetail(openSection);
-        }
-    }
+
+    // Reload the page with the new language parameter
+    const url = new URL(window.location);
+    url.searchParams.set('lang', currentLanguage);
+    window.location.href = url.toString();
 }
 
 // Force update translations
 function forceUpdateTranslations() {
-    console.log('Manually updating translations...');
+    // Manually updating translations
     updateTranslations(currentLanguage);
 }
 
 function setLanguage(lang) {
-    console.log('Setting language to:', lang);
     currentLanguage = lang;
     const isRTL = lang === 'ar';
-    console.log('Current language updated to:', currentLanguage);
+    // Current language updated
 
     // Set document direction and language
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
@@ -255,9 +243,24 @@ function setLanguage(lang) {
     if (mobileLangToggle && translations[lang] && translations[lang].lang_toggle) {
         mobileLangToggle.textContent = translations[lang].lang_toggle;
     }
-    
+
     // Update theme switcher UI for new language
     updateThemeSwitcherUI();
+}
+
+// Update theme switcher UI for new language
+function updateThemeSwitcherUI() {
+    if (typeof currentLanguage === 'undefined' || typeof translations === 'undefined') {
+        return; // Skip if language system not ready
+    }
+
+    const themeOptions = document.querySelectorAll('.theme-option span[data-translate]');
+    themeOptions.forEach(option => {
+        const key = option.getAttribute('data-translate');
+        if (translations[currentLanguage] && translations[currentLanguage][key]) {
+            option.textContent = translations[currentLanguage][key];
+        }
+    });
 }
 
 // Function to update icon direction
@@ -326,14 +329,14 @@ function updateTranslations(lang) {
 }
 
 // Navbar scroll effect
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const navbar = document.getElementById('navbar');
     const logoText = document.getElementById('logo-text');
     const logoSubtitle = document.getElementById('logo-subtitle');
 
     if (window.scrollY > 100) {
         navbar.classList.add('navbar-scroll');
-        
+
         // Logo text stays white for better contrast on the gradient background (only if elements exist)
         if (logoText) {
             logoText.classList.add('text-white');
@@ -350,7 +353,7 @@ window.addEventListener('scroll', function() {
         });
     } else {
         navbar.classList.remove('navbar-scroll');
-        
+
         // Keep logo text white for consistency (only if elements exist)
         if (logoText) {
             logoText.classList.add('text-white');
@@ -372,24 +375,24 @@ window.addEventListener('scroll', function() {
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     let currentSection = '';
     const scrollPosition = window.scrollY + 150; // Offset for better detection
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
-        
+
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             currentSection = section.getAttribute('id');
         }
     });
-    
+
     // Remove active class from all nav links
     navLinks.forEach(link => {
         link.classList.remove('active');
     });
-    
+
     // Add active class to current section's nav link
     if (currentSection) {
         const activeLink = document.querySelector(`.nav-link[href="#${currentSection}"]`);
@@ -411,14 +414,14 @@ let isLoaderHidden = false;
 
 function hideLoader() {
     if (isLoaderHidden) return;
-    
+
     const loader = document.getElementById('loader');
     if (loader) {
         isLoaderHidden = true;
         loader.classList.add('fade-out');
-        
+
         // Remove loader from DOM after fade out
-        setTimeout(function() {
+        setTimeout(function () {
             loader.remove();
         }, 1000);
     }
@@ -427,7 +430,7 @@ function hideLoader() {
 function checkMinimumLoadTime() {
     const elapsedTime = Date.now() - loaderStartTime;
     const minimumLoadTime = 2000; // 2 seconds minimum
-    
+
     if (elapsedTime >= minimumLoadTime) {
         hideLoader();
     } else {
@@ -436,52 +439,44 @@ function checkMinimumLoadTime() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Wait for sun animation to complete (8 seconds) or minimum load time
-    setTimeout(function() {
+    setTimeout(function () {
         checkMinimumLoadTime();
     }, 8000);
 });
 
 // Hide loader when page is fully loaded (but respect minimum time)
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     // Add small delay to ensure all resources are loaded
-    setTimeout(function() {
+    setTimeout(function () {
         checkMinimumLoadTime();
     }, 500);
-});
-
-// Mobile menu toggle
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-mobileMenuBtn.addEventListener('click', function() {
-    mobileMenu.classList.toggle('hidden');
 });
 
 // Contact form submission
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-    // Get form data
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
+        // Get form data
+        const formData = new FormData(contactForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
 
-    // Simple validation
-    if (!name || !email || !subject || !message) {
-        alert('يرجى ملء جميع الحقول المطلوبة');
-        return;
-    }
+        // Simple validation
+        if (!name || !email || !subject || !message) {
+            alert('يرجى ملء جميع الحقول المطلوبة');
+            return;
+        }
 
-    // Simulate form submission
-    alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
-    contactForm.reset();
+        // Simulate form submission
+        alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+        contactForm.reset();
     });
 }
 
@@ -506,7 +501,7 @@ const observerOptions = {
 };
 
 // Lightweight animation observer
-const animationObserver = new IntersectionObserver(function(entries) {
+const animationObserver = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animate-in');
@@ -516,8 +511,16 @@ const animationObserver = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Initialize animations when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize language system when page loads
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize theme first
+    initializeTheme();
+
+    // Initialize language system
+    setTimeout(function () {
+        initializeLanguage();
+    }, 100); // Small delay to ensure translations.js is loaded
+
     // Trigger navbar animations with proper sequencing
     setTimeout(() => {
         const navItems = document.querySelectorAll('.nav-item');
@@ -538,22 +541,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // jQuery animations for administration section
-$(document).ready(function() {
+$(document).ready(function () {
     // Animate counter numbers
     function animateCounters() {
-        $('.counter-animation').each(function() {
+        $('.counter-animation').each(function () {
             const $this = $(this);
             const countTo = parseInt($this.text().replace('+', ''));
-            
+
             $({ countNum: 0 }).animate({
                 countNum: countTo
             }, {
                 duration: 2000,
                 easing: 'swing',
-                step: function() {
+                step: function () {
                     $this.text(Math.floor(this.countNum) + '+');
                 },
-                complete: function() {
+                complete: function () {
                     $this.text(countTo + '+');
                 }
             });
@@ -561,11 +564,11 @@ $(document).ready(function() {
     }
 
     // Intersection Observer for jQuery animations
-    const adminObserver = new IntersectionObserver(function(entries) {
+    const adminObserver = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const $element = $(entry.target);
-                
+
                 if ($element.hasClass('fade-in-up')) {
                     $element.addClass('visible');
                 }
@@ -575,7 +578,7 @@ $(document).ready(function() {
                 if ($element.hasClass('slide-in-right')) {
                     $element.addClass('visible');
                 }
-                
+
                 // Animate counters when they come into view
                 if ($element.find('.counter-animation').length > 0) {
                     setTimeout(animateCounters, 500);
@@ -588,22 +591,22 @@ $(document).ready(function() {
     });
 
     // Observe administration section elements
-    $('.fade-in-up, .slide-in-left, .slide-in-right').each(function() {
+    $('.fade-in-up, .slide-in-left, .slide-in-right').each(function () {
         adminObserver.observe(this);
     });
 
     // Expertise cards hover effects
     $('.expertise-card').hover(
-        function() {
+        function () {
             $(this).find('i').addClass('animate-pulse');
         },
-        function() {
+        function () {
             $(this).find('i').removeClass('animate-pulse');
         }
     );
 
     // Add click effects to expertise cards
-    $('.expertise-card').click(function() {
+    $('.expertise-card').click(function () {
         $(this).addClass('animate-pulse');
         setTimeout(() => {
             $(this).removeClass('animate-pulse');
@@ -611,48 +614,48 @@ $(document).ready(function() {
     });
 
     // Smooth reveal animation for admin section cards
-    $('.admin-section-card').each(function(index) {
+    $('.admin-section-card').each(function (index) {
         $(this).css('animation-delay', (index * 0.2) + 's');
     });
 
     // Admin cards click functionality
-    $('.admin-card').click(function() {
+    $('.admin-card').click(function () {
         const section = $(this).data('section');
         showAdminDetail(section);
     });
 
     // Modal close functionality
-    $('#close-modal').click(function(e) {
+    $('#close-modal').click(function (e) {
         e.preventDefault();
         e.stopPropagation();
         $('#admin-detail-modal').fadeOut(300);
     });
 
     // Close modal when clicking on backdrop
-    $('#admin-detail-modal').click(function(e) {
+    $('#admin-detail-modal').click(function (e) {
         if (e.target === this) {
             $('#admin-detail-modal').fadeOut(300);
         }
     });
 
     // Prevent modal close when clicking inside modal content
-    $(document).on('click', '.bg-white', function(e) {
+    $(document).on('click', '.bg-white', function (e) {
         e.stopPropagation();
     });
 
     // Close modal with Escape key
-    $(document).keydown(function(e) {
+    $(document).keydown(function (e) {
         if (e.key === "Escape") {
             $('#admin-detail-modal').fadeOut(300);
         }
     });
 
     // Function to show admin detail modal
-    window.showAdminDetail = function(section) {
+    window.showAdminDetail = function (section) {
         const modalContent = $('#modal-content');
         let content = '';
 
-        switch(section) {
+        switch (section) {
             case 'team':
                 content = `
                     <div class="modal-content-section grid lg:grid-cols-2 gap-8 items-start h-full">
@@ -856,7 +859,7 @@ function checkFontAwesome() {
 
     // If Font Awesome is not loaded, add fallback
     if (!fontFamily.includes('Font Awesome')) {
-        console.warn('Font Awesome not loaded, adding fallback');
+        // Font Awesome not loaded, adding fallback
         addIconFallbacks();
     }
 }
@@ -898,10 +901,10 @@ function addIconFallbacks() {
 }
 
 // Initialize language system when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize theme system
     initializeTheme();
-    
+
     // Initialize language system
     initializeLanguage();
 
@@ -913,46 +916,46 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mobileLangToggle && translations[currentLanguage] && translations[currentLanguage].lang_toggle) {
         mobileLangToggle.textContent = translations[currentLanguage].lang_toggle;
     }
-    
+
     // Theme switcher event listeners
     const themeToggle = document.getElementById('theme-toggle');
     const themeDropdown = document.getElementById('theme-dropdown');
     const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-    
+
     // Desktop theme switcher
     if (themeToggle && themeDropdown) {
-        themeToggle.addEventListener('click', function(e) {
+        themeToggle.addEventListener('click', function (e) {
             e.stopPropagation();
             themeDropdown.classList.toggle('show');
         });
-        
+
         // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (!themeToggle.contains(e.target) && !themeDropdown.contains(e.target)) {
                 themeDropdown.classList.remove('show');
             }
         });
-        
+
         // Theme option clicks
         document.querySelectorAll('.theme-option').forEach(option => {
-            option.addEventListener('click', function() {
+            option.addEventListener('click', function () {
                 const themeName = this.getAttribute('data-theme');
                 setTheme(themeName);
                 themeDropdown.classList.remove('show');
             });
         });
     }
-    
+
     // Mobile theme switcher (cycles through themes)
     if (mobileThemeToggle) {
-        mobileThemeToggle.addEventListener('click', function() {
+        mobileThemeToggle.addEventListener('click', function () {
             cycleToNextTheme();
         });
     }
 });
 
 // Intersection Observer for Section Animations
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Create intersection observer for section animations
     const observerOptions = {
         threshold: 0.1,
@@ -963,12 +966,12 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const section = entry.target;
-                
+
                 // Services Section Animation
                 if (section.id === 'services') {
                     triggerServicesAnimations();
                 }
-                
+
                 // Contact Section Animation
                 if (section.id === 'contact') {
                     triggerContactAnimations();
@@ -980,7 +983,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe sections
     const servicesSection = document.getElementById('services');
     const contactSection = document.getElementById('contact');
-    
+
     if (servicesSection) sectionObserver.observe(servicesSection);
     if (contactSection) sectionObserver.observe(contactSection);
 });
@@ -1006,27 +1009,95 @@ function triggerContactAnimations() {
     });
 }
 
-// Contact modal functions (if not already defined)
+// Contact modal functions - Available immediately
 function openContactModal() {
-    // Simple implementation - you can enhance this
-    alert('Contact modal would open here. This is a placeholder implementation.');
+    // Opening modal
+    const modal = document.getElementById('contactModal');
+    if (modal) {
+        // Modal found, opening
+        modal.classList.remove('hidden');
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        // Modal opened
+    } else {
+        // Modal not found
+        alert('Modal element not found. Please check if the modal exists in the page.');
+    }
 }
+
+function closeContactModal(event) {
+    // Closing modal
+    if (event && event.target !== event.currentTarget && !event.target.closest('.fa-times')) return;
+    const modal = document.getElementById('contactModal');
+    if (modal) {
+        modal.classList.remove('show');
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        // Modal closed
+    }
+}
+
+// Make functions globally available immediately
+window.openContactModal = openContactModal;
+window.closeContactModal = closeContactModal;
+
+// Also attach to document for extra safety
+if (typeof document !== 'undefined') {
+    document.openContactModal = openContactModal;
+    document.closeContactModal = closeContactModal;
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        closeContactModal();
+    }
+});
+
+// Initialize contact form handler when DOM is loaded
+document.addEventListener('DOMContentLoaded', function () {
+    // Handle contact form submission (both modal forms)
+    const contactForms = document.querySelectorAll('#contact-form, #modal-contact-form');
+    contactForms.forEach(form => {
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+
+                // Show success message
+                const isArabic = document.documentElement.lang === 'ar';
+                const successMessage = isArabic ?
+                    'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.' :
+                    'Your message has been sent successfully! We will contact you soon.';
+
+                alert(successMessage);
+
+                // Reset form and close modal
+                this.reset();
+                closeContactModal();
+            });
+        }
+    });
+});
 
 // Debug function to test themes
 function testThemes() {
-    console.log('Testing all themes...');
+    // Testing all themes
     const themeKeys = Object.keys(themes);
     let index = 0;
-    
+
     const testInterval = setInterval(() => {
         if (index >= themeKeys.length) {
             clearInterval(testInterval);
-            console.log('Theme testing complete!');
+            // Theme testing complete
             return;
         }
-        
+
         const themeName = themeKeys[index];
-        console.log(`Testing theme: ${themeName}`);
+        // Testing theme
         setTheme(themeName);
         index++;
     }, 2000);
@@ -1048,16 +1119,16 @@ class PWAManager {
     init() {
         // Register Service Worker
         this.registerServiceWorker();
-        
+
         // Handle install prompt
         this.handleInstallPrompt();
-        
+
         // Check if already installed
         this.checkInstallStatus();
-        
+
         // Handle app installed event
         this.handleAppInstalled();
-        
+
         // Request notification permission
         this.requestNotificationPermission();
     }
@@ -1065,9 +1136,9 @@ class PWAManager {
     async registerServiceWorker() {
         if ('serviceWorker' in navigator) {
             try {
-                const registration = await navigator.serviceWorker.register('/sw.js');
-                console.log('✅ Service Worker registered successfully:', registration);
-                
+                const registration = await navigator.serviceWorker.register('/sun_website/sw.js');
+                // Service Worker registered successfully
+
                 // Handle updates
                 registration.addEventListener('updatefound', () => {
                     const newWorker = registration.installing;
@@ -1077,16 +1148,16 @@ class PWAManager {
                         }
                     });
                 });
-                
+
             } catch (error) {
-                console.error('❌ Service Worker registration failed:', error);
+                // Service Worker registration failed
             }
         }
     }
 
     handleInstallPrompt() {
         window.addEventListener('beforeinstallprompt', (e) => {
-            console.log('💾 Install prompt available');
+            // Install prompt available
             e.preventDefault();
             this.deferredPrompt = e;
             this.showInstallButton();
@@ -1102,7 +1173,7 @@ class PWAManager {
         `;
         installButton.className = 'pwa-install-btn';
         installButton.onclick = () => this.installApp();
-        
+
         // Add to navigation
         const navbar = document.querySelector('#navbar .container .flex');
         if (navbar) {
@@ -1114,9 +1185,9 @@ class PWAManager {
         if (this.deferredPrompt) {
             this.deferredPrompt.prompt();
             const { outcome } = await this.deferredPrompt.userChoice;
-            console.log(`User response to install prompt: ${outcome}`);
+            // User response to install prompt
             this.deferredPrompt = null;
-            
+
             // Hide install button
             const installBtn = document.querySelector('.pwa-install-btn');
             if (installBtn) {
@@ -1127,7 +1198,7 @@ class PWAManager {
 
     handleAppInstalled() {
         window.addEventListener('appinstalled', () => {
-            console.log('🎉 PWA was installed successfully');
+            // PWA was installed successfully
             this.isInstalled = true;
             this.showWelcomeMessage();
         });
@@ -1137,38 +1208,38 @@ class PWAManager {
         // Check if running in standalone mode
         if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
             this.isInstalled = true;
-            console.log('📱 Running as installed PWA');
+            // Running as installed PWA
         }
     }
 
     async requestNotificationPermission() {
-        if ('Notification' in window) {
-            const permission = await Notification.requestPermission();
-            console.log('🔔 Notification permission:', permission);
-            
-            if (permission === 'granted') {
-                this.setupPushNotifications();
-            }
-        }
+        // Notification requests disabled to prevent console warnings
+        // if ('Notification' in window) {
+        //     const permission = await Notification.requestPermission();
+        //     // Notification permission granted
+        //     if (permission === 'granted') {
+        //         this.setupPushNotifications();
+        //     }
+        // }
     }
 
     async setupPushNotifications() {
         if ('serviceWorker' in navigator && 'PushManager' in window) {
             try {
                 const registration = await navigator.serviceWorker.ready;
-                
+
                 // Subscribe to push notifications
                 const subscription = await registration.pushManager.subscribe({
                     userVisibleOnly: true,
                     applicationServerKey: this.urlBase64ToUint8Array('YOUR_VAPID_PUBLIC_KEY') // Replace with actual key
                 });
-                
-                console.log('🔔 Push subscription:', subscription);
+
+                // Push subscription successful
                 // Send subscription to server
                 this.sendSubscriptionToServer(subscription);
-                
+
             } catch (error) {
-                console.error('❌ Push subscription failed:', error);
+                // Push subscription failed
             }
         }
     }
@@ -1186,7 +1257,7 @@ class PWAManager {
 
     sendSubscriptionToServer(subscription) {
         // Send subscription to your server
-        console.log('📤 Sending subscription to server:', subscription);
+        // Sending subscription to server
         // Implement server communication here
     }
 
@@ -1214,7 +1285,7 @@ class PWAManager {
             </div>
         `;
         document.body.appendChild(welcomeMessage);
-        
+
         // Auto-hide after 5 seconds
         setTimeout(() => {
             if (welcomeMessage.parentElement) {
@@ -1230,18 +1301,18 @@ class PWAManager {
                 const db = await this.openDB();
                 const transaction = db.transaction([type + 'Forms'], 'readwrite');
                 const store = transaction.objectStore(type + 'Forms');
-                
+
                 await store.add({
                     data: formData,
                     timestamp: Date.now(),
                     synced: false
                 });
-                
-                console.log('💾 Form saved offline for later sync');
+
+                // Form saved offline for later sync
                 this.showOfflineMessage();
-                
+
             } catch (error) {
-                console.error('❌ Failed to save offline form:', error);
+                // Failed to save offline form
             }
         }
     }
@@ -1273,7 +1344,7 @@ class PWAManager {
             </div>
         `;
         document.body.appendChild(offlineMsg);
-        
+
         setTimeout(() => {
             if (offlineMsg.parentElement) {
                 offlineMsg.remove();
@@ -1282,8 +1353,8 @@ class PWAManager {
     }
 }
 
-// Initialize PWA
-const pwaManager = new PWAManager();
+// PWA functionality disabled to prevent console errors
+// const pwaManager = new PWAManager();
 
 // Trigger Services Section Animations
 function triggerServicesAnimations() {
@@ -1298,14 +1369,14 @@ function triggerServicesAnimations() {
         '.service-card-5',
         '.service-card-6'
     ];
-    
+
     elementsToAnimate.forEach((selector, index) => {
         const element = document.querySelector(selector);
         if (element) {
             // Reset animation
             element.style.animation = 'none';
             element.offsetHeight; // Trigger reflow
-            
+
             // Re-apply animation
             setTimeout(() => {
                 element.style.animation = '';
@@ -1324,14 +1395,14 @@ function triggerContactAnimations() {
         '.contact-card-3',
         '.contact-button-animate'
     ];
-    
+
     elementsToAnimate.forEach((selector, index) => {
         const element = document.querySelector(selector);
         if (element) {
             // Reset animation
             element.style.animation = 'none';
             element.offsetHeight; // Trigger reflow
-            
+
             // Re-apply animation
             setTimeout(() => {
                 element.style.animation = '';

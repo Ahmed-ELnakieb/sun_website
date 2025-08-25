@@ -1,1651 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="page_title">شركة الشمس للتصدير والاستيراد - شريككم الموثوق في الاستيراد والتصدير لجميع البلدان</title>
-    <meta name="description" content="شركة الشمس للتصدير والاستيراد - شريككم الموثوق في الاستيراد والتصدير لجميع البلدان. خبرة طويلة وجودة عالية في الخدمة." data-translate="page_description">
-    
-    <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#E9A319">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Sun Trading">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Sun Trading">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    
-    <!-- Favicon and PWA Icons -->
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="apple-touch-icon" href="images/logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
-    <link rel="shortcut icon" href="images/logo.png">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Font Awesome Icons CDN - Multiple sources for reliability -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Backup Font Awesome CDN -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" crossorigin="anonymous" />
-    <!-- Alternative CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-    <!-- Bootstrap CSS -->
-    <link href="packages/bootstrap/bootstrap.min.css" rel="stylesheet">
-
-    <!-- jQuery -->
-    <script src="packages/jquery/jquery-3.7.1.min.js"></script>
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Translations -->
-    <script src="translations.js"></script>
-    
-    <!-- Navbar Background Slideshow -->
-    <script src="navbar-slideshow.js"></script>
-    
-    <!-- Loader Auto-Hide Script -->
-    <script>
-        // Auto-hide loader after 3 seconds if it's still showing
-        setTimeout(function() {
-            const loader = document.getElementById('loader');
-            if (loader) {
-                loader.style.opacity = '0';
-                loader.style.transition = 'opacity 0.5s ease-out';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 500);
-            }
-        }, 3000);
-    </script>
-</head>
-<body class="bg-gray-50">
-    <!-- Agricultural Trading Company Loader -->
-    <div class="loader-container" id="loader">
-        <div class="agricultural-loader">
-            <!-- Animated Background Elements -->
-            <div class="loader-particles"></div>
-            <div class="loader-glow-orb loader-glow-1"></div>
-            <div class="loader-glow-orb loader-glow-2"></div>
-            <div class="loader-glow-orb loader-glow-3"></div>
-            
-            <!-- Main Logo Container -->
-            <div class="loader-logo-container">
-                <div class="loader-logo-circle">
-                    <!-- Rotating Grain Elements -->
-                    <div class="grain-orbit grain-orbit-1">
-                        <div class="grain-item grain-wheat">🌾</div>
-                        <div class="grain-item grain-corn">🌽</div>
-                        <div class="grain-item grain-rice">🌾</div>
-                    </div>
-                    <div class="grain-orbit grain-orbit-2">
-                        <div class="grain-item grain-beans">🫘</div>
-                        <div class="grain-item grain-lentils">🫛</div>
-                        <div class="grain-item grain-chickpeas">🫛</div>
-                    </div>
-                    
-                    <!-- Central Sun Logo -->
-                    <div class="loader-sun-center">
-                        <div class="sun-rays"></div>
-                        <div class="sun-core-new">
-                            <span class="sun-icon">☀️</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Company Name -->
-                <div class="loader-company-name">
-                    <div class="loader-name-arabic">شركة الشمس</div>
-                    <div class="loader-name-english">SUN COMPANY</div>
-                    <div class="loader-subtitle">Export & Import</div>
-                    <div class="loader-tagline">Agricultural Trading Excellence</div>
-                </div>
-                
-                <!-- Loading Progress -->
-                <div class="loading-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
-                    </div>
-                    <div class="loading-text">Loading...</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Developer Credit -->
-        <div class="developer-credit">
-            <span class="developer-text">Design and Developed by </span>
-            <a href="mailto:ahmedrmohamed2017@gmail.com" class="developer-link">Elnakieb</a>
-            <div class="copyright-text">© 2024 All Rights Reserved</div>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4" style="background: transparent;">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <div class="flex items-center space-x-4 space-x-reverse">
-                    <div class="flex items-center justify-center">
-                        <img src="images/logo.png" alt="شركة الشمس" class="h-20 object-contain">
-                    </div>
-                    <!-- LOGO_TEXT_NAVBAR: Uncomment to show company name beside logo
-                    <div>
-                        <h1 class="text-xl font-bold text-white" id="logo-text" data-translate="logo_title">شركة الشمس</h1>
-                        <p class="text-sm" id="logo-subtitle" style="color: var(--accent-color);" data-translate="logo_subtitle">للتصدير والاستيراد</p>
-                    </div>
-                    -->
-                </div>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 space-x-reverse items-center">
-                    <a href="#home" class="text-white transition-colors nav-link nav-item nav-delay-1" data-translate="nav_home">الرئيسية</a>
-                    <a href="#about" class="text-white transition-colors nav-link nav-item nav-delay-2" data-translate="nav_about">الشركة</a>
-                    <a href="#products" class="text-white transition-colors nav-link nav-item nav-delay-3" data-translate="nav_products">المنتجات</a>
-                    <a href="#administration" class="text-white transition-colors nav-link nav-item nav-delay-4" data-translate="nav_administration">الاداره</a>
-                    <a href="#services" class="text-white transition-colors nav-link nav-item nav-delay-5" data-translate="nav_services">الخدمات</a>
-                    <a href="#contact" class="text-white transition-colors nav-link nav-item nav-delay-6" data-translate="nav_contact">اتصل بنا</a>
-
-                    <!-- Theme Switcher -->
-                    <div class="theme-switcher">
-                        <button class="theme-button" id="theme-toggle">
-                            <div class="theme-color-preview" id="current-theme-preview"></div>
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </button>
-                        <div class="theme-dropdown" id="theme-dropdown">
-                            <div class="theme-option active" data-theme="golden">
-                                <div class="theme-color-preview"></div>
-                                <span data-translate="theme_golden">Golden</span>
-                            </div>
-                            <div class="theme-option" data-theme="ocean">
-                                <div class="theme-color-preview"></div>
-                                <span data-translate="theme_ocean">Ocean Blue</span>
-                            </div>
-                            <div class="theme-option" data-theme="forest">
-                                <div class="theme-color-preview"></div>
-                                <span data-translate="theme_forest">Forest Green</span>
-                            </div>
-                            <div class="theme-option" data-theme="purple">
-                                <div class="theme-color-preview"></div>
-                                <span data-translate="theme_purple">Royal Purple</span>
-                            </div>
-                            <div class="theme-option" data-theme="sunset">
-                                <div class="theme-color-preview"></div>
-                                <span data-translate="theme_sunset">Sunset Red</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Language Toggle Button -->
-                    <button id="lang-toggle" onclick="toggleLanguage()" class="text-white bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-sm transition-all duration-300 border border-white/30">
-                        English
-                    </button>
-                </div>
-
-                <!-- Mobile Menu Button & Language Toggle -->
-                <div class="md:hidden flex items-center space-x-3 space-x-reverse">
-                    <!-- Mobile Language Toggle -->
-                    <button onclick="toggleLanguage()" class="text-white bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-sm transition-all duration-300 border border-white/30" id="mobile-lang-toggle">
-                        English
-                    </button>
-                    <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-btn" class="text-white">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 rounded-lg shadow-lg p-4" style="background: var(--background-color); border: 1px solid var(--accent-color);">
-                <a href="#home" class="block py-2 transition-colors nav-link nav-item nav-delay-1" style="color: var(--secondary-color);" data-translate="nav_home">الرئيسية</a>
-                <a href="#about" class="block py-2 transition-colors nav-link nav-item nav-delay-2" style="color: var(--secondary-color);" data-translate="nav_about">الشركة</a>
-                <a href="#products" class="block py-2 transition-colors nav-link nav-item nav-delay-3" style="color: var(--secondary-color);" data-translate="nav_products">المنتجات</a>
-                <a href="#administration" class="block py-2 transition-colors nav-link nav-item nav-delay-4" style="color: var(--secondary-color);" data-translate="nav_administration">الاداره</a>
-                <a href="#services" class="block py-2 transition-colors nav-link nav-item nav-delay-5" style="color: var(--secondary-color);" data-translate="nav_services">الخدمات</a>
-                <a href="#contact" class="block py-2 transition-colors nav-link nav-item nav-delay-6" style="color: var(--secondary-color);" data-translate="nav_contact">اتصل بنا</a>
-
-                <!-- Mobile Theme & Language Toggle -->
-                <div class="mt-4 pt-4 border-t border-gray-300">
-                    <!-- Mobile Theme Switcher -->
-                    <div class="mobile-theme-switcher">
-                        <button class="mobile-theme-button" id="mobile-theme-toggle">
-                            <div class="theme-color-preview" id="mobile-current-theme-preview"></div>
-                            <i class="fas fa-palette"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden">
-        <!-- Animated Background Elements -->
-        <div class="hero-particles"></div>
-        <div class="hero-glow-orb hero-glow-orb-1"></div>
-        <div class="hero-glow-orb hero-glow-orb-2"></div>
-        <div class="hero-glow-orb hero-glow-orb-3"></div>
-        
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <div class="max-w-4xl mx-auto">
-                <!-- Main Title with Spectacular Animation -->
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 hero-title-animate" data-translate="hero_title">
-                    <span class="hero-word hero-word-1">مرحباً</span>
-                    <span class="hero-word hero-word-2">بكم</span>
-                    <span class="hero-word hero-word-3">في</span>
-                    <span class="hero-word hero-word-4">شركة</span>
-                    <span class="hero-word hero-word-5">الشمس</span>
-                </h1>
-                
-                <!-- Subtitle with Slide Animation -->
-                <h2 class="text-2xl md:text-4xl font-medium mb-8 hero-subtitle-animate" style="color: var(--accent-color);" data-translate="company_subtitle">
-                    للتصدير والاستيراد
-                </h2>
-                
-                <!-- Description with Fade Up Animation -->
-                <p class="text-xl md:text-2xl mb-12 leading-relaxed text-white hero-description-animate" data-translate="hero_subtitle">
-                    شريككم الموثوق في الاستيراد والتصدير لجميع البلدان
-                </p>
-                
-                <!-- Buttons with Slide Up Animation -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center hero-buttons-animate">
-                    <a href="#services" class="text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 hero-button-primary" style="background: var(--secondary-color); box-shadow: 0 8px 25px var(--shadow-golden);" data-translate="hero_discover">
-                        اكتشف خدماتنا
-                    </a>
-                    <button onclick="openContactModal()" class="border-2 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer hero-button-secondary" style="border-color: var(--accent-color);" data-translate="hero_contact">
-                        تواصل معنا
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Scroll Down Arrow with Enhanced Animation -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 hero-scroll-animate">
-            <a href="#features" class="text-2xl hero-scroll-arrow" style="color: var(--accent-color);">
-                <i class="fas fa-chevron-down"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="py-20" style="background: var(--background-color);">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-fade-up" style="color: var(--primary-color);" data-translate="features_title">لماذا تختار شركة الشمس؟</h2>
-                <p class="text-xl max-w-3xl mx-auto text-fade-up animate-delay-1" style="color: var(--text-dark);" data-translate="features_subtitle">
-                    نتميز بخبرة طويلة في مجال استيراد وتصدير المنتجات الزراعية ونعمل على توفير مجموعة من المنتجات عالية الجودة التي تلبي احتياجات السوق
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Feature 1 -->
-                <div class="feature-card card-fade-in animate-delay-1 p-8 rounded-xl shadow-lg text-center">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 icon-scale-in animate-delay-2" style="background: var(--accent-color);">
-                        <i class="fas fa-globe text-2xl" style="color: var(--primary-color);"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-fade-up animate-delay-3" style="color: var(--primary-color);" data-translate="feature1_title">شبكة واسعة</h3>
-                    <p class="text-fade-up animate-delay-4" style="color: var(--text-dark);" data-translate="feature1_desc">نتعاون مع أفضل الموردين في جميع أنحاء العالم</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="feature-card card-fade-in animate-delay-2 p-8 rounded-xl shadow-lg text-center">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 icon-scale-in animate-delay-3" style="background: var(--accent-color);">
-                        <i class="fas fa-award text-2xl" style="color: var(--primary-color);"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-fade-up animate-delay-4" style="color: var(--primary-color);" data-translate="feature2_title">جودة عالية</h3>
-                    <p class="text-fade-up animate-delay-5" style="color: var(--text-dark);" data-translate="feature2_desc">نقدم منتجات عالية الجودة تلبي المعايير الدولية</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="feature-card card-fade-in animate-delay-3 p-8 rounded-xl shadow-lg text-center">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 icon-scale-in animate-delay-4" style="background: var(--accent-color);">
-                        <i class="fas fa-headset text-2xl" style="color: var(--primary-color);"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-fade-up animate-delay-5" style="color: var(--primary-color);" data-translate="feature3_title">خدمة متميزة</h3>
-                    <p class="text-fade-up animate-delay-6" style="color: var(--text-dark);" data-translate="feature3_desc">نحرص على توفير خدمة عملاء مميزة وحلول مرنة</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="feature-card card-fade-in animate-delay-4 p-8 rounded-xl shadow-lg text-center">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 icon-scale-in animate-delay-5" style="background: var(--accent-color);">
-                        <i class="fas fa-clock text-2xl" style="color: var(--primary-color);"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-fade-up animate-delay-6" style="color: var(--primary-color);" data-translate="feature4_title">خبرة طويلة</h3>
-                    <p class="text-fade-up animate-delay-6" style="color: var(--text-dark);" data-translate="feature4_desc">سنوات من الخبرة في مجال الاستيراد والتصدير</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="min-h-screen flex items-center relative overflow-hidden about-bg">
-        <!-- Background Overlay for Better Text Readability -->
-        <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/60 to-black/40"></div>
-        <div class="absolute inset-0 bg-black/20"></div>
-
-        <!-- Content -->
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-16 items-center min-h-screen py-20">
-                <!-- Text Content -->
-                <div class="slide-in-left text-white">
-                    <div class="mb-8">
-                        <h2 class="text-6xl lg:text-7xl font-bold mb-6 leading-tight text-fade-up" style="color: var(--accent-color);" data-translate="about_title">نبذة عن الشركة</h2>
-                        <div class="w-24 h-1 rounded-full mb-8 scale-in animate-delay-1" style="background: var(--secondary-color);"></div>
-                    </div>
-
-                    <div class="space-y-6 text-lg leading-relaxed">
-                        <p class="text-white/90" data-translate="about_text1">
-                            تأسست شركة الشمس للتصدير والاستيراد لتعمل في مجال استيراد وتصدير الحاصلات الزراعية والسلع الأساسية،
-                            وقد أصبحت تمتلك أقوى فريق عمل ينتقي المحاصيل ذات الجودة العالية ويقوم بفرزها وتنقيتها وتصديرها
-                            لكل بلدان العالم مثل العراق ورومانيا وتركيا وإسبانيا وغيرها.
-                        </p>
-                        <p class="text-white/90" data-translate="about_text2">
-                            نسعى للتوسع في هذا المجال وتقديم أفضل الخدمات لعملائنا، مع الحرص على تقديم أسعار مناسبة
-                            تناسب جميع أنواع الأسواق والحفاظ على أعلى معايير الجودة.
-                        </p>
-                    </div>
-
-                    <!-- Call to Action -->
-                    <div class="mt-10">
-                        <button onclick="openContactModal()" class="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 cursor-pointer" style="background: linear-gradient(to right, var(--secondary-color), var(--primary-color)); color: white; box-shadow: 0 8px 25px var(--shadow-golden);">
-                            <span data-translate="about_cta">تواصل معنا الآن</span>
-                            <i class="fas fa-arrow-left icon-dynamic ml-3"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Stats & Values Card -->
-                <div class="animate-slide-in-left">
-                    <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
-                        <!-- Stats -->
-                        <div class="grid grid-cols-3 gap-6 mb-10">
-                            <div class="text-center">
-                                <div class="text-4xl font-bold mb-2 counter-animation" style="color: var(--secondary-color);">15+</div>
-                                <div class="text-white/80 text-sm" data-translate="stats_experience">سنة خبرة</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold mb-2 counter-animation" style="color: var(--secondary-color);">50+</div>
-                                <div class="text-white/80 text-sm" data-translate="stats_clients">عميل راضي</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold mb-2 counter-animation" style="color: var(--secondary-color);">20+</div>
-                                <div class="text-white/80 text-sm" data-translate="stats_countries">دولة نصدر إليها</div>
-                            </div>
-                        </div>
-
-                        <!-- Values -->
-                        <div class="space-y-6">
-                            <h3 class="text-2xl font-bold mb-6 text-center" style="color: var(--accent-color);" data-translate="values_title">قيمنا الأساسية</h3>
-
-                            <div class="space-y-4">
-                                <div class="flex items-center space-x-4 space-x-reverse p-4 rounded-xl bg-white/5 border border-white/10">
-                                    <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--secondary-color);">
-                                        <i class="fas fa-award text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-white mb-1" data-translate="value1_title">الجودة</h4>
-                                        <p class="text-white/70 text-sm" data-translate="value1_desc">التزامنا بمعايير الجودة والتميز في كل خطوة</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center space-x-4 space-x-reverse p-4 rounded-xl bg-white/5 border border-white/10">
-                                    <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--secondary-color);">
-                                        <i class="fas fa-handshake text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-white mb-1" data-translate="value2_title">الشفافية</h4>
-                                        <p class="text-white/70 text-sm" data-translate="value2_desc">نؤمن بالتعامل بشفافية مع عملائنا وشركائنا</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center space-x-4 space-x-reverse p-4 rounded-xl bg-white/5 border border-white/10">
-                                    <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--secondary-color);">
-                                        <i class="fas fa-lightbulb text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-white mb-1" data-translate="value3_title">الابتكار</h4>
-                                        <p class="text-white/70 text-sm" data-translate="value3_desc">نسعى دائماً لتقديم حلول جديدة ومبتكرة</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Decorative Elements -->
-        <div class="absolute bottom-10 right-10 opacity-20">
-            <i class="fas fa-seedling text-6xl" style="color: var(--secondary-color);"></i>
-        </div>
-        <div class="absolute top-20 right-20 opacity-10">
-            <i class="fas fa-sun text-8xl" style="color: var(--accent-color);"></i>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="py-20" style="background: var(--background-color);">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-fade-up" style="color: var(--primary-color);" data-translate="products_title">منتجاتنا</h2>
-                <p class="text-xl max-w-3xl mx-auto text-fade-up animate-delay-1" style="color: var(--text-dark);" data-translate="products_subtitle">
-                    نقدم مجموعة متنوعة من المنتجات الزراعية عالية الجودة التي تلبي احتياجات السوق المحلي والدولي
-                </p>
-            </div>
-
-            <!-- Product Categories -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button class="category-btn active px-6 py-3 rounded-full font-medium transition-all duration-300" data-category="all" style="background: var(--secondary-color); color: white;" data-translate="category_all">
-                    جميع المنتجات
-                </button>
-                <button class="category-btn px-6 py-3 rounded-full font-medium transition-all duration-300" data-category="grains" style="background: var(--accent-color); color: var(--primary-color);" data-translate="category_grains">
-                    الحبوب
-                </button>
-                <button class="category-btn px-6 py-3 rounded-full font-medium transition-all duration-300" data-category="legumes" style="background: var(--accent-color); color: var(--primary-color);" data-translate="category_legumes">
-                    البقوليات
-                </button>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
-                <!-- Product 2 - Corn -->
-                <div class="product-card card-fade-in animate-delay-2 rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="corn">
-                    <div class="relative overflow-hidden">
-                        <img src="images/products/zora.png"
-                             alt="الذرة"
-                             class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('images/products/zora.png', 'الذرة')">
-                        <div class="absolute top-4 right-4">
-                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product2_type">حبوب</span>
-                        </div>
-
-                        <!-- Hover Details Overlay -->
-                        <div class="hover-overlay">
-                            <div class="hover-content">
-                                <h3 data-translate="product2_name">الذرة</h3>
-                                <p data-translate="product2_full_desc">ذرة صفراء عالية الجودة للاستخدامات المتعددة في الصناعات الغذائية والعلفية</p>
-
-                                <div class="features-section">
-                                    <div class="features-title" data-translate="features_label">المميزات:</div>
-                                    <div>
-                                        <span class="feature-badge yellow" data-translate="feature_golden_color">لون ذهبي مميز</span>
-                                        <span class="feature-badge yellow" data-translate="feature_whole_grains">حبوب كاملة</span>
-                                        <span class="feature-badge yellow" data-translate="feature_suitable_moisture">رطوبة مناسبة</span>
-                                        <span class="feature-badge yellow" data-translate="feature_pest_free">خالية من الآفات</span>
-                                    </div>
-                                </div>
-
-                                <div class="info-grid">
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="origin_label">المنشأ:</div>
-                                        <div data-translate="origin_corn">الأرجنتين، البرازيل، أوكرانيا</div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="usage_label">الاستخدامات:</div>
-                                        <div data-translate="usage_corn">الأعلاف، الصناعات الغذائية، النشا</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product2_name">الذرة</h3>
-                        <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product2_desc">ذرة صفراء عالية الجودة للاستخدامات المتعددة</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product2_category">حبوب</span>
-                            <i class="fas fa-seedling" style="color: var(--secondary-color);"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3 - Cowpea -->
-                <div class="product-card card-fade-in animate-delay-3 rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="cowpea">
-                    <div class="relative overflow-hidden">
-                        <img src="images/products/lobia.png"
-                             alt="لوبيا"
-                             class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('images/products/lobia.png', 'لوبيا')">
-                        <div class="absolute top-4 right-4">
-                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product3_type">بقوليات</span>
-                        </div>
-
-                        <!-- Hover Details Overlay -->
-                        <div class="hover-overlay">
-                            <div class="hover-content">
-                                <h3 data-translate="product3_name">لوبيا</h3>
-                                <p data-translate="product3_full_desc">لوبيا عالية الجودة للاستخدامات المتعددة مع ضمان النقاوة والجودة</p>
-
-                                <div class="features-section">
-                                    <div class="features-title" data-translate="features_label">المميزات:</div>
-                                    <div>
-                                        <span class="feature-badge blue" data-translate="feature_high_nutrition">قيمة غذائية عالية</span>
-                                        <span class="feature-badge green" data-translate="feature_easy_digest">سهل الهضم</span>
-                                        <span class="feature-badge orange" data-translate="feature_storage_resistant">مقاوم للتخزين</span>
-                                        <span class="feature-badge purple" data-translate="feature_excellent_purity">نقاوة ممتازة</span>
-                                    </div>
-                                </div>
-
-                                <div class="info-grid">
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="origin_label">المنشأ:</div>
-                                        <div>مصر، تركيا</div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="usage_label">الاستخدامات:</div>
-                                        <div>الطبخ المنزلي</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product3_name">لوبيا</h3>
-                        <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product3_desc">لوبيا عالية الجودة للاستخدامات المتعددة</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product3_category">بقوليات</span>
-                            <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 - Beans -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="beans">
-                    <div class="relative overflow-hidden">
-                        <img src="images/products/fasolia.png"
-                             alt="الفاصوليا"
-                             class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('images/products/fasolia.png', 'الفاصوليا البيضاء')">
-                        <div class="absolute top-4 right-4">
-                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product4_type">بقوليات</span>
-                        </div>
-
-                        <!-- Hover Details Overlay -->
-                        <div class="hover-overlay">
-                            <div class="hover-content">
-                                <h3 data-translate="product4_name">الفاصوليا البيضاء</h3>
-                                <p data-translate="product4_full_desc">فاصوليا بيضاء خالية من الشوائب وعالية الجودة، مصدر ممتاز للبروتين النباتي</p>
-
-                                <div class="features-section">
-                                    <div class="features-title" data-translate="features_label">المميزات:</div>
-                                    <div>
-                                        <span class="feature-badge indigo" data-translate="feature_high_protein">بروتين عالي</span>
-                                        <span class="feature-badge green" data-translate="feature_no_impurities">خالية من الشوائب</span>
-                                        <span class="feature-badge blue" data-translate="feature_uniform_size">حجم منتظم</span>
-                                        <span class="feature-badge purple" data-translate="feature_bright_white">لون أبيض ناصع</span>
-                                    </div>
-                                </div>
-
-                                <div class="info-grid">
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="origin_label">المنشأ:</div>
-                                        <div data-translate="origin_beans">تركيا، الأرجنتين، كندا</div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="usage_label">الاستخدامات:</div>
-                                        <div data-translate="usage_beans">الطبخ المنزلي، الصناعات الغذائية</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product4_name">الفاصوليا البيضاء</h3>
-                        <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product4_desc">فاصوليا بيضاء خالية من الشوائب وعالية الجودة</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product4_category">بروتين نباتي</span>
-                            <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 5 - Lentils -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="lentils">
-                    <div class="relative overflow-hidden">
-                        <img src="images/products/ads.png"
-                             alt="العدس"
-                             class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('images/products/ads.png', 'العدس')">
-                        <div class="absolute top-4 right-4">
-                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product5_type">بقوليات</span>
-                        </div>
-
-                        <!-- Hover Details Overlay -->
-                        <div class="hover-overlay">
-                            <div class="hover-content">
-                                <h3 data-translate="product5_name">العدس</h3>
-                                <p data-translate="product5_full_desc">عدس أحمر وأصفر عالي الجودة ومنتقى بعناية، غني بالبروتين والألياف</p>
-
-                                <div class="features-section">
-                                    <div class="features-title" data-translate="features_label">المميزات:</div>
-                                    <div>
-                                        <span class="feature-badge red" data-translate="feature_protein_rich">غني بالبروتين</span>
-                                        <span class="feature-badge orange" data-translate="feature_quick_cook">سريع الطبخ</span>
-                                        <span class="feature-badge green" data-translate="feature_variety_colors">ألوان متنوعة</span>
-                                        <span class="feature-badge blue" data-translate="feature_high_nutrition_value">قيمة غذائية عالية</span>
-                                    </div>
-                                </div>
-
-                                <div class="info-grid">
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="origin_label">المنشأ:</div>
-                                        <div data-translate="origin_lentils">تركيا، كندا، أستراليا</div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="usage_label">الاستخدامات:</div>
-                                        <div data-translate="usage_lentils">الشوربات، الأطباق الرئيسية</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product5_name">العدس</h3>
-                        <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product5_desc">عدس أحمر وأصفر عالي الجودة ومنتقى بعناية</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product5_category">غذاء صحي</span>
-                            <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 6 - Chickpeas -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="chickpeas">
-                    <div class="relative overflow-hidden">
-                        <img src="images/products/homos.png"
-                             alt="الحمص"
-                             class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('images/products/homos.png', 'الحمص')">
-                        <div class="absolute top-4 right-4">
-                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product6_type">بقوليات</span>
-                        </div>
-
-                        <!-- Hover Details Overlay -->
-                        <div class="hover-overlay">
-                            <div class="hover-content">
-                                <h3 data-translate="product6_name">الحمص</h3>
-                                <p data-translate="product6_full_desc">حمص عالي الجودة ومنتقى من أفضل المصادر، مصدر طبيعي للبروتين والألياف</p>
-
-                                <div class="features-section">
-                                    <div class="features-title" data-translate="features_label">المميزات:</div>
-                                    <div>
-                                        <span class="feature-badge yellow" data-translate="feature_large_size">حجم كبير</span>
-                                        <span class="feature-badge orange" data-translate="feature_golden_color_chickpea">لون ذهبي</span>
-                                        <span class="feature-badge green" data-translate="feature_smooth_texture">ملمس ناعم</span>
-                                        <span class="feature-badge blue" data-translate="feature_distinctive_taste">طعم مميز</span>
-                                    </div>
-                                </div>
-
-                                <div class="info-grid">
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="origin_label">المنشأ:</div>
-                                        <div data-translate="origin_chickpeas">تركيا، المكسيك، أستراليا</div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="usage_label">الاستخدامات:</div>
-                                        <div data-translate="usage_chickpeas">الحمص المسلوق، الفلافل، الحمص بالطحينة</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product6_name">الحمص</h3>
-                        <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product6_desc">حمص عالي الجودة ومنتقى من أفضل المصادر</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product6_category">بروتين طبيعي</span>
-                            <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 7 - Rice -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="grains" data-product="rice">
-                    <div class="relative overflow-hidden">
-                        <img src="images/products/rice.png"
-                             alt="رز"
-                             class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('images/products/rice.png', 'رز')">
-                        <div class="absolute top-4 right-4">
-                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product7_type">حبوب</span>
-                        </div>
-
-                        <!-- Hover Details Overlay -->
-                        <div class="hover-overlay">
-                            <div class="hover-content">
-                                <h3 data-translate="product7_name">رز</h3>
-                                <p data-translate="product7_full_desc">رز عالي الجودة من أفضل المصادر العالمية، يتميز بنقاوته العالية ومحتواه الغذائي الممتاز</p>
-
-                                <div class="features-section">
-                                    <div class="features-title" data-translate="features_label">المميزات:</div>
-                                    <div>
-                                        <span class="feature-badge green" data-translate="feature_high_purity">نقاوة عالية</span>
-                                        <span class="feature-badge green" data-translate="feature_no_impurities">خالي من الشوائب</span>
-                                        <span class="feature-badge green" data-translate="feature_international_standards">معايير دولية</span>
-                                        <span class="feature-badge green" data-translate="feature_safe_storage">تخزين آمن</span>
-                                    </div>
-                                </div>
-
-                                <div class="info-grid">
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="origin_label">المنشأ:</div>
-                                        <div data-translate="origin_rice">مصر، استراليا</div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="usage_label">الاستخدامات:</div>
-                                        <div data-translate="usage_rice">الطبخ المنزلي</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product7_name">رز</h3>
-                        <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product7_desc">رز عالي الجودة من أفضل المصادر العالمية</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product7_category">منتج أساسي</span>
-                            <i class="fas fa-seedling" style="color: var(--secondary-color);"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 8 - Fava Beans -->
-                <div class="product-card rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl" data-category="legumes" data-product="fava-beans">
-                    <div class="relative overflow-hidden">
-                        <img src="images/products/fol.png"
-                             alt="فول"
-                             class="w-full object-cover" style="height: 280px; width: 100%;"
-                             onclick="openFullscreenImage('images/products/fol.png', 'فول')">
-                        <div class="absolute top-4 right-4">
-                            <span class="bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium" style="color: var(--primary-color);" data-translate="product8_type">بقوليات</span>
-                        </div>
-
-                        <!-- Hover Details Overlay -->
-                        <div class="hover-overlay">
-                            <div class="hover-content">
-                                <h3 data-translate="product8_name">فول</h3>
-                                <p data-translate="product8_full_desc">فول عالي الجودة ومنتقى بعناية، غني بالبروتين والألياف</p>
-
-                                <div class="features-section">
-                                    <div class="features-title" data-translate="features_label">المميزات:</div>
-                                    <div>
-                                        <span class="feature-badge red" data-translate="feature_protein_rich">غني بالبروتين</span>
-                                        <span class="feature-badge orange" data-translate="feature_quick_cook">سريع الطبخ</span>
-                                        <span class="feature-badge green" data-translate="feature_variety_colors">ألوان متنوعة</span>
-                                        <span class="feature-badge blue" data-translate="feature_high_nutrition_value">قيمة غذائية عالية</span>
-                                    </div>
-                                </div>
-
-                                <div class="info-grid">
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="origin_label">المنشأ:</div>
-                                        <div data-translate="origin_fava_beans">مصر، استراليا</div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-label" data-translate="usage_label">الاستخدامات:</div>
-                                        <div data-translate="usage_fava_beans">الطبخ المنزلي</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-color);" data-translate="product8_name">فول</h3>
-                        <p class="mb-4 text-sm" style="color: var(--text-dark);" data-translate="product8_desc">فول عالي الجودة ومنتقى بعناية</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold px-3 py-1 rounded-full text-sm" style="background: var(--accent-color); color: var(--primary-color);" data-translate="product8_category">غذاء صحي</span>
-                            <i class="fas fa-leaf" style="color: var(--secondary-color);"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Full Screen Image Modal -->
-        <div id="fullscreenImageModal" class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden flex items-center justify-center p-4">
-            <div class="relative max-w-full max-h-full">
-                <!-- Close Button -->
-                <button onclick="closeFullscreenImage()" class="absolute top-4 right-4 text-white hover:text-gray-300 text-3xl z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">
-                    <i class="fas fa-times"></i>
-                </button>
-
-                <!-- Full Screen Image -->
-                <img id="fullscreenImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
-
-                <!-- Image Caption -->
-                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg">
-                    <span id="fullscreenImageCaption"></span>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-
-    <!-- Administration Section -->
-    <section id="administration" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4" style="color: var(--primary-color);" data-translate="admin_title">الإدارة</h2>
-                <p class="text-xl max-w-3xl mx-auto" style="color: var(--text-dark);" data-translate="admin_subtitle">
-                    تعرف على فريق الإدارة المتميز الذي يقود شركة الشمس نحو النجاح والتميز في مجال الاستيراد والتصدير
-                </p>
-            </div>
-
-            <!-- 4 Column Cards Layout - Enhanced Size -->
-            <div class="flex justify-center mb-16">
-                <div class="admin-cards-container flex gap-4 container mx-auto px-4" style="height: 750px;">
-                    <!-- فريق العمل Card -->
-                    <div class="admin-card admin-card-team flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="team" style="transform: skewX(-8deg); min-width: 280px;">
-                        <div class="admin-card-overlay"></div>
-                        <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
-                            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: var(--secondary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                                <i class="fas fa-users text-white text-3xl"></i>
-                            </div>
-                            <h3 class="text-3xl font-bold text-white mb-6 drop-shadow-lg" data-translate="admin_team_title">فريق العمل</h3>
-                            <div class="w-16 h-1 bg-white rounded-full mb-4"></div>
-                            <p class="text-white/80 text-sm leading-relaxed" data-translate="admin_team_desc">
-                                فريق متخصص ومتفاني يعمل بأعلى معايير الجودة
-                            </p>
-                        </div>
-
-                        <!-- Hover Details Overlay -->
-                        <div class="admin-hover-overlay">
-                            <div class="admin-hover-content">
-                                <h3 data-translate="admin_team_title">فريق العمل</h3>
-                                <p data-translate="admin_team_full_desc">فريق متخصص ومتفاني يعمل بأعلى معايير الجودة والمهنية في جميع جوانب العمل</p>
-
-                                <div class="admin-features-section">
-                                    <div class="admin-features-title" data-translate="admin_team_features_title">مميزات الفريق:</div>
-                                    <div>
-                                        <span class="admin-feature-badge blue" data-translate="admin_team_specialized">فريق متخصص ومتفاني</span>
-                                        <span class="admin-feature-badge green" data-translate="admin_team_experience">خبرة واسعة</span>
-                                        <span class="admin-feature-badge purple" data-translate="admin_team_commitment">التزام بالتميز</span>
-                                    </div>
-                                </div>
-
-                                <div class="admin-info-grid">
-                                    <div class="admin-info-item">
-                                        <div class="admin-info-label" data-translate="admin_team_specialization_title">التخصص:</div>
-                                        <div data-translate="admin_team_specialization">الاستيراد والتصدير والتجارة الدولية</div>
-                                    </div>
-                                    <div class="admin-info-item">
-                                        <div class="admin-info-label" data-translate="admin_team_goal_title">الهدف:</div>
-                                        <div data-translate="admin_team_goal">تقديم أفضل الخدمات لعملائنا</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- إدارة الشركة Card -->
-                    <div class="admin-card admin-card-management flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="management" style="transform: skewX(-8deg); min-width: 280px;">
-                        <div class="admin-card-overlay"></div>
-                        <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
-                            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: var(--accent-color); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                                <i class="fas fa-building text-3xl" style="color: var(--primary-color);"></i>
-                            </div>
-                            <h3 class="text-3xl font-bold text-white mb-6 drop-shadow-lg" data-translate="admin_management_title">إدارة الشركة</h3>
-                            <div class="w-16 h-1 bg-white rounded-full mb-4"></div>
-                            <p class="text-white/80 text-sm leading-relaxed" data-translate="admin_management_desc">
-                                قيادة حكيمة وتخطيط استراتيجي للنمو المستدام
-                            </p>
-                        </div>
-
-                        <!-- Hover Details Overlay -->
-                        <div class="admin-hover-overlay">
-                            <div class="admin-hover-content">
-                                <h3 data-translate="admin_management_title">إدارة الشركة</h3>
-                                <p data-translate="admin_management_full_desc">قيادة حكيمة وتخطيط استراتيجي للنمو المستدام مع التركيز على التميز والابتكار</p>
-
-                                <div class="admin-features-section">
-                                    <div class="admin-features-title" data-translate="admin_management_features_title">التوجهات الاستراتيجية:</div>
-                                    <div>
-                                        <span class="admin-feature-badge gold" data-translate="admin_management_wise_leadership">قيادة حكيمة</span>
-                                        <span class="admin-feature-badge orange" data-translate="admin_management_strategic_planning">تخطيط استراتيجي</span>
-                                        <span class="admin-feature-badge blue" data-translate="admin_management_sustainable_growth">نمو مستدام</span>
-                                    </div>
-                                </div>
-
-                                <div class="admin-info-grid">
-                                    <div class="admin-info-item">
-                                        <div class="admin-info-label" data-translate="admin_management_vision_title">رؤيتنا:</div>
-                                        <div data-translate="admin_management_vision">أن نكون الشركة الرائدة في مجال الاستيراد والتصدير في المنطقة</div>
-                                    </div>
-                                    <div class="admin-info-item">
-                                        <div class="admin-info-label" data-translate="admin_management_mission_title">مهمتنا:</div>
-                                        <div data-translate="admin_management_mission">تقديم خدمات متميزة في الاستيراد والتصدير مع الحفاظ على أعلى معايير</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- المدير العام Card -->
-                    <div class="admin-card admin-card-ceo flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="ceo" style="transform: skewX(-8deg); min-width: 280px;">
-                        <div class="admin-card-overlay"></div>
-                        <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
-                            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: linear-gradient(135deg, #FFD700, #FFA500); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                                <i class="fas fa-user-tie text-white text-3xl"></i>
-                            </div>
-                            <h3 class="text-3xl font-bold text-white mb-6 drop-shadow-lg" data-translate="admin_ceo_title">المدير العام والمؤسس</h3>
-                            <div class="w-16 h-1 bg-white rounded-full mb-4"></div>
-                            <p class="text-white/80 text-sm leading-relaxed" data-translate="admin_ceo_desc">
-                                يتمتع بخبرة تزيد عن 20 عاماً في مجال التجارة الدولية والاستيراد والتصدير
-                            </p>
-                        </div>
-
-                        <!-- Hover Details Overlay -->
-                        <div class="admin-hover-overlay">
-                            <div class="admin-hover-content">
-                                <h3 data-translate="admin_ceo_name">أحمد عبدالفتاح متولي</h3>
-                                <p data-translate="admin_ceo_desc">يتمتع بخبرة تزيد عن 20 عاماً في مجال التجارة الدولية والاستيراد والتصدير</p>
-
-                                <div class="admin-features-section">
-                                    <div class="admin-features-title" data-translate="admin_ceo_qualifications_title">المؤهلات:</div>
-                                    <div>
-                                        <span class="admin-feature-badge gold" data-translate="admin_ceo_experience">خبرة +20 سنة</span>
-                                        <span class="admin-feature-badge orange" data-translate="admin_ceo_international_trade">التجارة الدولية</span>
-                                        <span class="admin-feature-badge blue" data-translate="admin_ceo_strategic_leadership">قيادة استراتيجية</span>
-                                    </div>
-                                </div>
-
-                                <div class="admin-info-grid">
-                                    <div class="admin-info-item">
-                                        <div class="admin-info-label" data-translate="admin_ceo_position_title">المنصب:</div>
-                                        <div data-translate="admin_ceo_position">المدير العام والمؤسس</div>
-                                    </div>
-                                    <div class="admin-info-item">
-                                        <div class="admin-info-label" data-translate="admin_ceo_specialization_title">التخصص:</div>
-                                        <div data-translate="admin_ceo_specialization">التجارة الدولية والاستيراد والتصدير</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- قيمنا Card -->
-                    <div class="admin-card admin-card-values flex-1 overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-2xl"
-                         data-section="values" style="transform: skewX(-8deg); min-width: 280px;">
-                        <div class="admin-card-overlay"></div>
-                        <div class="admin-card-content h-full flex flex-col items-center justify-center p-8 text-center relative z-10" style="transform: skewX(8deg);">
-                            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-8" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                                <i class="fas fa-heart text-white text-3xl"></i>
-                            </div>
-                            <h3 class="text-3xl font-bold text-white mb-6 drop-shadow-lg" data-translate="admin_values_title">قيمنا</h3>
-                            <div class="w-16 h-1 bg-white rounded-full mb-4"></div>
-                            <p class="text-white/80 text-sm leading-relaxed" data-translate="admin_values_desc">
-                                مبادئ أساسية توجه عملنا وتحدد هويتنا
-                            </p>
-                        </div>
-
-                        <!-- Hover Details Overlay -->
-                        <div class="admin-hover-overlay">
-                            <div class="admin-hover-content">
-                                <h3 data-translate="admin_values_title">قيمنا</h3>
-                                <p data-translate="admin_values_full_desc">مبادئ أساسية توجه عملنا وتحدد هويتنا في جميع التعاملات التجارية والعلاقات مع العملاء</p>
-
-                                <div class="admin-features-section">
-                                    <div class="admin-features-title" data-translate="admin_core_values_title">قيمنا الأساسية:</div>
-                                    <div>
-                                        <span class="admin-feature-badge blue" data-translate="admin_value_credibility">المصداقية</span>
-                                        <span class="admin-feature-badge green" data-translate="admin_value_quality">الجودة</span>
-                                        <span class="admin-feature-badge red" data-translate="admin_value_customer_care">الاهتمام بالعملاء</span>
-                                        <span class="admin-feature-badge purple" data-translate="admin_value_innovation">الابتكار</span>
-                                    </div>
-                                </div>
-
-                                <div class="admin-info-grid">
-                                    <div class="admin-info-item">
-                                        <div class="admin-info-label" data-translate="admin_credibility_label">المصداقية:</div>
-                                        <div data-translate="admin_credibility_desc">الصدق والشفافية في جميع التعاملات</div>
-                                    </div>
-                                    <div class="admin-info-item">
-                                        <div class="admin-info-label" data-translate="admin_quality_label">الجودة:</div>
-                                        <div data-translate="admin_quality_desc">أعلى المعايير في الخدمات والمنتجات</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Detail Modal/Overlay -->
-        <div id="admin-detail-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
-            <div class="flex items-center justify-center min-h-screen p-4">
-                <div class="bg-white rounded-xl shadow-2xl max-w-5xl w-full h-auto max-h-[85vh] overflow-hidden">
-                    <!-- Close Button -->
-                    <div class="flex justify-end p-4 pb-2">
-                        <button id="close-modal" class="text-gray-500 hover:text-gray-700 text-2xl transition-colors">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-
-                    <!-- Modal Content -->
-                    <div id="modal-content" class="px-8 pb-8 pt-0 h-full">
-                        <!-- Content will be dynamically loaded here -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 relative overflow-hidden services-section">
-        <!-- Animated Background Elements -->
-        <div class="services-particles"></div>
-        <div class="services-glow-orb services-glow-orb-1"></div>
-        <div class="services-glow-orb services-glow-orb-2"></div>
-        
-        <!-- Background with gradient overlay -->
-        <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100"></div>
-
-        <div class="container mx-auto px-4 relative z-10">
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold mb-6 services-title-animate" style="color: var(--primary-color);" data-translate="services_title">خدماتنا</h2>
-                <p class="text-xl max-w-3xl mx-auto leading-relaxed services-subtitle-animate" style="color: var(--text-dark);" data-translate="services_subtitle">
-                    نقدم مجموعة شاملة من الخدمات المتخصصة في مجال الاستيراد والتصدير لضمان نجاح أعمالكم التجارية
-                </p>
-                <div class="w-24 h-1 mx-auto mt-6 rounded-full services-line-animate" style="background: linear-gradient(to right, var(--secondary-color), var(--primary-color));"></div>
-            </div>
-
-            <!-- Services Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <!-- Service 1: Export/Import Consulting -->
-                <div class="service-card service-card-1 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));">
-                        <i class="fas fa-handshake text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);" data-translate="service1_title">استشارات الاستيراد والتصدير</h3>
-                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);" data-translate="service1_desc">
-                        فريق من المتخصصين يقدم استشارات شاملة في مجال الاستيراد والتصدير للمجالات الزراعية والصناعية والتجارية
-                    </p>
-                    <div class="text-center">
-                        <button onclick="openContactModal()" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer" style="background: var(--secondary-color);">
-                            <span data-translate="learn_more">اعرف المزيد</span>
-                            <i class="fas fa-arrow-left icon-dynamic ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 2: Price Quotations -->
-                <div class="service-card service-card-2 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--secondary-color), var(--accent-color));">
-                        <i class="fas fa-calculator text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);" data-translate="service2_title">عروض الأسعار</h3>
-                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);" data-translate="service2_desc">
-                        نقدم أفضل الأسعار لعملائنا ونساعدهم للوصول لأفضل سعر ممكن مع مراعاة الجودة والمصداقية
-                    </p>
-                    <div class="text-center">
-                        <button onclick="openContactModal()" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer" style="background: var(--secondary-color);">
-                            <span data-translate="get_quote">اطلب عرض سعر</span>
-                            <i class="fas fa-arrow-left icon-dynamic ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 3: Machinery Import -->
-                <div class="service-card service-card-3 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--accent-color), var(--primary-color));">
-                        <i class="fas fa-cogs text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);" data-translate="service3_title">استيراد الماكينات</h3>
-                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);" data-translate="service3_desc">
-                        متخصصون في استيراد الماكينات وخطوط الإنتاج من أفضل المصادر العالمية مع ضمان الجودة والكفاءة
-                    </p>
-                    <div class="text-center">
-                        <button onclick="openContactModal()" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer" style="background: var(--secondary-color);">
-                            <span data-translate="contact_now">تواصل معنا</span>
-                            <i class="fas fa-arrow-left icon-dynamic ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 4: International Marketing -->
-                <div class="service-card service-card-4 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--primary-color), var(--accent-color));">
-                        <i class="fas fa-globe text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);" data-translate="service4_title">التسويق الدولي</h3>
-                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);" data-translate="service4_desc">
-                        خدمات التسويق الدولية لمساعدتك في تسويق منتجاتك عالمياً وتوسيع نطاق أعمالك التجارية
-                    </p>
-                    <div class="text-center">
-                        <button onclick="openContactModal()" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer" style="background: var(--secondary-color);">
-                            <span data-translate="start_now">ابدأ الآن</span>
-                            <i class="fas fa-arrow-left icon-dynamic ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 5: Shipping Consulting -->
-                <div class="service-card service-card-5 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--secondary-color), var(--primary-color));">
-                        <i class="fas fa-ship text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);" data-translate="service5_title">استشارات الشحن</h3>
-                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);" data-translate="service5_desc">
-                        خدمات استشارية متخصصة في الشحن البحري والجوي والبري مع أفضل الحلول اللوجستية
-                    </p>
-                    <div class="text-center">
-                        <button onclick="openContactModal()" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer" style="background: var(--secondary-color);" data-translate="consult_experts">
-                            استشر خبرائنا
-                            <i class="fas fa-arrow-left icon-dynamic ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Service 6: Storage & Distribution -->
-                <div class="service-card service-card-6 bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--accent-color), var(--secondary-color));">
-                        <i class="fas fa-warehouse text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-center mb-4" style="color: var(--primary-color);" data-translate="service6_title">التخزين والتوزيع</h3>
-                    <p class="text-center leading-relaxed mb-6" style="color: var(--text-dark);" data-translate="service6_desc">
-                        حلول متكاملة للتخزين والتوزيع مع مرافق حديثة وأنظمة إدارة متطورة لضمان سلامة البضائع
-                    </p>
-                    <div class="text-center">
-                        <button onclick="openContactModal()" class="inline-flex items-center px-6 py-3 rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer" style="background: var(--secondary-color);" data-translate="book_space">
-                            احجز مساحتك
-                            <i class="fas fa-arrow-left icon-dynamic ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Why Choose Us Section -->
-            <div class="bg-white rounded-3xl shadow-2xl p-12 mb-16">
-                <h3 class="text-4xl font-bold text-center mb-12" style="color: var(--primary-color);" data-translate="why_choose_title">لماذا تختار شركة الشمس؟</h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Feature 1: Speed -->
-                    <div class="text-center">
-                        <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));">
-                            <i class="fas fa-bolt text-white text-3xl"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-4" style="color: var(--primary-color);" data-translate="why_speed_title">السرعة</h4>
-                        <p class="leading-relaxed" style="color: var(--text-dark);" data-translate="why_speed_desc">
-                            خدمة سريعة في التخليص الجمركي والشحن مع الحفاظ على أعلى معايير الجودة والدقة
-                        </p>
-                    </div>
-
-                    <!-- Feature 2: Reliability -->
-                    <div class="text-center">
-                        <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--secondary-color), var(--accent-color));">
-                            <i class="fas fa-shield-alt text-white text-3xl"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-4" style="color: var(--primary-color);" data-translate="why_credibility_title">المصداقية</h4>
-                        <p class="leading-relaxed" style="color: var(--text-dark);" data-translate="why_credibility_desc">
-                            عملاء دائمون يثقون بنا للمصداقية في المواعيد والتعامل مع فريق متخصص من الخبراء
-                        </p>
-                    </div>
-
-                    <!-- Feature 3: Solutions -->
-                    <div class="text-center">
-                        <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, var(--accent-color), var(--primary-color));">
-                            <i class="fas fa-lightbulb text-white text-3xl"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold mb-4" style="color: var(--primary-color);" data-translate="why_solutions_title">الحلول المميزة</h4>
-                        <p class="leading-relaxed" style="color: var(--text-dark);" data-translate="why_solutions_desc">
-                            حلول مبتكرة ومتخصصة في جميع طرق الشحن: البرية والجوية والبحرية
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="text-center">
-                <h3 class="text-3xl font-bold mb-6" style="color: var(--primary-color);" data-translate="cta_question">هل تحتاج إلى استشارة مجانية؟</h3>
-                <p class="text-xl mb-8" style="color: var(--text-dark);" data-translate="cta_description">تواصل معنا الآن للحصول على استشارة مجانية وعرض سعر مخصص لاحتياجاتك</p>
-                <button onclick="openContactModal()" class="inline-flex items-center px-12 py-4 rounded-full text-white text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));">
-                    <span data-translate="cta_button">تواصل معنا الآن</span>
-                    <i class="fas fa-phone icon-dynamic ml-3"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 relative overflow-hidden contact-section" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
-        <!-- Animated Background Elements -->
-        <div class="contact-particles"></div>
-        <div class="contact-wave contact-wave-1"></div>
-        <div class="contact-wave contact-wave-2"></div>
-        <div class="contact-glow-orb contact-glow-orb-1"></div>
-        <div class="contact-glow-orb contact-glow-orb-2"></div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white contact-title-animate" data-translate="contact_title">تواصل معنا</h2>
-                <p class="text-xl mb-12 text-white/90 max-w-3xl mx-auto contact-subtitle-animate" data-translate="contact_subtitle">
-                    نحن هنا لخدمتكم ومساعدتكم في جميع احتياجاتكم التجارية. تواصلوا معنا للحصول على استشارة مجانية وعرض سعر مخصص
-                </p>
-
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <!-- Phone -->
-                    <div class="text-center contact-card contact-card-1">
-                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4 contact-icon-animate">
-                            <i class="fas fa-phone text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2" data-translate="contact_phone">اتصل بنا</h3>
-                        <p class="text-white/80" dir="ltr" style="direction: ltr;">+20 122 033 3352</p>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="text-center contact-card contact-card-2">
-                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4 contact-icon-animate">
-                            <i class="fas fa-envelope text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2" data-translate="contact_email">راسلنا</h3>
-                        <p class="text-white/80">info@suncompany-egypt.org</p>
-                    </div>
-
-                    <!-- Location -->
-                    <div class="text-center contact-card contact-card-3">
-                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4 contact-icon-animate">
-                            <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2" data-translate="contact_location">زورنا</h3>
-                        <p class="text-white/80">القاهرة، مصر</p>
-                    </div>
-                </div>
-
-                <button onclick="openContactModal()" class="contact-button-animate inline-flex items-center px-12 py-4 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style="background: white; color: var(--primary-color);">
-                    <span data-translate="contact_send">أرسل رسالة</span>
-                    <i class="fas fa-paper-plane icon-dynamic ml-3"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Modal -->
-    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4" onclick="closeContactModal(event)">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[95vh] overflow-hidden" onclick="event.stopPropagation()">
-            <!-- Modal Header -->
-            <div class="flex items-center justify-between p-6 border-b border-gray-200">
-                <h2 class="text-3xl font-bold" style="color: var(--primary-color);" data-translate="contact_title">تواصل معنا</h2>
-                <button onclick="closeContactModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
-            </div>
-
-            <!-- Modal Body -->
-            <div class="p-6 h-full">
-                <div class="grid lg:grid-cols-2 gap-8 h-full">
-                    <!-- Left Side: Contact Information -->
-                    <div class="space-y-6">
-                        <!-- Phone Numbers -->
-                        <div>
-                            <h3 class="text-xl font-bold mb-4" style="color: var(--primary-color);" data-translate="contact_phone_numbers">أرقام الهاتف</h3>
-                            <div class="grid grid-cols-1 gap-3">
-                                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                    <a href="tel:+201220333352" class="text-base font-medium" style="color: var(--text-dark); direction: ltr;" dir="ltr">+20 122 033 3352</a>
-                                    <a href="https://wa.me/201220333352" target="_blank" class="text-green-500 hover:text-green-600 transition-colors">
-                                        <i class="fab fa-whatsapp text-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Address & Email -->
-                        <div>
-                            <h3 class="text-xl font-bold mb-4" style="color: var(--primary-color);" data-translate="contact_address_email">العنوان والبريد الإلكتروني</h3>
-                            <div class="space-y-3">
-                                <div class="p-3 bg-gray-50 rounded-lg">
-                                    <div class="flex items-start space-x-3 space-x-reverse">
-                                        <i class="fas fa-map-marker-alt mt-1" style="color: var(--accent-color);"></i>
-                                        <div>
-                                            <p class="font-semibold mb-1" style="color: var(--primary-color);" data-translate="contact_full_address">العنوان الكامل:</p>
-                                            <p class="text-sm" style="color: var(--text-dark);">
-                                                <span data-translate="contact_street">7 شارع الشون</span><br>
-                                                <span data-translate="contact_area">ساحل روض الفرج</span><br>
-                                                <span data-translate="contact_city">القاهرة، مصر</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="p-3 bg-gray-50 rounded-lg">
-                                    <div class="flex items-center space-x-3 space-x-reverse">
-                                        <i class="fas fa-envelope" style="color: var(--accent-color);"></i>
-                                        <div>
-                                            <p class="font-semibold mb-1" style="color: var(--primary-color);" data-translate="contact_email_label">البريد الإلكتروني:</p>
-                                            <a href="mailto:info@suncompany-egypt.org" class="hover:underline text-sm" style="color: var(--text-dark);" data-translate="contact_email_address">info@suncompany-egypt.org</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Side: Contact Form -->
-                    <div>
-                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary-color);" data-translate="contact_send">أرسل لنا رسالة</h3>
-                        <form id="modal-contact-form" class="space-y-4">
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label for="modal-name" class="block font-semibold mb-2 text-sm" style="color: var(--primary-color);" data-translate="form_name">الاسم</label>
-                                    <input type="text" id="modal-name" name="name" required
-                                           class="w-full px-3 py-2 border-2 rounded-lg transition-all duration-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm" style="border-color: var(--accent-color);">
-                                </div>
-                                <div>
-                                    <label for="modal-email" class="block font-semibold mb-2 text-sm" style="color: var(--primary-color);" data-translate="form_email">البريد الإلكتروني</label>
-                                    <input type="email" id="modal-email" name="email" required
-                                           class="w-full px-3 py-2 border-2 rounded-lg transition-all duration-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm" style="border-color: var(--accent-color);">
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label for="modal-phone" class="block font-semibold mb-2 text-sm" style="color: var(--primary-color);" data-translate="form_phone">رقم الهاتف</label>
-                                    <input type="tel" id="modal-phone" name="phone"
-                                           class="w-full px-3 py-2 border-2 rounded-lg transition-all duration-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm" style="border-color: var(--accent-color);">
-                                </div>
-                                <div>
-                                    <label for="modal-subject" class="block font-semibold mb-2 text-sm" style="color: var(--primary-color);" data-translate="form_subject">الموضوع</label>
-                                    <select id="modal-subject" name="subject" required
-                                            class="w-full px-3 py-2 border-2 rounded-lg transition-all duration-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 text-sm" style="border-color: var(--accent-color);">
-                                        <option value="" data-translate="form_select_subject">اختر الموضوع</option>
-                                        <option value="import" data-translate="form_option_import">استيراد</option>
-                                        <option value="export" data-translate="form_option_export">تصدير</option>
-                                        <option value="consultation" data-translate="form_option_consultation">استشارة</option>
-                                        <option value="machinery" data-translate="form_option_machinery">استيراد ماكينات</option>
-                                        <option value="marketing" data-translate="form_option_marketing">تسويق دولي</option>
-                                        <option value="shipping" data-translate="form_option_shipping">استشارات شحن</option>
-                                        <option value="storage" data-translate="form_option_storage">تخزين وتوزيع</option>
-                                        <option value="other" data-translate="form_option_other">أخرى</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="modal-message" class="block font-semibold mb-2 text-sm" style="color: var(--primary-color);" data-translate="form_message">الرسالة</label>
-                                <textarea id="modal-message" name="message" rows="3" required
-                                          class="w-full px-3 py-2 border-2 rounded-lg transition-all duration-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 resize-none text-sm" style="border-color: var(--accent-color);"
-                                          data-translate-placeholder="form_message_placeholder" placeholder="اكتب رسالتك هنا..."></textarea>
-                            </div>
-                            <button type="submit"
-                                    class="w-full text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center" style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));" data-translate="form_submit">
-                                إرسال الرسالة
-                                <i class="fas fa-paper-plane icon-dynamic ml-2"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="text-white py-12 relative overflow-hidden" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
-        <!-- Animated Sun Element - Bottom Right -->
-        <div class="absolute bottom-8 right-8 z-10 hidden md:block">
-            <div class="contact-sun-animation relative">
-                <!-- Main Sun Circle -->
-                <div class="w-32 h-32 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-400 to-orange-400 shadow-2xl animate-pulse">
-                    <div class="w-full h-full rounded-full bg-gradient-to-tr from-transparent via-yellow-200 to-transparent opacity-50 animate-spin-slow"></div>
-                </div>
-
-                <!-- Sun Rays -->
-                <div class="absolute inset-0 animate-spin-reverse">
-                    <div class="absolute top-0 left-1/2 w-1 h-8 bg-gradient-to-t from-yellow-400 to-transparent transform -translate-x-1/2 -translate-y-8"></div>
-                    <div class="absolute top-2 right-2 w-1 h-6 bg-gradient-to-tr from-yellow-400 to-transparent transform rotate-45 translate-x-6 -translate-y-6"></div>
-                    <div class="absolute top-1/2 right-0 w-8 h-1 bg-gradient-to-r from-yellow-400 to-transparent transform -translate-y-1/2 translate-x-8"></div>
-                    <div class="absolute bottom-2 right-2 w-1 h-6 bg-gradient-to-br from-yellow-400 to-transparent transform -rotate-45 translate-x-6 translate-y-6"></div>
-                    <div class="absolute bottom-0 left-1/2 w-1 h-8 bg-gradient-to-b from-yellow-400 to-transparent transform -translate-x-1/2 translate-y-8"></div>
-                    <div class="absolute bottom-2 left-2 w-1 h-6 bg-gradient-to-bl from-yellow-400 to-transparent transform rotate-45 -translate-x-6 translate-y-6"></div>
-                    <div class="absolute top-1/2 left-0 w-8 h-1 bg-gradient-to-l from-yellow-400 to-transparent transform -translate-y-1/2 -translate-x-8"></div>
-                    <div class="absolute top-2 left-2 w-1 h-6 bg-gradient-to-tl from-yellow-400 to-transparent transform -rotate-45 -translate-x-6 -translate-y-6"></div>
-                </div>
-
-                <!-- Inner Glow -->
-                <div class="absolute inset-4 rounded-full bg-gradient-to-br from-yellow-200 to-orange-300 opacity-70 animate-pulse-slow"></div>
-            </div>
-        </div>
-
-        <!-- Mobile Sun Element - Smaller and repositioned -->
-        <div class="absolute bottom-4 right-4 z-10 md:hidden">
-            <div class="contact-sun-animation relative">
-                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-400 to-orange-400 shadow-lg animate-pulse">
-                    <div class="w-full h-full rounded-full bg-gradient-to-tr from-transparent via-yellow-200 to-transparent opacity-50 animate-spin-slow"></div>
-                </div>
-                <div class="absolute inset-1 rounded-full bg-gradient-to-br from-yellow-200 to-orange-300 opacity-70 animate-pulse-slow"></div>
-            </div>
-        </div>
-
-        <div class="container mx-auto px-4 relative z-20">
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Company Info -->
-                <div>
-                    <div class="flex items-center space-x-4 space-x-reverse mb-6">
-                        <div class="flex items-center justify-center">
-                            <img src="images/logo.png" alt="شركة الشمس" class="h-20 object-contain">
-                        </div>
-                        <!-- LOGO_TEXT_FOOTER: Uncomment to show company name beside logo
-                        <div>
-                            <h3 class="text-xl font-bold" data-translate="logo_title">شركة الشمس</h3>
-                            <p style="color: var(--accent-color);" data-translate="logo_subtitle">للتصدير والاستيراد</p>
-                        </div>
-                        -->
-                    </div>
-                    <p class="leading-relaxed" style="color: rgba(255, 255, 255, 0.9);" data-translate="hero_subtitle">
-                        شريككم الموثوق في الاستيراد والتصدير لجميع البلدان. نقدم خدمات الاستيراد والتصدير بأعلى معايير الجودة.
-                    </p>
-                </div>
-
-                <!-- Phone Numbers -->
-                <div>
-                    <h4 class="text-lg font-bold mb-6" data-translate="contact_phone_numbers">أرقام الهاتف</h4>
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-2">
-                            <a href="https://wa.me/201220333352" target="_blank" style="color: rgba(255, 255, 255, 0.9); direction: ltr;" class="hover:text-white transition-colors" dir="ltr">+20 122 033 3352</a>
-                            <i class="fab fa-whatsapp" style="color: var(--accent-color);"></i>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-phone" style="color: var(--accent-color);"></i>
-                            <span style="color: rgba(255, 255, 255, 0.9);" data-translate="contact_direct_call">للاتصال المباشر</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Address & Email -->
-                <div>
-                    <h4 class="text-lg font-bold mb-6" data-translate="contact_address_email">العنوان والبريد الإلكتروني</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-3 space-x-reverse">
-                            <i class="fas fa-map-marker-alt mt-1" style="color: var(--accent-color);"></i>
-                            <div style="color: rgba(255, 255, 255, 0.9);">
-                                <p class="font-semibold" data-translate="contact_full_address">العنوان الكامل:</p>
-                                <p data-translate="contact_street">7 شارع الشون</p>
-                                <p data-translate="contact_area">ساحل روض الفرج</p>
-                                <p data-translate="contact_city">القاهرة، مصر</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3 space-x-reverse">
-                            <i class="fas fa-envelope" style="color: var(--accent-color);"></i>
-                            <div style="color: rgba(255, 255, 255, 0.9);">
-                                <p class="font-semibold" data-translate="contact_email_label">البريد الإلكتروني:</p>
-                                <a href="mailto:info@suncompany-egypt.org" class="hover:text-white transition-colors" data-translate="contact_email_address">info@suncompany-egypt.org</a>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3 space-x-reverse">
-                            <i class="fas fa-building" style="color: var(--accent-color);"></i>
-                            <div style="color: rgba(255, 255, 255, 0.9);">
-                                <p class="font-semibold" data-translate="footer_company_name">شركة الشمس للتصدير والاستيراد</p>
-                                <p class="text-sm opacity-80" data-translate="footer_tagline">متخصصون في التجارة الدولية</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-8 pt-8 flex flex-col md:flex-row md:justify-between md:items-center text-center md:text-right" style="border-top: 1px solid var(--accent-color);">
-                <p style="color: rgba(255, 255, 255, 0.8);" data-translate="footer_copyright">
-                    © 2024 شركة الشمس للتصدير والاستيراد. جميع الحقوق محفوظة.
-                </p>
-                <p class="text-sm mt-2 md:mt-0" style="color: rgba(255, 255, 255, 0.6);">
-                    <span data-translate="developer_credit">تصميم وتطوير بواسطه</span>
-                    <a href="mailto:ahmedrmohamed2017@gmail.com" class="shine-effect hover:text-white transition-colors ml-1" style="color: var(--accent-color);" data-translate="developer_name">النقيب</a>
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JavaScript -->
-    <script src="packages/bootstrap/bootstrap.bundle.min.js"></script>
-
-    <!-- External JavaScript -->
-    <script src="script.js"></script>
-
-    <!-- Contact Modal JavaScript -->
-    <script>
-        // Open contact modal
-        function openContactModal() {
-            const modal = document.getElementById('contactModal');
-            modal.classList.remove('hidden');
-
-            // Force reflow to ensure the element is rendered
-            modal.offsetHeight;
-
-            // Add show class for animation
-            setTimeout(() => {
-                modal.classList.add('show');
-            }, 10);
-
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-
-        // Close contact modal
-        function closeContactModal(event) {
-            // Only close if clicking the backdrop or close button
-            if (event && event.target !== event.currentTarget && !event.target.closest('.fa-times')) {
-                return;
-            }
-
-            const modal = document.getElementById('contactModal');
-
-            // Remove show class for animation
-            modal.classList.remove('show');
-
-            // Hide modal after animation completes
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto'; // Restore scrolling
-            }, 300);
-        }
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeContactModal();
-            }
-        });
-
-        // Handle form submission
-        document.getElementById('modal-contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-
-            // Here you can add your form submission logic
-            console.log('Form submitted:', data);
-
-            // Show success message (you can customize this)
-            alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
-
-            // Reset form and close modal
-            this.reset();
-            closeContactModal();
-        });
-
-
-
-        // Products Category Filtering
-        document.addEventListener('DOMContentLoaded', function() {
-            const categoryBtns = document.querySelectorAll('.category-btn');
-            const productCards = document.querySelectorAll('.product-card');
-
-            categoryBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
-
-                    // Update active button
-                    categoryBtns.forEach(b => {
-                        b.classList.remove('active');
-                        b.style.background = 'var(--accent-color)';
-                        b.style.color = 'var(--primary-color)';
-                    });
-                    this.classList.add('active');
-                    this.style.background = 'var(--secondary-color)';
-                    this.style.color = 'white';
-
-                    // Filter products
-                    productCards.forEach(card => {
-                        if (category === 'all' || card.getAttribute('data-category') === category) {
-                            card.style.display = 'block';
-                            card.style.animation = 'fadeIn 0.5s ease-in-out';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-
-        // Full Screen Image Functions
-        function openFullscreenImage(imageSrc, imageAlt) {
-            console.log('Opening fullscreen image:', imageAlt);
-            const modal = document.getElementById('fullscreenImageModal');
-            const image = document.getElementById('fullscreenImage');
-            const caption = document.getElementById('fullscreenImageCaption');
-
-            // Set higher quality image source
-            const highQualityImageSrc = imageSrc.replace('w=800', 'w=1200').replace('q=80', 'q=90');
-
-            image.src = highQualityImageSrc;
-            image.alt = imageAlt;
-            caption.textContent = imageAlt;
-
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeFullscreenImage() {
-            console.log('Closing fullscreen image');
-            const modal = document.getElementById('fullscreenImageModal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close fullscreen image when clicking on backdrop
-        document.addEventListener('click', function(e) {
-            const modal = document.getElementById('fullscreenImageModal');
-            if (e.target === modal) {
-                closeFullscreenImage();
-            }
-        });
-
-        // Close fullscreen image with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const modal = document.getElementById('fullscreenImageModal');
-                if (!modal.classList.contains('hidden')) {
-                    closeFullscreenImage();
-                }
-            }
-        });
-
-        // Make functions globally available
-        window.openFullscreenImage = openFullscreenImage;
-        window.closeFullscreenImage = closeFullscreenImage;
-    </script>
-
-</body>
-</html>
